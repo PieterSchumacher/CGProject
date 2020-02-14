@@ -5,4 +5,8 @@
 #ifndef CGPROJECT_LIGHTSOURCE_H
 #define CGPROJECT_LIGHTSOURCE_H
 
+struct LightSource {
+
+};
+
 #endif //CGPROJECT_LIGHTSOURCE_H

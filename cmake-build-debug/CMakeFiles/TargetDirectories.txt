@@ -1,3 +1,3 @@
-C:/Users/piete/OneDrive/Documenten/CGProject/cmake-build-debug/CMakeFiles/CGProject.dir
-C:/Users/piete/OneDrive/Documenten/CGProject/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/piete/OneDrive/Documenten/CGProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Program Files/CGProject/cmake-build-debug/CMakeFiles/CGProject.dir
+C:/Program Files/CGProject/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Program Files/CGProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -5,4 +5,8 @@
 #ifndef CGPROJECT_SHAPE_H
 #define CGPROJECT_SHAPE_H
 
+struct Shape {
+
+};
+
 #endif //CGPROJECT_SHAPE_H

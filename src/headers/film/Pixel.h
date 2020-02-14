@@ -5,4 +5,6 @@
 #ifndef CGPROJECT_PIXEL_H
 #define CGPROJECT_PIXEL_H
 
+
+
 #endif //CGPROJECT_PIXEL_H
