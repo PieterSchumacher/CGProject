@@ -10,3 +10,12 @@ Tasks:
   Material
   Plane
   Pixel? Maybe
+
+Notes:
+  Split into subtasks:
+    1. write a .ppm with random colours
+    2. write a sphere with predetermined colours to .ppm
+    3. ray trace a sphere and write to .ppm
+    4. do 3 for a triangle
+    5. parse a simple triangle and write to .ppm
+  When the above is finished, then think about lights, phong shading and material model
