@@ -1,3 +1,4 @@
-C:/Program Files/CGProject/cmake-build-debug/CMakeFiles/CGProject.dir
-C:/Program Files/CGProject/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Program Files/CGProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/CGProject/cmake-build-debug/CMakeFiles/CGProject.dir
+C:/CGProject/cmake-build-debug/CMakeFiles/hw2.dir
+C:/CGProject/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/CGProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,12 @@
+Goal: Read Wavefront Object, write a .ppm image in a perspective
+
+Tasks:
+  Camera                        Probably done
+  Shape                         Kind of done
+  Sphere                        Probably done
+  Ray                           Most likely done
+  Wavefront Object parser
+  .ppm writer
+  Material
+  Plane
+  Pixel? Maybe

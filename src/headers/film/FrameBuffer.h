@@ -1,8 +1,0 @@
-//
-// Created by piete on 2/14/2020.
-//
-
-#ifndef CGPROJECT_FRAMEBUFFER_H
-#define CGPROJECT_FRAMEBUFFER_H
-
-#endif //CGPROJECT_FRAMEBUFFER_H
