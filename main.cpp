@@ -34,6 +34,7 @@ int main(int argc, char * argv[]) {
     #pragma omp parallel for
     for(unsigned i=0; i<height; ++i) {
         for(unsigned j=0; j<width; ++j) {
+            std::cout << "i: " << i << " j: " << j << "\n";
             // Set background color
             rgb background_color = rgb(0,0,0);
 

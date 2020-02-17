@@ -162,33 +162,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/DirectionalLight.obj: src/DirectionalLight.cpp.obj
-
-.PHONY : src/DirectionalLight.obj
-
-# target to build an object file
-src/DirectionalLight.cpp.obj:
-	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/DirectionalLight.cpp.obj
-.PHONY : src/DirectionalLight.cpp.obj
-
-src/DirectionalLight.i: src/DirectionalLight.cpp.i
-
-.PHONY : src/DirectionalLight.i
-
-# target to preprocess a source file
-src/DirectionalLight.cpp.i:
-	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/DirectionalLight.cpp.i
-.PHONY : src/DirectionalLight.cpp.i
-
-src/DirectionalLight.s: src/DirectionalLight.cpp.s
-
-.PHONY : src/DirectionalLight.s
-
-# target to generate assembly for a file
-src/DirectionalLight.cpp.s:
-	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/DirectionalLight.cpp.s
-.PHONY : src/DirectionalLight.cpp.s
-
 src/Plane.obj: src/Plane.cpp.obj
 
 .PHONY : src/Plane.obj
@@ -324,86 +297,32 @@ src/TriangleMesh.cpp.s:
 	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/TriangleMesh.cpp.s
 .PHONY : src/TriangleMesh.cpp.s
 
-src/blinn_phong_shading.obj: src/blinn_phong_shading.cpp.obj
+src/WaveFrontParser.obj: src/WaveFrontParser.cpp.obj
 
-.PHONY : src/blinn_phong_shading.obj
-
-# target to build an object file
-src/blinn_phong_shading.cpp.obj:
-	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/blinn_phong_shading.cpp.obj
-.PHONY : src/blinn_phong_shading.cpp.obj
-
-src/blinn_phong_shading.i: src/blinn_phong_shading.cpp.i
-
-.PHONY : src/blinn_phong_shading.i
-
-# target to preprocess a source file
-src/blinn_phong_shading.cpp.i:
-	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/blinn_phong_shading.cpp.i
-.PHONY : src/blinn_phong_shading.cpp.i
-
-src/blinn_phong_shading.s: src/blinn_phong_shading.cpp.s
-
-.PHONY : src/blinn_phong_shading.s
-
-# target to generate assembly for a file
-src/blinn_phong_shading.cpp.s:
-	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/blinn_phong_shading.cpp.s
-.PHONY : src/blinn_phong_shading.cpp.s
-
-src/first_hit.obj: src/first_hit.cpp.obj
-
-.PHONY : src/first_hit.obj
+.PHONY : src/WaveFrontParser.obj
 
 # target to build an object file
-src/first_hit.cpp.obj:
-	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/first_hit.cpp.obj
-.PHONY : src/first_hit.cpp.obj
+src/WaveFrontParser.cpp.obj:
+	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.obj
+.PHONY : src/WaveFrontParser.cpp.obj
 
-src/first_hit.i: src/first_hit.cpp.i
+src/WaveFrontParser.i: src/WaveFrontParser.cpp.i
 
-.PHONY : src/first_hit.i
-
-# target to preprocess a source file
-src/first_hit.cpp.i:
-	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/first_hit.cpp.i
-.PHONY : src/first_hit.cpp.i
-
-src/first_hit.s: src/first_hit.cpp.s
-
-.PHONY : src/first_hit.s
-
-# target to generate assembly for a file
-src/first_hit.cpp.s:
-	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/first_hit.cpp.s
-.PHONY : src/first_hit.cpp.s
-
-src/raycolor.obj: src/raycolor.cpp.obj
-
-.PHONY : src/raycolor.obj
-
-# target to build an object file
-src/raycolor.cpp.obj:
-	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/raycolor.cpp.obj
-.PHONY : src/raycolor.cpp.obj
-
-src/raycolor.i: src/raycolor.cpp.i
-
-.PHONY : src/raycolor.i
+.PHONY : src/WaveFrontParser.i
 
 # target to preprocess a source file
-src/raycolor.cpp.i:
-	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/raycolor.cpp.i
-.PHONY : src/raycolor.cpp.i
+src/WaveFrontParser.cpp.i:
+	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.i
+.PHONY : src/WaveFrontParser.cpp.i
 
-src/raycolor.s: src/raycolor.cpp.s
+src/WaveFrontParser.s: src/WaveFrontParser.cpp.s
 
-.PHONY : src/raycolor.s
+.PHONY : src/WaveFrontParser.s
 
 # target to generate assembly for a file
-src/raycolor.cpp.s:
-	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/raycolor.cpp.s
-.PHONY : src/raycolor.cpp.s
+src/WaveFrontParser.cpp.s:
+	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.s
+.PHONY : src/WaveFrontParser.cpp.s
 
 src/viewing_ray.obj: src/viewing_ray.cpp.obj
 
@@ -432,33 +351,6 @@ src/viewing_ray.cpp.s:
 	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/viewing_ray.cpp.s
 .PHONY : src/viewing_ray.cpp.s
 
-src/write_ppm.obj: src/write_ppm.cpp.obj
-
-.PHONY : src/write_ppm.obj
-
-# target to build an object file
-src/write_ppm.cpp.obj:
-	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/write_ppm.cpp.obj
-.PHONY : src/write_ppm.cpp.obj
-
-src/write_ppm.i: src/write_ppm.cpp.i
-
-.PHONY : src/write_ppm.i
-
-# target to preprocess a source file
-src/write_ppm.cpp.i:
-	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/write_ppm.cpp.i
-.PHONY : src/write_ppm.cpp.i
-
-src/write_ppm.s: src/write_ppm.cpp.s
-
-.PHONY : src/write_ppm.s
-
-# target to generate assembly for a file
-src/write_ppm.cpp.s:
-	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/write_ppm.cpp.s
-.PHONY : src/write_ppm.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -472,9 +364,6 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... src/DirectionalLight.obj
-	@echo ... src/DirectionalLight.i
-	@echo ... src/DirectionalLight.s
 	@echo ... src/Plane.obj
 	@echo ... src/Plane.i
 	@echo ... src/Plane.s
@@ -490,21 +379,12 @@ help:
 	@echo ... src/TriangleMesh.obj
 	@echo ... src/TriangleMesh.i
 	@echo ... src/TriangleMesh.s
-	@echo ... src/blinn_phong_shading.obj
-	@echo ... src/blinn_phong_shading.i
-	@echo ... src/blinn_phong_shading.s
-	@echo ... src/first_hit.obj
-	@echo ... src/first_hit.i
-	@echo ... src/first_hit.s
-	@echo ... src/raycolor.obj
-	@echo ... src/raycolor.i
-	@echo ... src/raycolor.s
+	@echo ... src/WaveFrontParser.obj
+	@echo ... src/WaveFrontParser.i
+	@echo ... src/WaveFrontParser.s
 	@echo ... src/viewing_ray.obj
 	@echo ... src/viewing_ray.i
 	@echo ... src/viewing_ray.s
-	@echo ... src/write_ppm.obj
-	@echo ... src/write_ppm.i
-	@echo ... src/write_ppm.s
 .PHONY : help
 
 

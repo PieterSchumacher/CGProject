@@ -134,13 +134,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/CGProject/include/WaveFrontParser.h">
-			<Option target="hw2"/>
-		</Unit>
 		<Unit filename="C:/CGProject/main.cpp">
-			<Option target="CGProject"/>
-		</Unit>
-		<Unit filename="C:/CGProject/src/DirectionalLight.cpp">
 			<Option target="CGProject"/>
 		</Unit>
 		<Unit filename="C:/CGProject/src/Plane.cpp">
@@ -158,19 +152,10 @@
 		<Unit filename="C:/CGProject/src/TriangleMesh.cpp">
 			<Option target="hw2"/>
 		</Unit>
-		<Unit filename="C:/CGProject/src/blinn_phong_shading.cpp">
-			<Option target="CGProject"/>
-		</Unit>
-		<Unit filename="C:/CGProject/src/first_hit.cpp">
+		<Unit filename="C:/CGProject/src/WaveFrontParser.cpp">
 			<Option target="hw2"/>
-		</Unit>
-		<Unit filename="C:/CGProject/src/raycolor.cpp">
-			<Option target="CGProject"/>
 		</Unit>
 		<Unit filename="C:/CGProject/src/viewing_ray.cpp">
-			<Option target="hw2"/>
-		</Unit>
-		<Unit filename="C:/CGProject/src/write_ppm.cpp">
 			<Option target="hw2"/>
 		</Unit>
 		<Unit filename="C:/CGProject/CMakeLists.txt">

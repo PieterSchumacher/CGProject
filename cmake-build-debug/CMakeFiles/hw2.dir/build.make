@@ -112,24 +112,10 @@ CMakeFiles/hw2.dir/src/TriangleMesh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw2.dir/src/TriangleMesh.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\CGProject\src\TriangleMesh.cpp -o CMakeFiles\hw2.dir\src\TriangleMesh.cpp.s
 
-CMakeFiles/hw2.dir/src/first_hit.cpp.obj: CMakeFiles/hw2.dir/flags.make
-CMakeFiles/hw2.dir/src/first_hit.cpp.obj: CMakeFiles/hw2.dir/includes_CXX.rsp
-CMakeFiles/hw2.dir/src/first_hit.cpp.obj: ../src/first_hit.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/hw2.dir/src/first_hit.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw2.dir\src\first_hit.cpp.obj -c C:\CGProject\src\first_hit.cpp
-
-CMakeFiles/hw2.dir/src/first_hit.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw2.dir/src/first_hit.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\CGProject\src\first_hit.cpp > CMakeFiles\hw2.dir\src\first_hit.cpp.i
-
-CMakeFiles/hw2.dir/src/first_hit.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw2.dir/src/first_hit.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\CGProject\src\first_hit.cpp -o CMakeFiles\hw2.dir\src\first_hit.cpp.s
-
 CMakeFiles/hw2.dir/src/viewing_ray.cpp.obj: CMakeFiles/hw2.dir/flags.make
 CMakeFiles/hw2.dir/src/viewing_ray.cpp.obj: CMakeFiles/hw2.dir/includes_CXX.rsp
 CMakeFiles/hw2.dir/src/viewing_ray.cpp.obj: ../src/viewing_ray.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/hw2.dir/src/viewing_ray.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/hw2.dir/src/viewing_ray.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw2.dir\src\viewing_ray.cpp.obj -c C:\CGProject\src\viewing_ray.cpp
 
 CMakeFiles/hw2.dir/src/viewing_ray.cpp.i: cmake_force
@@ -140,19 +126,19 @@ CMakeFiles/hw2.dir/src/viewing_ray.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw2.dir/src/viewing_ray.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\CGProject\src\viewing_ray.cpp -o CMakeFiles\hw2.dir\src\viewing_ray.cpp.s
 
-CMakeFiles/hw2.dir/src/write_ppm.cpp.obj: CMakeFiles/hw2.dir/flags.make
-CMakeFiles/hw2.dir/src/write_ppm.cpp.obj: CMakeFiles/hw2.dir/includes_CXX.rsp
-CMakeFiles/hw2.dir/src/write_ppm.cpp.obj: ../src/write_ppm.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/hw2.dir/src/write_ppm.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw2.dir\src\write_ppm.cpp.obj -c C:\CGProject\src\write_ppm.cpp
+CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.obj: CMakeFiles/hw2.dir/flags.make
+CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.obj: CMakeFiles/hw2.dir/includes_CXX.rsp
+CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.obj: ../src/WaveFrontParser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw2.dir\src\WaveFrontParser.cpp.obj -c C:\CGProject\src\WaveFrontParser.cpp
 
-CMakeFiles/hw2.dir/src/write_ppm.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw2.dir/src/write_ppm.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\CGProject\src\write_ppm.cpp > CMakeFiles\hw2.dir\src\write_ppm.cpp.i
+CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\CGProject\src\WaveFrontParser.cpp > CMakeFiles\hw2.dir\src\WaveFrontParser.cpp.i
 
-CMakeFiles/hw2.dir/src/write_ppm.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw2.dir/src/write_ppm.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\CGProject\src\write_ppm.cpp -o CMakeFiles\hw2.dir\src\write_ppm.cpp.s
+CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\CGProject\src\WaveFrontParser.cpp -o CMakeFiles\hw2.dir\src\WaveFrontParser.cpp.s
 
 # Object files for target hw2
 hw2_OBJECTS = \
@@ -160,9 +146,8 @@ hw2_OBJECTS = \
 "CMakeFiles/hw2.dir/src/Sphere.cpp.obj" \
 "CMakeFiles/hw2.dir/src/Triangle.cpp.obj" \
 "CMakeFiles/hw2.dir/src/TriangleMesh.cpp.obj" \
-"CMakeFiles/hw2.dir/src/first_hit.cpp.obj" \
 "CMakeFiles/hw2.dir/src/viewing_ray.cpp.obj" \
-"CMakeFiles/hw2.dir/src/write_ppm.cpp.obj"
+"CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.obj"
 
 # External object files for target hw2
 hw2_EXTERNAL_OBJECTS =
@@ -171,12 +156,11 @@ libhw2.a: CMakeFiles/hw2.dir/src/Plane.cpp.obj
 libhw2.a: CMakeFiles/hw2.dir/src/Sphere.cpp.obj
 libhw2.a: CMakeFiles/hw2.dir/src/Triangle.cpp.obj
 libhw2.a: CMakeFiles/hw2.dir/src/TriangleMesh.cpp.obj
-libhw2.a: CMakeFiles/hw2.dir/src/first_hit.cpp.obj
 libhw2.a: CMakeFiles/hw2.dir/src/viewing_ray.cpp.obj
-libhw2.a: CMakeFiles/hw2.dir/src/write_ppm.cpp.obj
+libhw2.a: CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.obj
 libhw2.a: CMakeFiles/hw2.dir/build.make
 libhw2.a: CMakeFiles/hw2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libhw2.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libhw2.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\hw2.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\hw2.dir\link.txt --verbose=$(VERBOSE)
 

@@ -56,24 +56,10 @@ include CMakeFiles/CGProject.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/CGProject.dir/flags.make
 
-CMakeFiles/CGProject.dir/src/DirectionalLight.cpp.obj: CMakeFiles/CGProject.dir/flags.make
-CMakeFiles/CGProject.dir/src/DirectionalLight.cpp.obj: CMakeFiles/CGProject.dir/includes_CXX.rsp
-CMakeFiles/CGProject.dir/src/DirectionalLight.cpp.obj: ../src/DirectionalLight.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CGProject.dir/src/DirectionalLight.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\CGProject.dir\src\DirectionalLight.cpp.obj -c C:\CGProject\src\DirectionalLight.cpp
-
-CMakeFiles/CGProject.dir/src/DirectionalLight.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGProject.dir/src/DirectionalLight.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\CGProject\src\DirectionalLight.cpp > CMakeFiles\CGProject.dir\src\DirectionalLight.cpp.i
-
-CMakeFiles/CGProject.dir/src/DirectionalLight.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGProject.dir/src/DirectionalLight.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\CGProject\src\DirectionalLight.cpp -o CMakeFiles\CGProject.dir\src\DirectionalLight.cpp.s
-
 CMakeFiles/CGProject.dir/src/PointLight.cpp.obj: CMakeFiles/CGProject.dir/flags.make
 CMakeFiles/CGProject.dir/src/PointLight.cpp.obj: CMakeFiles/CGProject.dir/includes_CXX.rsp
 CMakeFiles/CGProject.dir/src/PointLight.cpp.obj: ../src/PointLight.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CGProject.dir/src/PointLight.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CGProject.dir/src/PointLight.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\CGProject.dir\src\PointLight.cpp.obj -c C:\CGProject\src\PointLight.cpp
 
 CMakeFiles/CGProject.dir/src/PointLight.cpp.i: cmake_force
@@ -84,38 +70,10 @@ CMakeFiles/CGProject.dir/src/PointLight.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGProject.dir/src/PointLight.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\CGProject\src\PointLight.cpp -o CMakeFiles\CGProject.dir\src\PointLight.cpp.s
 
-CMakeFiles/CGProject.dir/src/blinn_phong_shading.cpp.obj: CMakeFiles/CGProject.dir/flags.make
-CMakeFiles/CGProject.dir/src/blinn_phong_shading.cpp.obj: CMakeFiles/CGProject.dir/includes_CXX.rsp
-CMakeFiles/CGProject.dir/src/blinn_phong_shading.cpp.obj: ../src/blinn_phong_shading.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CGProject.dir/src/blinn_phong_shading.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\CGProject.dir\src\blinn_phong_shading.cpp.obj -c C:\CGProject\src\blinn_phong_shading.cpp
-
-CMakeFiles/CGProject.dir/src/blinn_phong_shading.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGProject.dir/src/blinn_phong_shading.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\CGProject\src\blinn_phong_shading.cpp > CMakeFiles\CGProject.dir\src\blinn_phong_shading.cpp.i
-
-CMakeFiles/CGProject.dir/src/blinn_phong_shading.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGProject.dir/src/blinn_phong_shading.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\CGProject\src\blinn_phong_shading.cpp -o CMakeFiles\CGProject.dir\src\blinn_phong_shading.cpp.s
-
-CMakeFiles/CGProject.dir/src/raycolor.cpp.obj: CMakeFiles/CGProject.dir/flags.make
-CMakeFiles/CGProject.dir/src/raycolor.cpp.obj: CMakeFiles/CGProject.dir/includes_CXX.rsp
-CMakeFiles/CGProject.dir/src/raycolor.cpp.obj: ../src/raycolor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CGProject.dir/src/raycolor.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\CGProject.dir\src\raycolor.cpp.obj -c C:\CGProject\src\raycolor.cpp
-
-CMakeFiles/CGProject.dir/src/raycolor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGProject.dir/src/raycolor.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\CGProject\src\raycolor.cpp > CMakeFiles\CGProject.dir\src\raycolor.cpp.i
-
-CMakeFiles/CGProject.dir/src/raycolor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGProject.dir/src/raycolor.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\CGProject\src\raycolor.cpp -o CMakeFiles\CGProject.dir\src\raycolor.cpp.s
-
 CMakeFiles/CGProject.dir/main.cpp.obj: CMakeFiles/CGProject.dir/flags.make
 CMakeFiles/CGProject.dir/main.cpp.obj: CMakeFiles/CGProject.dir/includes_CXX.rsp
 CMakeFiles/CGProject.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CGProject.dir/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CGProject.dir/main.cpp.obj"
 	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\CGProject.dir\main.cpp.obj -c C:\CGProject\main.cpp
 
 CMakeFiles/CGProject.dir/main.cpp.i: cmake_force
@@ -128,26 +86,20 @@ CMakeFiles/CGProject.dir/main.cpp.s: cmake_force
 
 # Object files for target CGProject
 CGProject_OBJECTS = \
-"CMakeFiles/CGProject.dir/src/DirectionalLight.cpp.obj" \
 "CMakeFiles/CGProject.dir/src/PointLight.cpp.obj" \
-"CMakeFiles/CGProject.dir/src/blinn_phong_shading.cpp.obj" \
-"CMakeFiles/CGProject.dir/src/raycolor.cpp.obj" \
 "CMakeFiles/CGProject.dir/main.cpp.obj"
 
 # External object files for target CGProject
 CGProject_EXTERNAL_OBJECTS =
 
-CGProject.exe: CMakeFiles/CGProject.dir/src/DirectionalLight.cpp.obj
 CGProject.exe: CMakeFiles/CGProject.dir/src/PointLight.cpp.obj
-CGProject.exe: CMakeFiles/CGProject.dir/src/blinn_phong_shading.cpp.obj
-CGProject.exe: CMakeFiles/CGProject.dir/src/raycolor.cpp.obj
 CGProject.exe: CMakeFiles/CGProject.dir/main.cpp.obj
 CGProject.exe: CMakeFiles/CGProject.dir/build.make
 CGProject.exe: libhw2.a
 CGProject.exe: CMakeFiles/CGProject.dir/linklibs.rsp
 CGProject.exe: CMakeFiles/CGProject.dir/objects1.rsp
 CGProject.exe: CMakeFiles/CGProject.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable CGProject.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable CGProject.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\CGProject.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

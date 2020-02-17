@@ -3,10 +3,7 @@ file(REMOVE_RECURSE
   "CGProject.exe.manifest"
   "CGProject.pdb"
   "CMakeFiles/CGProject.dir/main.cpp.obj"
-  "CMakeFiles/CGProject.dir/src/DirectionalLight.cpp.obj"
   "CMakeFiles/CGProject.dir/src/PointLight.cpp.obj"
-  "CMakeFiles/CGProject.dir/src/blinn_phong_shading.cpp.obj"
-  "CMakeFiles/CGProject.dir/src/raycolor.cpp.obj"
   "libCGProject.dll.a"
 )
 
