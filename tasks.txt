@@ -1,21 +1,27 @@
-Goal: Read Wavefront Object, write a .ppm image in a perspective
+Goal: Read Wavefront Object, write a .ppm (or other format) image in a perspective
 
 Tasks:
   Camera                        Probably done
   Shape                         Kind of done
   Sphere                        Probably done
   Ray                           Most likely done
+  Image file writer
   Wavefront Object parser
-  .ppm writer
   Material
   Plane
-  Pixel? Maybe
+  Pixel? Maybe, must ask
 
 Notes:
-  Split into subtasks:
+  Split into subtasks (this might change for the file format):
     1. write a .ppm with random colours
     2. write a sphere with predetermined colours to .ppm
     3. ray trace a sphere and write to .ppm
     4. do 3 for a triangle
     5. parse a simple triangle and write to .ppm
   When the above is finished, then think about lights, phong shading and material model
+
+Questions for assistant:
+  Suggestion for image format, prefer an industry standard
+  Way to read Wavefront Object files with notepad/any other application program
+  Find a way to define a working project structure without h2w lib
+  Further explanation on the use of a Pixel data structure, and possible other screen/film related things
