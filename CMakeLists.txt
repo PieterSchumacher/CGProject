@@ -17,7 +17,7 @@ set(HW2FILES
         "${CMAKE_CURRENT_SOURCE_DIR}/${SRC_DIR}/Triangle.cpp"
         "${CMAKE_CURRENT_SOURCE_DIR}/${SRC_DIR}/TriangleMesh.cpp"
         "${CMAKE_CURRENT_SOURCE_DIR}/${SRC_DIR}/viewing_ray.cpp"
-        "${CMAKE_CURRENT_SOURCE_DIR}/${SRC_DIR}/WaveFrontParser.cpp")
+        "${CMAKE_CURRENT_SOURCE_DIR}/${SRC_DIR}/WaveFrontParser.cpp" include/write_ppm.h src/write_ppm.cpp)
 list(REMOVE_ITEM SRCFILES ${HW2FILES})
 list(APPEND SRCFILES main.cpp)
 # create executable

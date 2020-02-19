@@ -351,6 +351,36 @@ src/viewing_ray.cpp.s:
 	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/viewing_ray.cpp.s
 .PHONY : src/viewing_ray.cpp.s
 
+src/write_ppm.obj: src/write_ppm.cpp.obj
+
+.PHONY : src/write_ppm.obj
+
+# target to build an object file
+src/write_ppm.cpp.obj:
+	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/write_ppm.cpp.obj
+	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/write_ppm.cpp.obj
+.PHONY : src/write_ppm.cpp.obj
+
+src/write_ppm.i: src/write_ppm.cpp.i
+
+.PHONY : src/write_ppm.i
+
+# target to preprocess a source file
+src/write_ppm.cpp.i:
+	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/write_ppm.cpp.i
+	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/write_ppm.cpp.i
+.PHONY : src/write_ppm.cpp.i
+
+src/write_ppm.s: src/write_ppm.cpp.s
+
+.PHONY : src/write_ppm.s
+
+# target to generate assembly for a file
+src/write_ppm.cpp.s:
+	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/write_ppm.cpp.s
+	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/write_ppm.cpp.s
+.PHONY : src/write_ppm.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -385,6 +415,9 @@ help:
 	@echo ... src/viewing_ray.obj
 	@echo ... src/viewing_ray.i
 	@echo ... src/viewing_ray.s
+	@echo ... src/write_ppm.obj
+	@echo ... src/write_ppm.i
+	@echo ... src/write_ppm.s
 .PHONY : help
 
 

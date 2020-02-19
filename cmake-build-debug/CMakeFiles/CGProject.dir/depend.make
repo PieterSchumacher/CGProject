@@ -148,6 +148,7 @@ CMakeFiles/CGProject.dir/main.cpp.obj: ../include/Object.h
 CMakeFiles/CGProject.dir/main.cpp.obj: ../include/RGB.h
 CMakeFiles/CGProject.dir/main.cpp.obj: ../include/Ray.h
 CMakeFiles/CGProject.dir/main.cpp.obj: ../include/Sphere.h
+CMakeFiles/CGProject.dir/main.cpp.obj: ../include/write_ppm.h
 CMakeFiles/CGProject.dir/main.cpp.obj: ../Eigen/Cholesky
 CMakeFiles/CGProject.dir/main.cpp.obj: ../Eigen/Core
 CMakeFiles/CGProject.dir/main.cpp.obj: ../Eigen/Dense
@@ -361,4 +362,7 @@ CMakeFiles/CGProject.dir/src/PointLight.cpp.obj: ../Eigen/src/plugins/MatrixCwis
 CMakeFiles/CGProject.dir/src/PointLight.cpp.obj: ../include/Light.h
 CMakeFiles/CGProject.dir/src/PointLight.cpp.obj: ../include/PointLight.h
 CMakeFiles/CGProject.dir/src/PointLight.cpp.obj: ../src/PointLight.cpp
+
+CMakeFiles/CGProject.dir/src/write_ppm.cpp.obj: ../include/write_ppm.h
+CMakeFiles/CGProject.dir/src/write_ppm.cpp.obj: ../src/write_ppm.cpp
 

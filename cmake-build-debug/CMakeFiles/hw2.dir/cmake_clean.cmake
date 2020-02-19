@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/hw2.dir/src/TriangleMesh.cpp.obj"
   "CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.obj"
   "CMakeFiles/hw2.dir/src/viewing_ray.cpp.obj"
+  "CMakeFiles/hw2.dir/src/write_ppm.cpp.obj"
   "libhw2.a"
   "libhw2.pdb"
 )

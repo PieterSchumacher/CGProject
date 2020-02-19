@@ -786,3 +786,6 @@ CMakeFiles/hw2.dir/src/viewing_ray.cpp.obj
  ../include/Ray.h
  ../include/viewing_ray.h
  C:/CGProject/src/viewing_ray.cpp
+CMakeFiles/hw2.dir/src/write_ppm.cpp.obj
+ ../include/write_ppm.h
+ C:/CGProject/src/write_ppm.cpp

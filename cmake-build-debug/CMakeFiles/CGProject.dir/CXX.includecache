@@ -706,6 +706,14 @@ Object.h
 ../Eigen/Core
 ../Eigen/Core
 
+../include/write_ppm.h
+string
+-
+vector
+-
+iostream
+-
+
 C:/CGProject/Eigen/Cholesky
 Core
 C:/CGProject/Eigen/Core
@@ -1456,6 +1464,8 @@ vector
 memory
 -
 Sphere.h
+-
+write_ppm.h
 -
 Eigen/Dense
 C:/CGProject/Eigen/Dense
