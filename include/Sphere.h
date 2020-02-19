@@ -19,8 +19,8 @@ class Sphere : public Object
     //   t  first intersection at ray.origin + t * ray.direction
     //   n  surface normal at point of intersection
     // Returns iff there a first intersection is found.
-    bool intersect(
-      const Ray & ray, const double min_t, double & t, Eigen::Vector3d & n) const;
+    bool
+    intersect(const Ray &ray, const double min_t, double &t, Eigen::Vector3d &n) const;
 };
 
 #endif

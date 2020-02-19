@@ -9,6 +9,8 @@
 #include <memory>
 #include <Sphere.h>
 #include <write_ppm.h>
+#include <Hitpoint.h>
+#include <PointLight.h>
 #include "Eigen/Dense"
 
 using Eigen::Vector3d;
@@ -18,42 +20,69 @@ using std::vector;
 using std::shared_ptr;
 
 int main(int argc, char * argv[]) {
-    Camera camera = {Vector3d(0,0,0), Vector3d(0,0,1), Vector3d(0,-1,0), Vector3d(0,0,-1), 0.5, 640, 360};
+    unsigned int h_res = 640;
+    unsigned int v_res = 360;
+    double s = 0.003125; // pixel size
+    double plane_offset = 0.5;
+    Camera camera = {Vector3d(0,0,0),                                       // eye
+                     Vector3d(1,0,0), Vector3d(0,0,1), Vector3d(0,-1,0),    // uvw
+                     plane_offset,                                          // distance to plane
+                     (double) h_res, (double) v_res                         // image dimensions
+                    };
 
-    Sphere s;
-
-    vector<shared_ptr<Object>> objects;
-    vector<shared_ptr<Light>> lights;
+    vector<shared_ptr<Object>>  objects;
+    vector<shared_ptr<Light>>   lights;
     // Initialize scene and camera
+    shared_ptr<PointLight> pointLight(new PointLight());
+    pointLight->I = rgb(100.0,100.0,100.0);
+    pointLight->p = Vector3d(0,0,2);
+    lights.push_back(pointLight);
+    shared_ptr<Material> mat(new Material());
+    mat->kd = rgb(0.3,0.5,1);
     shared_ptr<Sphere> sphere(new Sphere());
-    sphere->center = Vector3d(0,3,0);
-    sphere->radius = 1.0;
+    sphere->center = Vector3d(0,2,0);
+    sphere->radius = 0.5;
+    sphere->material = mat;
     objects.push_back(sphere);
 
-    unsigned int width = 640;
-    unsigned int height = 360;
-    vector<unsigned char> rgb_image(3*width*height);
+    vector<unsigned char> rgb_image(3*h_res*v_res);
     // For each pixel (i,j)
     #pragma omp parallel for
-    for (unsigned i=0; i < height; ++i) {
-        for (unsigned j=0; j < width; ++j) {
-            // Set background color
-            rgb background_color = rgb(0,0,0);
-
-            // Compute viewing ray  -- in : camera,i,j,width,height,ray --
-            Ray ray;
-
-            // Shoot ray and collect color -- in : ray,1.0,objects,lights,0,rgb --
-            rgb color = rgb(255.0-i, 255.0-i, 255.0-i);
-            // Write double precision color into image
+    for (unsigned r=0; r < v_res; ++r) {
+        for (unsigned c=0; c < h_res; ++c) {
+            // Shoot ray through pixel
+            Ray ray = {camera.e, Vector3d(s*(c - (h_res/2.0) + 0.5), // x coordinate in uv space
+                                          1,                         // negative viewing direction
+                                          s*(r - (v_res/2.0) + 0.5)  // y coordinate in uv space
+                                          ).normalized() // center of pixel
+                      };
+            // Compute nearest hitpoint
+            Hitpoint hitpoint;
+            bool intersect = find_nearest_hitpoint(objects, ray, plane_offset, hitpoint);
+            // Compute color of nearest hitpoint
+            rgb diffuse_light   = rgb(0, 0, 0);
+            rgb specular_light  = rgb(0, 0, 0);
+            rgb pigment         = rgb(1, 0.98, 0.94);   // default pigment
+            if (intersect) {
+                Vector3d l = ray.direction;
+                Vector3d x = hitpoint.t * l;
+                for (shared_ptr<Light> &light : lights) {
+                    Vector3d dlight; double max_t;
+                    light->direction(x, dlight, max_t);
+                    diffuse_light += hitpoint.object->material->kd*rgb(255.0,0.0,0.0)*light->I
+                                        *(x.dot(dlight)/(x.norm()*dlight.norm()));
+//                    cout << diffuse_light.r;
+                }
+            }
+            rgb color = (diffuse_light + specular_light) * pigment;
+            // pixel <- color
             auto clamp = [](double s){return max(min(s,1.0),0.0);};
-            rgb_image[0+3*(j+width*i)] = 255.0*clamp(color.r/255.0);
-            rgb_image[1+3*(j+width*i)] = 255.0*clamp(color.g/255.0);
-            rgb_image[2+3*(j+width*i)] = 255.0*clamp(color.b/255.0);
+            rgb_image[0+3*(c+h_res*r)] = 255.0*clamp(color.r/255.0);
+            rgb_image[1+3*(c+h_res*r)] = 255.0*clamp(color.g/255.0);
+            rgb_image[2+3*(c+h_res*r)] = 255.0*clamp(color.b/255.0);
         }
     }
-
-    // write to file -- in : str filename, rgb_image, width, height, 3
+    // write to file -- in : str filename, rgb_image, h_res, v_res, 3
     std::string filename = "CGDemo";
-    write_ppm(filename, rgb_image, width, height);
+    write_ppm(filename, rgb_image, h_res, v_res);
 }

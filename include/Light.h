@@ -1,11 +1,13 @@
 #ifndef LIGHT_H
 #define LIGHT_H
 #include "../Eigen/Core"
+#include "RGB.h"
+
 class Light
 {
   public:
     // Color (intensities)
-    Eigen::Vector3d I;
+    rgb I{};
     // https://stackoverflow.com/questions/461203/when-to-use-virtual-destructors
     virtual ~Light() {};
     // Given a query point return the direction _toward_ the Light.

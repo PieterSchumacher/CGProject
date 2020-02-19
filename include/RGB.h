@@ -9,7 +9,7 @@
 
 struct rgb {
     double r,g,b,f;
-
+    rgb(){r=0.0,g=0.0,b=0.0,f=0.0;};
     rgb(double r_, double g_, double b_) : r(r_), g(g_), b(b_), f(1.0) {}
     rgb(double r_, double g_, double b_, double f_) : r(r_), g(g_), b(b_), f(f_) {}
 
@@ -18,8 +18,18 @@ struct rgb {
         return *this;
     }
 
+    rgb& operator+=(const rgb &c) {
+        r += c.r, g += c.g, b += c.b;
+        return *this;
+    }
+
     rgb operator*(rgb c) {
         r *= c.r, g *= c.g, b *= c.b;
+        return *this;
+    }
+
+    rgb operator*(double d) {
+        r *= d, g *= d, b *= d;
         return *this;
     }
 

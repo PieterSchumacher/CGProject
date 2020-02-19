@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/CGProject/src/Hitpoint.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/hw2.dir/src/Hitpoint.cpp.obj"
   "C:/CGProject/src/Plane.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/hw2.dir/src/Plane.cpp.obj"
   "C:/CGProject/src/Sphere.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/hw2.dir/src/Sphere.cpp.obj"
   "C:/CGProject/src/Triangle.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/hw2.dir/src/Triangle.cpp.obj"

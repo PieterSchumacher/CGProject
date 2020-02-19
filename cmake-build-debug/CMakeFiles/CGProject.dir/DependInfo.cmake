@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/CGProject/main.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/CGProject.dir/main.cpp.obj"
+  "C:/CGProject/src/Hitpoint.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/CGProject.dir/src/Hitpoint.cpp.obj"
   "C:/CGProject/src/PointLight.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/CGProject.dir/src/PointLight.cpp.obj"
   "C:/CGProject/src/write_ppm.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/CGProject.dir/src/write_ppm.cpp.obj"
   )

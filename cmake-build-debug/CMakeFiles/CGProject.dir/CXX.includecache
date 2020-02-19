@@ -676,13 +676,25 @@ Object.h
 ../Eigen/Core
 ../Eigen/Core
 
+../include/Hitpoint.h
+Object.h
+../include/Object.h
+vector
+-
+Ray.h
+-
+
 ../include/Light.h
 ../Eigen/Core
 ../Eigen/Core
+RGB.h
+../include/RGB.h
 
 ../include/Material.h
 ../Eigen/Core
 ../Eigen/Core
+RGB.h
+../include/RGB.h
 
 ../include/Object.h
 Material.h
@@ -691,6 +703,12 @@ Material.h
 ../Eigen/Core
 memory
 -
+
+../include/PointLight.h
+Light.h
+../include/Light.h
+../Eigen/Core
+../Eigen/Core
 
 ../include/RGB.h
 src/Core/Matrix.h
@@ -712,6 +730,8 @@ string
 vector
 -
 iostream
+-
+fstream
 -
 
 C:/CGProject/Eigen/Cholesky
@@ -1466,6 +1486,10 @@ memory
 Sphere.h
 -
 write_ppm.h
+-
+Hitpoint.h
+-
+PointLight.h
 -
 Eigen/Dense
 C:/CGProject/Eigen/Dense

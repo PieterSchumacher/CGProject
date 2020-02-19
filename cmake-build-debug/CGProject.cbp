@@ -134,11 +134,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/CGProject/include/Hitpoint.h">
+			<Option target="hw2"/>
+		</Unit>
 		<Unit filename="C:/CGProject/include/write_ppm.h">
 			<Option target="hw2"/>
 		</Unit>
 		<Unit filename="C:/CGProject/main.cpp">
 			<Option target="CGProject"/>
+		</Unit>
+		<Unit filename="C:/CGProject/src/Hitpoint.cpp">
+			<Option target="CGProject"/>
+			<Option target="hw2"/>
 		</Unit>
 		<Unit filename="C:/CGProject/src/Plane.cpp">
 			<Option target="hw2"/>

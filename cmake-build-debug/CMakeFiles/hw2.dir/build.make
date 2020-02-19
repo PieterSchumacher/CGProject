@@ -154,6 +154,20 @@ CMakeFiles/hw2.dir/src/write_ppm.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw2.dir/src/write_ppm.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\CGProject\src\write_ppm.cpp -o CMakeFiles\hw2.dir\src\write_ppm.cpp.s
 
+CMakeFiles/hw2.dir/src/Hitpoint.cpp.obj: CMakeFiles/hw2.dir/flags.make
+CMakeFiles/hw2.dir/src/Hitpoint.cpp.obj: CMakeFiles/hw2.dir/includes_CXX.rsp
+CMakeFiles/hw2.dir/src/Hitpoint.cpp.obj: ../src/Hitpoint.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/hw2.dir/src/Hitpoint.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw2.dir\src\Hitpoint.cpp.obj -c C:\CGProject\src\Hitpoint.cpp
+
+CMakeFiles/hw2.dir/src/Hitpoint.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw2.dir/src/Hitpoint.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\CGProject\src\Hitpoint.cpp > CMakeFiles\hw2.dir\src\Hitpoint.cpp.i
+
+CMakeFiles/hw2.dir/src/Hitpoint.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw2.dir/src/Hitpoint.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\CGProject\src\Hitpoint.cpp -o CMakeFiles\hw2.dir\src\Hitpoint.cpp.s
+
 # Object files for target hw2
 hw2_OBJECTS = \
 "CMakeFiles/hw2.dir/src/Plane.cpp.obj" \
@@ -162,7 +176,8 @@ hw2_OBJECTS = \
 "CMakeFiles/hw2.dir/src/TriangleMesh.cpp.obj" \
 "CMakeFiles/hw2.dir/src/viewing_ray.cpp.obj" \
 "CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.obj" \
-"CMakeFiles/hw2.dir/src/write_ppm.cpp.obj"
+"CMakeFiles/hw2.dir/src/write_ppm.cpp.obj" \
+"CMakeFiles/hw2.dir/src/Hitpoint.cpp.obj"
 
 # External object files for target hw2
 hw2_EXTERNAL_OBJECTS =
@@ -174,9 +189,10 @@ libhw2.a: CMakeFiles/hw2.dir/src/TriangleMesh.cpp.obj
 libhw2.a: CMakeFiles/hw2.dir/src/viewing_ray.cpp.obj
 libhw2.a: CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.obj
 libhw2.a: CMakeFiles/hw2.dir/src/write_ppm.cpp.obj
+libhw2.a: CMakeFiles/hw2.dir/src/Hitpoint.cpp.obj
 libhw2.a: CMakeFiles/hw2.dir/build.make
 libhw2.a: CMakeFiles/hw2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libhw2.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library libhw2.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\hw2.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\hw2.dir\link.txt --verbose=$(VERBOSE)
 

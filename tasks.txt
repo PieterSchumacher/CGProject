@@ -1,3 +1,5 @@
+--- 12/02/2020 through 19/02/2020 ---
+
 Goal: Read Wavefront Object, write a .ppm (or other format) image in a perspective
 
 Tasks:
@@ -14,18 +16,29 @@ Tasks:
 Notes:
   Split into subtasks (this might change for the file format):
     1. write a .ppm with random colours                         DONE
-    2. write a sphere with predetermined colours to .ppm        PENDING
+    2. write a sphere with predetermined colours to .ppm        DONE
     3. ray trace a sphere with point light and write to .ppm
-    4. do 3 for a triangle
-    5. parse a simple triangle and write to .ppm
-  When the above is finished, then think about lights, phong shading and material model
+    4. do 3 for a triangles
+    5. write a WaveFront Parser and render a triangle
+    6. do 3 for planes, rectangles, meshes
+    7. think about possible bugs/artefacts and write a draft
+        for the report
+
 
 Questions for assistant:
-  Suggestion for image format, prefer an industry standard
-  Way to read Wavefront Object files with notepad/any other application program
-  Find a way to define a working project structure without h2w lib
-  Further explanation on the use of a Pixel data structure, and possible other screen/film related things
+  Suggestion for image format, prefer an industry standard  -> .ppm or .png or .jpeg
+  Way to read Wavefront Object files with notepad/any other application program -> just unzip the file and open
+  Find a way to define a working project structure without h2w lib -> for later, must focus on deadline
+  Further explanation on the use of a Pixel data structure, and possible other screen/film related things -> Pixel not necessary
 
 image format: .png of openexr
 .gz unzippen en dan notepad
 zoek op: stack vs heap
+
+19/02/2020:
+  Got the intersections working (or atleast to the point where a 2d image renders). Strange bug occuring
+  where the sphere moves downwards if the z coordinate is incremented. Need to rethink the way ray directions, cameras
+  and hitpoints are represented (in what coordinate systems?). Also: the image isn't taking the plane offset into
+  account yet. The ray direction must change accordingly. Maybe ask help tomorrow
+
+

@@ -23,8 +23,8 @@ class Object
     // Returns iff there a first intersection is found.
     //
     // The funny = 0 just ensures that this function is defined (as a no-op)
-    virtual bool intersect(
-        const Ray & ray, const double min_t, double & t, Eigen::Vector3d & n) const = 0;
+    virtual bool
+    intersect(const Ray &ray, const double min_t, double &t, Eigen::Vector3d &n) const = 0;
 };
 
 #endif
