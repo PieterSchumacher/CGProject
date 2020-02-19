@@ -1,7 +1,3 @@
-//
-// Created by piete on 2/16/2020.
-//
-
 #ifndef CGPROJECT_WAVEFRONTPARSER_H
 #define CGPROJECT_WAVEFRONTPARSER_H
 

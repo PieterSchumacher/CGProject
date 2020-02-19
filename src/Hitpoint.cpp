@@ -1,7 +1,3 @@
-//
-// Created by piete on 2/19/2020.
-//
-
 #include <iostream>
 #include "Hitpoint.h"
 

@@ -1,6 +1,3 @@
-//
-// Created by piete on 2/19/2020.
-//
 #include "write_ppm.h"
 
 void write_ppm(string filename, vector<unsigned char> image_buffer, unsigned int width, unsigned int height) {

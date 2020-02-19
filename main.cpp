@@ -54,7 +54,7 @@ int main(int argc, char * argv[]) {
             Ray ray = {camera.e, Vector3d(s*(c - (h_res/2.0) + 0.5), // x coordinate in uv space
                                           1,                         // negative viewing direction
                                           s*(r - (v_res/2.0) + 0.5)  // y coordinate in uv space
-                                          ).normalized() // center of pixel
+                                          ).normalized()             // center of pixel
                       };
             // Compute nearest hitpoint
             Hitpoint hitpoint;
@@ -70,8 +70,7 @@ int main(int argc, char * argv[]) {
                     Vector3d dlight; double max_t;
                     light->direction(x, dlight, max_t);
                     diffuse_light += hitpoint.object->material->kd*rgb(255.0,0.0,0.0)*light->I
-                                        *(x.dot(dlight)/(x.norm()*dlight.norm()));
-//                    cout << diffuse_light.r;
+                                        *(x.dot(dlight)/(x.norm()*dlight.norm())); // values are too high
                 }
             }
             rgb color = (diffuse_light + specular_light) * pigment;

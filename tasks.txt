@@ -36,9 +36,10 @@ image format: .png of openexr
 zoek op: stack vs heap
 
 19/02/2020:
-  Got the intersections working (or atleast to the point where a 2d image renders). Strange bug occuring
+  Got the intersections working (or atleast to the point where a 2d image renders). Strange bug occurring
   where the sphere moves downwards if the z coordinate is incremented. Need to rethink the way ray directions, cameras
   and hitpoints are represented (in what coordinate systems?). Also: the image isn't taking the plane offset into
-  account yet. The ray direction must change accordingly. Maybe ask help tomorrow
+  account yet. The ray direction must change accordingly. Maybe ask help tomorrow. Light calculations are strange,
+  must somehow be able to multiply and get a value between 0 and 255
 
 

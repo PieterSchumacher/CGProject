@@ -3,23 +3,16 @@
 #include "../Eigen/Core"
 #include "RGB.h"
 
-class Light
-{
+using Eigen::Vector3d;
+
+class Light {
   public:
     // Color (intensities)
     rgb I{};
-    // https://stackoverflow.com/questions/461203/when-to-use-virtual-destructors
     virtual ~Light() {};
-    // Given a query point return the direction _toward_ the Light.
-    //
-    // Input:
-    //   q  3D query point in space
-    // Outputs:
-    //    d  3D direction from point toward light as a vector.
-    //    max_t  parametric distance from q along d to light (may be inf)
     virtual void direction(
-      const Eigen::Vector3d & q, 
-      Eigen::Vector3d & d, 
+      const Vector3d & q,
+      Vector3d & d,
       double & max_t) const =0;
 };
 #endif

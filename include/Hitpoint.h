@@ -1,7 +1,3 @@
-//
-// Created by piete on 2/19/2020.
-//
-
 #ifndef CGPROJECT_HITPOINT_H
 #define CGPROJECT_HITPOINT_H
 
