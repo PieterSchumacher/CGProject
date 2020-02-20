@@ -440,6 +440,8 @@ src/Core/util/ReenableStupidWarnings.h
 
 ../Eigen/src/Core/MathFunctionsImpl.h
 
+../Eigen/src/Core/Matrix.h
+
 ../Eigen/src/Core/MatrixBase.h
 ../plugins/CommonCwiseUnaryOps.h
 ../Eigen/src/plugins/CommonCwiseUnaryOps.h
@@ -1493,4 +1495,18 @@ PointLight.h
 -
 Eigen/Dense
 C:/CGProject/Eigen/Dense
+
+C:/CGProject/src/Hitpoint.cpp
+iostream
+-
+Hitpoint.h
+C:/CGProject/src/Hitpoint.h
+
+C:/CGProject/src/PointLight.cpp
+PointLight.h
+C:/CGProject/src/PointLight.h
+
+C:/CGProject/src/write_ppm.cpp
+write_ppm.h
+C:/CGProject/src/write_ppm.h
 

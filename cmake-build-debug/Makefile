@@ -354,33 +354,6 @@ src/WaveFrontParser.cpp.s:
 	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.s
 .PHONY : src/WaveFrontParser.cpp.s
 
-src/viewing_ray.obj: src/viewing_ray.cpp.obj
-
-.PHONY : src/viewing_ray.obj
-
-# target to build an object file
-src/viewing_ray.cpp.obj:
-	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/viewing_ray.cpp.obj
-.PHONY : src/viewing_ray.cpp.obj
-
-src/viewing_ray.i: src/viewing_ray.cpp.i
-
-.PHONY : src/viewing_ray.i
-
-# target to preprocess a source file
-src/viewing_ray.cpp.i:
-	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/viewing_ray.cpp.i
-.PHONY : src/viewing_ray.cpp.i
-
-src/viewing_ray.s: src/viewing_ray.cpp.s
-
-.PHONY : src/viewing_ray.s
-
-# target to generate assembly for a file
-src/viewing_ray.cpp.s:
-	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/viewing_ray.cpp.s
-.PHONY : src/viewing_ray.cpp.s
-
 src/write_ppm.obj: src/write_ppm.cpp.obj
 
 .PHONY : src/write_ppm.obj
@@ -445,9 +418,6 @@ help:
 	@echo ... src/WaveFrontParser.obj
 	@echo ... src/WaveFrontParser.i
 	@echo ... src/WaveFrontParser.s
-	@echo ... src/viewing_ray.obj
-	@echo ... src/viewing_ray.i
-	@echo ... src/viewing_ray.s
 	@echo ... src/write_ppm.obj
 	@echo ... src/write_ppm.i
 	@echo ... src/write_ppm.s

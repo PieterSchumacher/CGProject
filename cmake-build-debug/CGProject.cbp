@@ -165,9 +165,6 @@
 		<Unit filename="C:/CGProject/src/WaveFrontParser.cpp">
 			<Option target="hw2"/>
 		</Unit>
-		<Unit filename="C:/CGProject/src/viewing_ray.cpp">
-			<Option target="hw2"/>
-		</Unit>
 		<Unit filename="C:/CGProject/src/write_ppm.cpp">
 			<Option target="CGProject"/>
 			<Option target="hw2"/>

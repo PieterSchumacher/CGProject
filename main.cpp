@@ -72,6 +72,7 @@ int main(int argc, char * argv[]) {
                     diffuse_light += hitpoint.object->material->kd*rgb(255.0,0.0,0.0)*light->I
                                         *(x.dot(dlight)/(x.norm()*dlight.norm())); // values are too high
                 }
+//                  diffuse_light += rgb(255.0,0.0,0.0);
             }
             rgb color = (diffuse_light + specular_light) * pigment;
             // pixel <- color
