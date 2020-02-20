@@ -56,19 +56,19 @@ include CMakeFiles/CGProject.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/CGProject.dir/flags.make
 
-CMakeFiles/CGProject.dir/src/Hitpoint.cpp.obj: CMakeFiles/CGProject.dir/flags.make
-CMakeFiles/CGProject.dir/src/Hitpoint.cpp.obj: CMakeFiles/CGProject.dir/includes_CXX.rsp
-CMakeFiles/CGProject.dir/src/Hitpoint.cpp.obj: ../src/Hitpoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CGProject.dir/src/Hitpoint.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\CGProject.dir\src\Hitpoint.cpp.obj -c C:\CGProject\src\Hitpoint.cpp
+CMakeFiles/CGProject.dir/src/Intersection.cpp.obj: CMakeFiles/CGProject.dir/flags.make
+CMakeFiles/CGProject.dir/src/Intersection.cpp.obj: CMakeFiles/CGProject.dir/includes_CXX.rsp
+CMakeFiles/CGProject.dir/src/Intersection.cpp.obj: ../src/Intersection.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CGProject.dir/src/Intersection.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\CGProject.dir\src\Intersection.cpp.obj -c C:\CGProject\src\Intersection.cpp
 
-CMakeFiles/CGProject.dir/src/Hitpoint.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGProject.dir/src/Hitpoint.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\CGProject\src\Hitpoint.cpp > CMakeFiles\CGProject.dir\src\Hitpoint.cpp.i
+CMakeFiles/CGProject.dir/src/Intersection.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGProject.dir/src/Intersection.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\CGProject\src\Intersection.cpp > CMakeFiles\CGProject.dir\src\Intersection.cpp.i
 
-CMakeFiles/CGProject.dir/src/Hitpoint.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGProject.dir/src/Hitpoint.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\CGProject\src\Hitpoint.cpp -o CMakeFiles\CGProject.dir\src\Hitpoint.cpp.s
+CMakeFiles/CGProject.dir/src/Intersection.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGProject.dir/src/Intersection.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\CGProject\src\Intersection.cpp -o CMakeFiles\CGProject.dir\src\Intersection.cpp.s
 
 CMakeFiles/CGProject.dir/src/PointLight.cpp.obj: CMakeFiles/CGProject.dir/flags.make
 CMakeFiles/CGProject.dir/src/PointLight.cpp.obj: CMakeFiles/CGProject.dir/includes_CXX.rsp
@@ -114,7 +114,7 @@ CMakeFiles/CGProject.dir/main.cpp.s: cmake_force
 
 # Object files for target CGProject
 CGProject_OBJECTS = \
-"CMakeFiles/CGProject.dir/src/Hitpoint.cpp.obj" \
+"CMakeFiles/CGProject.dir/src/Intersection.cpp.obj" \
 "CMakeFiles/CGProject.dir/src/PointLight.cpp.obj" \
 "CMakeFiles/CGProject.dir/src/write_ppm.cpp.obj" \
 "CMakeFiles/CGProject.dir/main.cpp.obj"
@@ -122,7 +122,7 @@ CGProject_OBJECTS = \
 # External object files for target CGProject
 CGProject_EXTERNAL_OBJECTS =
 
-CGProject.exe: CMakeFiles/CGProject.dir/src/Hitpoint.cpp.obj
+CGProject.exe: CMakeFiles/CGProject.dir/src/Intersection.cpp.obj
 CGProject.exe: CMakeFiles/CGProject.dir/src/PointLight.cpp.obj
 CGProject.exe: CMakeFiles/CGProject.dir/src/write_ppm.cpp.obj
 CGProject.exe: CMakeFiles/CGProject.dir/main.cpp.obj

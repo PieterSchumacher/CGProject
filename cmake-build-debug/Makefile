@@ -162,35 +162,35 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/Hitpoint.obj: src/Hitpoint.cpp.obj
+src/Intersection.obj: src/Intersection.cpp.obj
 
-.PHONY : src/Hitpoint.obj
+.PHONY : src/Intersection.obj
 
 # target to build an object file
-src/Hitpoint.cpp.obj:
-	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/Hitpoint.cpp.obj
-	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/Hitpoint.cpp.obj
-.PHONY : src/Hitpoint.cpp.obj
+src/Intersection.cpp.obj:
+	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/Intersection.cpp.obj
+	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/Intersection.cpp.obj
+.PHONY : src/Intersection.cpp.obj
 
-src/Hitpoint.i: src/Hitpoint.cpp.i
+src/Intersection.i: src/Intersection.cpp.i
 
-.PHONY : src/Hitpoint.i
+.PHONY : src/Intersection.i
 
 # target to preprocess a source file
-src/Hitpoint.cpp.i:
-	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/Hitpoint.cpp.i
-	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/Hitpoint.cpp.i
-.PHONY : src/Hitpoint.cpp.i
+src/Intersection.cpp.i:
+	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/Intersection.cpp.i
+	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/Intersection.cpp.i
+.PHONY : src/Intersection.cpp.i
 
-src/Hitpoint.s: src/Hitpoint.cpp.s
+src/Intersection.s: src/Intersection.cpp.s
 
-.PHONY : src/Hitpoint.s
+.PHONY : src/Intersection.s
 
 # target to generate assembly for a file
-src/Hitpoint.cpp.s:
-	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/Hitpoint.cpp.s
-	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/Hitpoint.cpp.s
-.PHONY : src/Hitpoint.cpp.s
+src/Intersection.cpp.s:
+	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/Intersection.cpp.s
+	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/Intersection.cpp.s
+.PHONY : src/Intersection.cpp.s
 
 src/Plane.obj: src/Plane.cpp.obj
 
@@ -397,9 +397,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... src/Hitpoint.obj
-	@echo ... src/Hitpoint.i
-	@echo ... src/Hitpoint.s
+	@echo ... src/Intersection.obj
+	@echo ... src/Intersection.i
+	@echo ... src/Intersection.s
 	@echo ... src/Plane.obj
 	@echo ... src/Plane.i
 	@echo ... src/Plane.s

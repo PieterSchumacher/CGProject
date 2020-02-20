@@ -39,6 +39,7 @@ CMakeFiles/CGProject.dir/main.cpp.obj
  ../Eigen/src/Core/MapBase.h
  ../Eigen/src/Core/MathFunctions.h
  ../Eigen/src/Core/MathFunctionsImpl.h
+ ../Eigen/src/Core/Matrix.h
  ../Eigen/src/Core/MatrixBase.h
  ../Eigen/src/Core/NestByValue.h
  ../Eigen/src/Core/NoAlias.h
@@ -141,9 +142,8 @@ CMakeFiles/CGProject.dir/main.cpp.obj
  ../Eigen/src/plugins/CommonCwiseUnaryOps.h
  ../Eigen/src/plugins/MatrixCwiseBinaryOps.h
  ../Eigen/src/plugins/MatrixCwiseUnaryOps.h
- ../eigen/src/Core/Matrix.h
  ../include/Camera.h
- ../include/Hitpoint.h
+ ../include/Intersection.h
  ../include/Light.h
  ../include/Material.h
  ../include/Object.h
@@ -221,7 +221,7 @@ CMakeFiles/CGProject.dir/main.cpp.obj
  C:/CGProject/Eigen/src/misc/lapacke.h
  C:/CGProject/Eigen/src/misc/lapacke_mangling.h
  C:/CGProject/main.cpp
-CMakeFiles/CGProject.dir/src/Hitpoint.cpp.obj
+CMakeFiles/CGProject.dir/src/Intersection.cpp.obj
  ../Eigen/Core
  ../Eigen/src/Core/Array.h
  ../Eigen/src/Core/ArrayBase.h
@@ -362,12 +362,12 @@ CMakeFiles/CGProject.dir/src/Hitpoint.cpp.obj
  ../Eigen/src/plugins/CommonCwiseUnaryOps.h
  ../Eigen/src/plugins/MatrixCwiseBinaryOps.h
  ../Eigen/src/plugins/MatrixCwiseUnaryOps.h
- ../include/Hitpoint.h
+ ../include/Intersection.h
  ../include/Material.h
  ../include/Object.h
  ../include/RGB.h
  ../include/Ray.h
- C:/CGProject/src/Hitpoint.cpp
+ C:/CGProject/src/Intersection.cpp
 CMakeFiles/CGProject.dir/src/PointLight.cpp.obj
  ../Eigen/Core
  ../Eigen/src/Core/Array.h

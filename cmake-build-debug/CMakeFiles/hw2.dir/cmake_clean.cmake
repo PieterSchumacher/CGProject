@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/hw2.dir/src/Hitpoint.cpp.obj"
+  "CMakeFiles/hw2.dir/src/Intersection.cpp.obj"
   "CMakeFiles/hw2.dir/src/Plane.cpp.obj"
   "CMakeFiles/hw2.dir/src/Sphere.cpp.obj"
   "CMakeFiles/hw2.dir/src/Triangle.cpp.obj"

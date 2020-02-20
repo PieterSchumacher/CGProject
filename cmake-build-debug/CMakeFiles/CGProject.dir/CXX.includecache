@@ -670,15 +670,13 @@ cstdint
 
 ../Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
-../eigen/src/Core/Matrix.h
-
 ../include/Camera.h
 Object.h
 ../include/Object.h
 ../Eigen/Core
 ../Eigen/Core
 
-../include/Hitpoint.h
+../include/Intersection.h
 Object.h
 ../include/Object.h
 vector
@@ -1489,24 +1487,20 @@ Sphere.h
 -
 write_ppm.h
 -
-Hitpoint.h
+Intersection.h
 -
 PointLight.h
 -
 Eigen/Dense
 C:/CGProject/Eigen/Dense
 
-C:/CGProject/src/Hitpoint.cpp
+C:/CGProject/src/Intersection.cpp
 iostream
 -
-Hitpoint.h
-C:/CGProject/src/Hitpoint.h
+Intersection.h
+C:/CGProject/src/Intersection.h
 
 C:/CGProject/src/PointLight.cpp
 PointLight.h
 C:/CGProject/src/PointLight.h
-
-C:/CGProject/src/write_ppm.cpp
-write_ppm.h
-C:/CGProject/src/write_ppm.h
 

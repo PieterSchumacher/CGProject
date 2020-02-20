@@ -1,5 +1,5 @@
-#ifndef CGPROJECT_HITPOINT_H
-#define CGPROJECT_HITPOINT_H
+#ifndef CGPROJECT_INTERSECTION_H
+#define CGPROJECT_INTERSECTION_H
 
 #include "Object.h"
 #include <vector>
@@ -19,4 +19,4 @@ struct Intersection {
 bool find_nearest_intersection(const vector<shared_ptr<Object>> &objects, const Ray &ray, double offset,
                                Intersection &intersection);
 
-#endif //CGPROJECT_HITPOINT_H
+#endif //CGPROJECT_INTERSECTION_H
