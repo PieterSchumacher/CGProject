@@ -16,6 +16,7 @@ struct Intersection {
     Ray ray;
 };
 
-bool find_nearest_hitpoint(const vector<shared_ptr<Object>> &objects, const Ray &ray, double offset, Intersection &intersection);
+bool find_nearest_intersection(const vector<shared_ptr<Object>> &objects, const Ray &ray, double offset,
+                               Intersection &intersection);
 
 #endif //CGPROJECT_HITPOINT_H

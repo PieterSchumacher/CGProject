@@ -3,7 +3,8 @@
 
 using std::cout;
 
-bool find_nearest_hitpoint(const vector<shared_ptr<Object>> &objects, const Ray &ray, double offset, Intersection &intersection) {
+bool find_nearest_intersection(const vector<shared_ptr<Object>> &objects, const Ray &ray, double offset,
+                               Intersection &intersection) {
     Vector3d n;
     bool did_intersect = false;
     double smallest_t_so_far = 1e6;

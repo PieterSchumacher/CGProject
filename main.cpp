@@ -58,7 +58,7 @@ int main(int argc, char * argv[]) {
                       };
             // Compute nearest intersection
             Intersection intersection;
-            bool did_intersect = find_nearest_hitpoint(objects, ray, plane_offset, intersection);
+            bool did_intersect = find_nearest_intersection(objects, ray, plane_offset, intersection);
             // Compute color of nearest intersection
             rgb diffuse_light   = rgb(0, 0, 0);
             rgb specular_light  = rgb(0, 0, 0);
