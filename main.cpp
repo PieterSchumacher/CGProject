@@ -9,7 +9,7 @@
 #include <memory>
 #include <Sphere.h>
 #include <write_ppm.h>
-#include <Hitpoint.h>
+#include <Intersection.h>
 #include <PointLight.h>
 #include "Eigen/Dense"
 
@@ -52,24 +52,24 @@ int main(int argc, char * argv[]) {
         for (unsigned c=0; c < h_res; ++c) {
             // Shoot ray through pixel
             Ray ray = {camera.eye, Vector3d(s*(c - (h_res/2.0) + 0.5), // x coordinate in uv space
-                                          1,                         // negative viewing direction
-                                          s*(r - (v_res/2.0) + 0.5)  // y coordinate in uv space
-                                          ).normalized()             // center of pixel
+                                          1,                           // negative viewing direction
+                                          s*(r - (v_res/2.0) + 0.5)    // y coordinate in uv space
+                                          ).normalized()               // center of pixel
                       };
-            // Compute nearest hitpoint
-            Hitpoint hitpoint;
-            bool intersect = find_nearest_hitpoint(objects, ray, plane_offset, hitpoint);
-            // Compute color of nearest hitpoint
+            // Compute nearest intersection
+            Intersection intersection;
+            bool did_intersect = find_nearest_hitpoint(objects, ray, plane_offset, intersection);
+            // Compute color of nearest intersection
             rgb diffuse_light   = rgb(0, 0, 0);
             rgb specular_light  = rgb(0, 0, 0);
             rgb pigment         = rgb(1, 0.98, 0.94);   // default pigment
-            if (intersect) {
+            if (did_intersect) {
                 Vector3d l = ray.direction;
-                Vector3d x = hitpoint.t * l;
+                Vector3d x = intersection.t * l;
                 for (shared_ptr<Light> &light : lights) {
                     Vector3d dlight; double max_t;
                     light->direction(x, dlight, max_t);
-                    diffuse_light += hitpoint.object->material->kd*rgb(255.0,0.0,0.0)*light->I
+                    diffuse_light += intersection.object->material->kd*rgb(255.0,0.0,0.0)*light->I
                                         *(x.dot(dlight)/(x.norm()*dlight.norm())); // values are too high
                 }
 //                  diffuse_light += rgb(255.0,0.0,0.0);

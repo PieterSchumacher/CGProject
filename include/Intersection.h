@@ -9,13 +9,13 @@ using std::vector;
 using std::shared_ptr;
 using Eigen::Vector3d;
 
-struct Hitpoint {
+struct Intersection {
     double t; // parametric distance of ray
     Vector3d n; // normal vector
     shared_ptr<Object> object; // object intersected
     Ray ray;
 };
 
-bool find_nearest_hitpoint(const vector<shared_ptr<Object>> &objects, const Ray &ray, double offset, Hitpoint &hitpoint);
+bool find_nearest_hitpoint(const vector<shared_ptr<Object>> &objects, const Ray &ray, double offset, Intersection &intersection);
 
 #endif //CGPROJECT_HITPOINT_H
