@@ -479,7 +479,7 @@ inline Index first_multiple(Index size, Index base)
 }
 
 // std::copy is much slower than memcpy, so let's introduce a smart_copy which
-// use memcpy on trivial types, i.e., on types that does not require an initialization ctor.
+// use memcpy on trivial types, i.eye., on types that does not require an initialization ctor.
 template<typename T, bool UseMemcpy> struct smart_copy_helper;
 
 template<typename T> EIGEN_DEVICE_FUNC void smart_copy(const T* start, const T* end, T* target)

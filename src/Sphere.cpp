@@ -3,8 +3,8 @@
 #include "Ray.h"
 #include "../Eigen/Core"
 using Eigen::Vector3d;
-bool Sphere::intersect(const Ray &ray, double min_t, double &smallest_t_so_far, Eigen::Vector3d &n) const {
-    Vector3d oc = ray.origin - center;
+bool Sphere::intersect(const Ray &ray, double min_t, double &smallest_t_so_far, Vector3d &n) const {
+    Vector3d oc = ray.eye - center;
     double loc = ray.direction.dot(oc);
     double discriminant = pow(loc,2.0) - (oc.squaredNorm() - pow(radius,2.0));
     if (discriminant < 1e-6) {
@@ -15,7 +15,7 @@ bool Sphere::intersect(const Ray &ray, double min_t, double &smallest_t_so_far, 
                     -loc + sqrt_d);
     if (t < smallest_t_so_far && t >= min_t) {
         smallest_t_so_far = t;
-        n = ((ray.origin + t * ray.direction) - center) / radius;
+        n = ((ray.eye + t * ray.direction) - center) / radius;
         return true;
     }
     return false;

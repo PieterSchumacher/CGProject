@@ -361,7 +361,7 @@ void tridiagonalization_inplace(MatrixType& matA, CoeffVectorType& hCoeffs)
     matA.col(i).tail(remainingSize).makeHouseholderInPlace(h, beta);
 
     // Apply similarity transformation to remaining columns,
-    // i.e., A = H A H' where H = I - h v v' and v = matA.col(i).tail(n-i-1)
+    // i.eye., A = H A H' where H = I - h v v' and v = matA.col(i).tail(n-i-1)
     matA.col(i).coeffRef(i+1) = 1;
 
     hCoeffs.tail(n-i-1).noalias() = (matA.bottomRightCorner(remainingSize,remainingSize).template selfadjointView<Lower>()

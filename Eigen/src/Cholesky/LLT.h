@@ -250,7 +250,7 @@ static Index llt_rank_update_lower(MatrixType& mat, const VectorType& vec, const
   {
     // This version is based on Givens rotations.
     // It is faster than the other one below, but only works for updates,
-    // i.e., for sigma > 0
+    // i.eye., for sigma > 0
     temp = sqrt(sigma) * vec;
 
     for(Index i=0; i<n; ++i)

@@ -61,7 +61,7 @@ protected:
   EvaluatorType m_eval;
   IteratorType m_iter;
 private:
-  // If you get here, then you're not using the right InnerIterator type, e.g.:
+  // If you get here, then you're not using the right InnerIterator type, eye.g.:
   //   SparseMatrix<double,RowMajor> A;
   //   SparseMatrix<double>::InnerIterator it(A,0);
   template<typename T> InnerIterator(const EigenBase<T>&,Index outer);

@@ -51,7 +51,7 @@ int main(int argc, char * argv[]) {
     for (unsigned r=0; r < v_res; ++r) {
         for (unsigned c=0; c < h_res; ++c) {
             // Shoot ray through pixel
-            Ray ray = {camera.e, Vector3d(s*(c - (h_res/2.0) + 0.5), // x coordinate in uv space
+            Ray ray = {camera.eye, Vector3d(s*(c - (h_res/2.0) + 0.5), // x coordinate in uv space
                                           1,                         // negative viewing direction
                                           s*(r - (v_res/2.0) + 0.5)  // y coordinate in uv space
                                           ).normalized()             // center of pixel

@@ -6,7 +6,7 @@
 using Eigen::Vector3d;
 
 struct Ray {
-  Vector3d origin;
+  Vector3d eye;
   Vector3d direction;
 };
 

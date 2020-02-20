@@ -84,7 +84,7 @@ class TranspositionsBase
     }
 
     // FIXME: do we want such methods ?
-    // might be usefull when the target matrix expression is complex, e.g.:
+    // might be usefull when the target matrix expression is complex, eye.g.:
     // object.matrix().block(..,..,..,..) = trans * object.matrix().block(..,..,..,..);
     /*
     template<typename MatrixType>

@@ -87,7 +87,7 @@ struct dense_xpr_base_dispatcher<Array<_Scalar, _Rows, _Cols, _Options, _MaxRows
   * This class can be extended with the help of the plugin mechanism described on the page
   * \ref TopicCustomizing_Plugins by defining the preprocessor symbol \c EIGEN_PLAINOBJECTBASE_PLUGIN.
   *
-  * \tparam Derived is the derived type, e.g., a Matrix or Array
+  * \tparam Derived is the derived type, eye.g., a Matrix or Array
   *
   * \sa \ref TopicClassHierarchy
   */

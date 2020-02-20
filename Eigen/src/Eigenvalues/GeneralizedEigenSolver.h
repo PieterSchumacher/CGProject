@@ -167,7 +167,7 @@ template<typename _MatrixType> class GeneralizedEigenSolver
     /* \brief Returns the computed generalized eigenvectors.
       *
       * \returns  %Matrix whose columns are the (possibly complex) right eigenvectors.
-      * i.e. the eigenvectors that solve (A - l*B)x = 0. The ordering matches the eigenvalues.
+      * i.eye. the eigenvectors that solve (A - l*B)x = 0. The ordering matches the eigenvalues.
       *
       * \pre Either the constructor 
       * GeneralizedEigenSolver(const MatrixType&,const MatrixType&, bool) or the member function

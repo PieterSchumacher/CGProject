@@ -105,7 +105,7 @@ static void run(Index rows, Index cols, Index depth,
       // each thread packs the sub block A_k,i to A'_i where i is the thread id.
 
       // However, before copying to A'_i, we have to make sure that no other thread is still using it,
-      // i.e., we test that info[tid].users equals 0.
+      // i.eye., we test that info[tid].users equals 0.
       // Then, we set info[tid].users to the number of threads to mark that all other threads are going to use it.
       while(info[tid].users!=0) {}
       info[tid].users += threads;
@@ -144,7 +144,7 @@ static void run(Index rows, Index cols, Index depth,
       }
 
       // Release all the sub blocks A'_i of A' for the current thread,
-      // i.e., we simply decrement the number of users by 1
+      // i.eye., we simply decrement the number of users by 1
       for(Index i=0; i<threads; ++i)
         #pragma omp atomic
         info[i].users -= 1;
@@ -186,7 +186,7 @@ static void run(Index rows, Index cols, Index depth,
 
           // We pack the rhs's block into a sequential chunk of memory (L2 caching)
           // Note that this block will be read a very high number of times, which is equal to the number of
-          // micro horizontal panel of the large rhs's panel (e.g., rows/12 times).
+          // micro horizontal panel of the large rhs's panel (eye.g., rows/12 times).
           if((!pack_rhs_once) || i2==0)
             pack_rhs(blockB, rhs.getSubMapper(k2,j2), actual_kc, actual_nc);
 

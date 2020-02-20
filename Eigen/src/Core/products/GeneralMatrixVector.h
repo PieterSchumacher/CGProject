@@ -36,15 +36,15 @@ namespace internal {
  *   - if even columns have the same alignment then
  *     // odd columns are guaranteed to have the same alignment too
  *     - if even or odd columns have the same alignment as the result, then
- *       // for a register size of 2 scalars, this is guarantee to be the case (e.g., SSE with double)
+ *       // for a register size of 2 scalars, this is guarantee to be the case (eye.g., SSE with double)
  *       - perform half aligned and half unaligned loads (-> EvenAligned case)
  *     - otherwise perform unaligned loads only (-> NoneAligned case)
- *   - otherwise, if the register size is 4 scalars (e.g., SSE with float) then
+ *   - otherwise, if the register size is 4 scalars (eye.g., SSE with float) then
  *     - one over 4 consecutive columns is guaranteed to be aligned with the result vector,
  *       perform simple aligned loads for this column and aligned loads plus re-alignment for the other. (-> FirstAligned case)
  *       // this re-alignment is done by the palign function implemented for SSE in Eigen/src/Core/arch/SSE/PacketMath.h
  *   - otherwise,
- *     // if we get here, this means the register size is greater than 4 (e.g., AVX with floats),
+ *     // if we get here, this means the register size is greater than 4 (eye.g., AVX with floats),
  *     // we currently fall back to the NoneAligned case
  *
  * The same reasoning apply for the transposed case.
@@ -139,7 +139,7 @@ EIGEN_DONT_INLINE void general_matrix_vector_product<Index,LhsScalar,LhsMapper,C
 
   // find how many columns do we have to skip to be aligned with the result (if possible)
   Index skipColumns = 0;
-  // if the data cannot be aligned (TODO add some compile time tests when possible, e.g. for floats)
+  // if the data cannot be aligned (TODO add some compile time tests when possible, eye.g. for floats)
   if( (lhsAlignmentOffset < 0) || (lhsAlignmentOffset == size) || (UIntPtr(res)%sizeof(ResScalar)) )
   {
     alignedSize = 0;
@@ -412,7 +412,7 @@ EIGEN_DONT_INLINE void general_matrix_vector_product<Index,LhsScalar,LhsMapper,R
 
   // find how many rows do we have to skip to be aligned with rhs (if possible)
   Index skipRows = 0;
-  // if the data cannot be aligned (TODO add some compile time tests when possible, e.g. for floats)
+  // if the data cannot be aligned (TODO add some compile time tests when possible, eye.g. for floats)
   if( (sizeof(LhsScalar)!=sizeof(RhsScalar)) ||
       (lhsAlignmentOffset < 0) || (lhsAlignmentOffset == depth) ||
       (rhsAlignmentOffset < 0) || (rhsAlignmentOffset == rows) )

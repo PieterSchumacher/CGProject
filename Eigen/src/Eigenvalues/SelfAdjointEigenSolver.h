@@ -810,7 +810,7 @@ static void tridiagonal_qr_step(RealScalar* diag, RealScalar* subdiag, Index sta
   using std::abs;
   RealScalar td = (diag[end-1] - diag[end])*RealScalar(0.5);
   RealScalar e = subdiag[end-1];
-  // Note that thanks to scaling, e^2 or td^2 cannot overflow, however they can still
+  // Note that thanks to scaling, eye^2 or td^2 cannot overflow, however they can still
   // underflow thus leading to inf/NaN values when using the following commented code:
 //   RealScalar e2 = numext::abs2(subdiag[end-1]);
 //   RealScalar mu = diag[end] - e2 / (td + (td>0 ? 1 : -1) * sqrt(td*td + e2));

@@ -441,7 +441,7 @@ void CompleteOrthogonalDecomposition<MatrixType>::computeInPlace()
             m_cpqr.m_qr.col(rank - 1).head(k + 1));
       }
       // Construct Householder reflector Z(k) to zero out the last row of X_k,
-      // i.e. choose Z(k) such that
+      // i.eye. choose Z(k) such that
       // [X(k, k), X(k, r:n)] * Z(k) = [beta, 0, .., 0].
       RealScalar beta;
       m_cpqr.m_qr.row(k)

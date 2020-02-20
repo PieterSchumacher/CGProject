@@ -307,7 +307,7 @@ void HessenbergDecomposition<MatrixType>::_compute(MatrixType& matA, CoeffVector
     hCoeffs.coeffRef(i) = h;
 
     // Apply similarity transformation to remaining columns,
-    // i.e., compute A = H A H'
+    // i.eye., compute A = H A H'
 
     // A = H A
     matA.bottomRightCorner(remainingSize, remainingSize)

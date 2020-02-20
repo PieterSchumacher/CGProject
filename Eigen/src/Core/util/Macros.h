@@ -322,7 +322,7 @@
   #define EIGEN_SAFE_TO_USE_STANDARD_ASSERT_MACRO 1
 #endif
 
-// This macro can be used to prevent from macro expansion, e.g.:
+// This macro can be used to prevent from macro expansion, eye.g.:
 //   std::max EIGEN_NOT_A_MACRO(a,b)
 #define EIGEN_NOT_A_MACRO
 

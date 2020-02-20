@@ -535,7 +535,7 @@ ptranspose(PacketBlock<Packet16h,16>& kernel) {
   __m256i b = kernel.packet[1].x;
   __m256i c = kernel.packet[2].x;
   __m256i d = kernel.packet[3].x;
-  __m256i e = kernel.packet[4].x;
+  __m256i eye = kernel.packet[4].x;
   __m256i f = kernel.packet[5].x;
   __m256i g = kernel.packet[6].x;
   __m256i h = kernel.packet[7].x;
@@ -550,7 +550,7 @@ ptranspose(PacketBlock<Packet16h,16>& kernel) {
 
   __m256i ab_07 = _mm256_unpacklo_epi16(a, b);
   __m256i cd_07 = _mm256_unpacklo_epi16(c, d);
-  __m256i ef_07 = _mm256_unpacklo_epi16(e, f);
+  __m256i ef_07 = _mm256_unpacklo_epi16(eye, f);
   __m256i gh_07 = _mm256_unpacklo_epi16(g, h);
   __m256i ij_07 = _mm256_unpacklo_epi16(i, j);
   __m256i kl_07 = _mm256_unpacklo_epi16(k, l);
@@ -559,7 +559,7 @@ ptranspose(PacketBlock<Packet16h,16>& kernel) {
 
   __m256i ab_8f = _mm256_unpackhi_epi16(a, b);
   __m256i cd_8f = _mm256_unpackhi_epi16(c, d);
-  __m256i ef_8f = _mm256_unpackhi_epi16(e, f);
+  __m256i ef_8f = _mm256_unpackhi_epi16(eye, f);
   __m256i gh_8f = _mm256_unpackhi_epi16(g, h);
   __m256i ij_8f = _mm256_unpackhi_epi16(i, j);
   __m256i kl_8f = _mm256_unpackhi_epi16(k, l);
@@ -891,18 +891,18 @@ ptranspose(PacketBlock<Packet8h,8>& kernel) {
   __m128i b = kernel.packet[1].x;
   __m128i c = kernel.packet[2].x;
   __m128i d = kernel.packet[3].x;
-  __m128i e = kernel.packet[4].x;
+  __m128i eye = kernel.packet[4].x;
   __m128i f = kernel.packet[5].x;
   __m128i g = kernel.packet[6].x;
   __m128i h = kernel.packet[7].x;
 
   __m128i a03b03 = _mm_unpacklo_epi16(a, b);
   __m128i c03d03 = _mm_unpacklo_epi16(c, d);
-  __m128i e03f03 = _mm_unpacklo_epi16(e, f);
+  __m128i e03f03 = _mm_unpacklo_epi16(eye, f);
   __m128i g03h03 = _mm_unpacklo_epi16(g, h);
   __m128i a47b47 = _mm_unpackhi_epi16(a, b);
   __m128i c47d47 = _mm_unpackhi_epi16(c, d);
-  __m128i e47f47 = _mm_unpackhi_epi16(e, f);
+  __m128i e47f47 = _mm_unpackhi_epi16(eye, f);
   __m128i g47h47 = _mm_unpackhi_epi16(g, h);
 
   __m128i a01b01c01d01 = _mm_unpacklo_epi32(a03b03, c03d03);

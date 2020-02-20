@@ -1,6 +1,6 @@
 #include "PointLight.h"
 
 void PointLight::direction(
-  const Eigen::Vector3d & q, Eigen::Vector3d & d, double & max_t) const {
+  const Vector3d & q, Vector3d & d, double & max_t) const {
     d = p - q;
 }

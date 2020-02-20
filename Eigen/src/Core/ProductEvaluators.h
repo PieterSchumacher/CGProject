@@ -110,7 +110,7 @@ struct product_evaluator<Product<Lhs, Rhs, Options>, ProductTag, LhsShape, RhsSh
     ::new (static_cast<Base*>(this)) Base(m_result);
     
 // FIXME shall we handle nested_eval here?,
-// if so, then we must take care at removing the call to nested_eval in the specializations (e.g., in permutation_matrix_product, transposition_matrix_product, etc.)
+// if so, then we must take care at removing the call to nested_eval in the specializations (eye.g., in permutation_matrix_product, transposition_matrix_product, etc.)
 //     typedef typename internal::nested_eval<Lhs,Rhs::ColsAtCompileTime>::type LhsNested;
 //     typedef typename internal::nested_eval<Rhs,Lhs::RowsAtCompileTime>::type RhsNested;
 //     typedef typename internal::remove_all<LhsNested>::type LhsNestedCleaned;
@@ -199,7 +199,7 @@ struct Assignment<DstXprType, CwiseBinaryOp<internal::scalar_product_op<ScalarBi
 
 //----------------------------------------
 // Catch "Dense ?= xpr + Product<>" expression to save one temporary
-// FIXME we could probably enable these rules for any product, i.e., not only Dense and DefaultProduct
+// FIXME we could probably enable these rules for any product, i.eye., not only Dense and DefaultProduct
 
 template<typename OtherXpr, typename Lhs, typename Rhs>
 struct evaluator_assume_aliasing<CwiseBinaryOp<internal::scalar_sum_op<typename OtherXpr::Scalar,typename Product<Lhs,Rhs,DefaultProduct>::Scalar>, const OtherXpr,

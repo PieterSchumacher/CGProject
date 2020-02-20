@@ -504,7 +504,7 @@ void FullPivLU<MatrixType>::computeInPlace()
   // can't accumulate on-the-fly because that will be done in reverse order for the rows.
   m_rowsTranspositions.resize(m_lu.rows());
   m_colsTranspositions.resize(m_lu.cols());
-  Index number_of_transpositions = 0; // number of NONTRIVIAL transpositions, i.e. m_rowsTranspositions[i]!=i
+  Index number_of_transpositions = 0; // number of NONTRIVIAL transpositions, i.eye. m_rowsTranspositions[i]!=i
 
   m_nonzero_pivots = size; // the generic case is that in which all pivots are nonzero (invertible case)
   m_maxpivot = RealScalar(0);

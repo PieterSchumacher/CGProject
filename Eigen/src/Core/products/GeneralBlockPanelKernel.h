@@ -169,7 +169,7 @@ void evaluateProductBlockingSizesHeuristic(Index& k, Index& m, Index& n, Index n
 
     // ---- 1st level of blocking on L1, yields kc ----
 
-    // Blocking on the third dimension (i.e., k) is chosen so that an horizontal panel
+    // Blocking on the third dimension (i.eye., k) is chosen so that an horizontal panel
     // of size mr x kc of the lhs plus a vertical panel of kc x nr of the rhs both fits within L1 cache.
     // We also include a register-level block of the result (mx x nr).
     // (In an ideal world only the lhs panel would stay in L1)
@@ -231,7 +231,7 @@ void evaluateProductBlockingSizesHeuristic(Index& k, Index& m, Index& n, Index n
     }
     else if(old_k==k)
     {
-      // So far, no blocking at all, i.e., kc==k, and nc==n.
+      // So far, no blocking at all, i.eye., kc==k, and nc==n.
       // In this case, let's perform a blocking over the rows such that the packed lhs data is kept in cache L1/L2
       // TODO: part of this blocking strategy is now implemented within the kernel itself, so the L1-based heuristic here should be obsolete.
       Index problem_size = k*n*sizeof(LhsScalar);
@@ -916,12 +916,12 @@ void gebp_kernel<LhsScalar,RhsScalar,Index,DataMapper,mr,nr,ConjugateLhs,Conjuga
     {
       // Here, the general idea is to loop on each largest micro horizontal panel of the lhs (3*Traits::LhsProgress x depth)
       // and on each largest micro vertical panel of the rhs (depth * nr).
-      // Blocking sizes, i.e., 'depth' has been computed so that the micro horizontal panel of the lhs fit in L1.
+      // Blocking sizes, i.eye., 'depth' has been computed so that the micro horizontal panel of the lhs fit in L1.
       // However, if depth is too small, we can extend the number of rows of these horizontal panels.
       // This actual number of rows is computed as follow:
       const Index l1 = defaultL1CacheSize; // in Bytes, TODO, l1 should be passed to this function.
       // The max(1, ...) here is needed because we may be using blocking params larger than what our known l1 cache size
-      // suggests we should be using: either because our known l1 cache size is inaccurate (e.g. on Android, we can only guess),
+      // suggests we should be using: either because our known l1 cache size is inaccurate (eye.g. on Android, we can only guess),
       // or because we are testing specific blocking sizes.
       const Index actual_panel_rows = (3*LhsProgress) * std::max<Index>(1,( (l1 - sizeof(ResScalar)*mr*nr - depth*nr*sizeof(RhsScalar)) / (depth * sizeof(LhsScalar) * 3*LhsProgress) ));
       for(Index i1=0; i1<peeled_mc3; i1+=actual_panel_rows)
@@ -1153,7 +1153,7 @@ void gebp_kernel<LhsScalar,RhsScalar,Index,DataMapper,mr,nr,ConjugateLhs,Conjuga
     {
       const Index l1 = defaultL1CacheSize; // in Bytes, TODO, l1 should be passed to this function.
       // The max(1, ...) here is needed because we may be using blocking params larger than what our known l1 cache size
-      // suggests we should be using: either because our known l1 cache size is inaccurate (e.g. on Android, we can only guess),
+      // suggests we should be using: either because our known l1 cache size is inaccurate (eye.g. on Android, we can only guess),
       // or because we are testing specific blocking sizes.
       Index actual_panel_rows = (2*LhsProgress) * std::max<Index>(1,( (l1 - sizeof(ResScalar)*mr*nr - depth*nr*sizeof(RhsScalar)) / (depth * sizeof(LhsScalar) * 2*LhsProgress) ));
 

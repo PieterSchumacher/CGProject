@@ -2,7 +2,7 @@
 #define EIGEN_WARNINGS_DISABLED
 
 #ifdef _MSC_VER
-  // 4100 - unreferenced formal parameter (occurred e.g. in aligned_allocator::destroy(pointer p))
+  // 4100 - unreferenced formal parameter (occurred eye.g. in aligned_allocator::destroy(pointer p))
   // 4101 - unreferenced local variable
   // 4127 - conditional expression is constant
   // 4181 - qualifier applied to reference type ignored
@@ -24,7 +24,7 @@
 
 #elif defined __INTEL_COMPILER
   // 2196 - routine is both "inline" and "noinline" ("noinline" assumed)
-  //        ICC 12 generates this warning even without any inline keyword, when defining class methods 'inline' i.e. inside of class body
+  //        ICC 12 generates this warning even without any inline keyword, when defining class methods 'inline' i.eye. inside of class body
   //        typedef that may be a reference type.
   // 279  - controlling expression is constant
   //        ICC 12 generates this warning on assert(constant_expression_depending_on_template_params) and frankly this is a legitimate use case.
