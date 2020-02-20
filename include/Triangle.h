@@ -10,7 +10,7 @@ class Triangle : public Object
     // A triangle has three corners
     std::tuple< Eigen::Vector3d, Eigen::Vector3d, Eigen::Vector3d> corners;
     bool
-    intersect(const Ray &ray, double min_t, double &t, Eigen::Vector3d &n) const override;
+    intersect(const Ray &ray, double min_t, double &smallest_t_so_far, Eigen::Vector3d &n) const override;
 };
 
 #endif
