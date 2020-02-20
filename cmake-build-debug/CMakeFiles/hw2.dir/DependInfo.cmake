@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/CGProject/src/Triangle.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/hw2.dir/src/Triangle.cpp.obj"
   "C:/CGProject/src/TriangleMesh.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/hw2.dir/src/TriangleMesh.cpp.obj"
   "C:/CGProject/src/WaveFrontParser.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.obj"
+  "C:/CGProject/src/lambertian_reflection.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/hw2.dir/src/lambertian_reflection.cpp.obj"
   "C:/CGProject/src/write_ppm.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/hw2.dir/src/write_ppm.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

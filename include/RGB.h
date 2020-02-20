@@ -4,9 +4,7 @@
 
 #ifndef CGPROJECT_RGB_H
 #define CGPROJECT_RGB_H
-
-#include "src/Core/Matrix.h"
-
+#include <cmath>
 struct rgb {
     double r,g,b,f;
     rgb(){r=0.0,g=0.0,b=0.0,f=0.0;};
@@ -14,8 +12,7 @@ struct rgb {
     rgb(double r_, double g_, double b_, double f_) : r(r_), g(g_), b(b_), f(f_) {}
 
     rgb operator+(rgb c) {
-        r += c.r, g += c.g, b += c.b;
-        return *this;
+        return {r+c.r, g+c.g, b+c.b};
     }
 
     rgb& operator+=(const rgb &c) {
@@ -24,18 +21,23 @@ struct rgb {
     }
 
     rgb operator*(rgb c) {
-        r *= c.r, g *= c.g, b *= c.b;
-        return *this;
+        return {r*c.r, g*c.g, b*c.b};
     }
 
     rgb operator*(double d) {
-        r *= d, g *= d, b *= d;
-        return *this;
+        return {r*d, g*d, b*d};
     }
 
     rgb operator/(rgb c) {
-        r /= c.r, g /= c.g, b /= c.b;
-        return *this;
+        return {r/c.r, g/c.g, b/c.b};
+    }
+
+    rgb operator/(double d) {
+        return {r/d, g/d, b/d};
+    }
+
+    rgb operator^(double e) {
+        return {pow(r, e), pow(g, e), pow(b, e)};
     }
 };
 

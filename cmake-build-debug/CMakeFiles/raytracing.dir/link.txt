@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E remove -f CMakeFiles\raytracing.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\raytracing.dir/objects.a @CMakeFiles\raytracing.dir\objects1.rsp
-C:\MinGW\bin\g++.exe  -std=c++11 -g   -Wl,--whole-archive CMakeFiles\raytracing.dir/objects.a -Wl,--no-whole-archive  -o raytracing.exe -Wl,--out-implib,libraytracing.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\raytracing.dir\linklibs.rsp

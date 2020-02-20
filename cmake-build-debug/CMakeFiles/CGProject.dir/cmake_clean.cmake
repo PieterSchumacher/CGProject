@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/CGProject.dir/main.cpp.obj"
   "CMakeFiles/CGProject.dir/src/Intersection.cpp.obj"
   "CMakeFiles/CGProject.dir/src/PointLight.cpp.obj"
+  "CMakeFiles/CGProject.dir/src/lambertian_reflection.cpp.obj"
   "CMakeFiles/CGProject.dir/src/write_ppm.cpp.obj"
   "libCGProject.dll.a"
 )

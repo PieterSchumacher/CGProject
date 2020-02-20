@@ -711,8 +711,8 @@ Light.h
 ../Eigen/Core
 
 ../include/RGB.h
-src/Core/Matrix.h
-../include/src/Core/Matrix.h
+cmath
+-
 
 ../include/Ray.h
 ../Eigen/Core
@@ -723,6 +723,16 @@ Object.h
 ../include/Object.h
 ../Eigen/Core
 ../Eigen/Core
+
+../include/lambertian_reflection.h
+RGB.h
+../include/RGB.h
+Light.h
+../include/Light.h
+memory
+-
+vector
+-
 
 ../include/write_ppm.h
 string
@@ -1473,12 +1483,8 @@ Camera.h
 C:/CGProject/Camera.h
 Light.h
 C:/CGProject/Light.h
-Ray.h
-C:/CGProject/Ray.h
 RGB.h
 C:/CGProject/RGB.h
-iostream
--
 vector
 -
 memory
@@ -1491,16 +1497,8 @@ Intersection.h
 -
 PointLight.h
 -
+lambertian_reflection.h
+-
 Eigen/Dense
 C:/CGProject/Eigen/Dense
-
-C:/CGProject/src/Intersection.cpp
-iostream
--
-Intersection.h
-C:/CGProject/src/Intersection.h
-
-C:/CGProject/src/PointLight.cpp
-PointLight.h
-C:/CGProject/src/PointLight.h
 

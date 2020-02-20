@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/CGProject/main.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/CGProject.dir/main.cpp.obj"
   "C:/CGProject/src/Intersection.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/CGProject.dir/src/Intersection.cpp.obj"
   "C:/CGProject/src/PointLight.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/CGProject.dir/src/PointLight.cpp.obj"
+  "C:/CGProject/src/lambertian_reflection.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/CGProject.dir/src/lambertian_reflection.cpp.obj"
   "C:/CGProject/src/write_ppm.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/CGProject.dir/src/write_ppm.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

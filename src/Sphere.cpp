@@ -1,7 +1,5 @@
-#include <iostream>
 #include "Sphere.h"
 #include "Ray.h"
-#include "../Eigen/Core"
 using Eigen::Vector3d;
 bool Sphere::intersect(const Ray &ray, double min_t, double &smallest_t_so_far, Vector3d &n) const {
     Vector3d oc = ray.eye - center;

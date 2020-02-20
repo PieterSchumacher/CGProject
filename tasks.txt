@@ -17,7 +17,7 @@ Notes:
   Split into subtasks (this might change for the file format):
     1. write a .ppm with random colours                         DONE
     2. write a sphere with predetermined colours to .ppm        DONE
-    3. ray trace a sphere with point light and write to .ppm
+    3. ray trace a sphere with point light and write to .ppm    DONE
     4. do 3 for a triangles
     5. write a WaveFront Parser and render a triangle
     6. do 3 for planes, rectangles, meshes
@@ -49,6 +49,12 @@ zoek op: stack vs heap
   What coordinate systems should the ray direction and/or eye be represented in?
   RGB arithmetic, how to retain relative values within 0 and 255
   Best practices for auxiliary functions like get_intersection_color(), within main.cpp or seperate .h/.cpp?
+  -- Notes --
+  Made progress on color representation. The sphere now reflects light originating from a point light. Must refine shading
+  to support material properties. Basic arithmetic operators like + - / * of the rgb struct passed a reference of the original
+  object as a result, which resulted in weird bugs. They now return a new copy. Still need to implement gamma correction,
+  the correct calculation for a ray direction (i.e. deriving from the camera axes uvw) and new shapes like triangles etc...
+  
 
 
 
