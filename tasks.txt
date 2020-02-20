@@ -42,4 +42,14 @@ zoek op: stack vs heap
   account yet. The ray direction must change accordingly. Maybe ask help tomorrow. Light calculations are strange,
   must somehow be able to multiply and get a value between 0 and 255
 
+20/02/2020:
+  -- Questions --
+  Do lines like intersection.object->material->kd add a lot of overhead? How to improve?
+  Intersection.cpp line intersection = {smallest_t_so_far, n, object, ray}; what to do with object? if the original object gets deleted, will this too?
+  What coordinate systems should the ray direction and/or eye be represented in?
+  RGB arithmetic, how to retain relative values within 0 and 255
+  Best practices for auxiliary functions like get_intersection_color(), within main.cpp or seperate .h/.cpp?
+
+
+
 
