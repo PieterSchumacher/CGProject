@@ -24,22 +24,33 @@ int main(int argc, char * argv[]) {
     const double s = 0.003125; // pixel size
     const double plane_offset = 1.0;
     const double gamma = 2.2;
-    Camera camera = {Vector3d(0,0,0),                                       // eye
-                     Vector3d(1,0,0), Vector3d(0,0,1), Vector3d(0,-1,0),    // uvw
-                     plane_offset,                                          // distance to plane
-                     (double) h_res, (double) v_res                         // image dimensions
-                    };
+    Camera camera = Camera(
+            Vector3d(0,-1,0),
+            Vector3d(0,2.5,0),
+            plane_offset,
+            (double) h_res, (double) v_res,
+            s);
 
     vector<shared_ptr<Object>>  objects;
     vector<shared_ptr<Light>>   lights;
     // Initialize scene and camera
     shared_ptr<Material> mat(new Material());
     mat->kd = rgb(0.3,0.5,1);
-    shared_ptr<Sphere> sphere(new Sphere());
-    sphere->center = Vector3d(0,2,0);
-    sphere->radius = 0.5;
-    sphere->material = mat;
-    objects.push_back(sphere);
+    shared_ptr<Sphere> sphere1(new Sphere());
+    sphere1->center = Vector3d(0, 2, 0);
+    sphere1->radius = 1.0;
+    sphere1->material = mat;
+    objects.push_back(sphere1);
+    shared_ptr<Sphere> sphere2(new Sphere());
+    sphere2->center = Vector3d(1, 3, 0);
+    sphere2->radius = 1.0;
+    sphere2->material = mat;
+    objects.push_back(sphere2);
+    shared_ptr<Sphere> sphere3(new Sphere());
+    sphere3->center = Vector3d(-1, 3, 0);
+    sphere3->radius = 1.0;
+    sphere3->material = mat;
+    objects.push_back(sphere3);
     shared_ptr<PointLight> pointLight1(new PointLight());
     pointLight1->I = rgb(253.0, 0.0, 0.0);
     pointLight1->p = Vector3d(0, 0, -1);
@@ -59,14 +70,11 @@ int main(int argc, char * argv[]) {
     for (unsigned r=0; r < v_res; ++r) {
         for (unsigned c=0; c < h_res; ++c) {
             // Shoot ray through pixel
-            Ray ray = {camera.eye, Vector3d(s*(c - (h_res/2.0) + 0.5),   // x coordinate in uv space
-                                            plane_offset,                           // negative viewing direction
-                                            s*(r - (v_res/2.0) + 0.5)    // y coordinate in uv space
-                                            ).normalized()               // center of pixel
-                      };
+            Ray ray;
+            camera.shoot_ray(c, r, ray);
             // Compute nearest intersection
             Intersection intersection;
-            bool did_intersect = find_nearest_intersection(objects, ray, plane_offset, intersection);
+            bool did_intersect = find_nearest_intersection(objects, ray, 1e-6, intersection);
             // Compute color of nearest intersection
             rgb diffuse_light   = rgb(0, 0, 0);
             rgb specular_light  = rgb(0, 0, 0);
@@ -76,7 +84,6 @@ int main(int argc, char * argv[]) {
                                             intersection.t * ray.direction, intersection.n);
             }
             rgb color = (diffuse_light + specular_light) * pigment;
-//            cout << color.r << " " << color.g << " " << color.b << " ";
             // pixel <- color
             auto clamp = [](double s){return max(min(s,255.0),0.0);};
             rgb_image[0+3*(c+h_res*r)] = clamp(color.r);

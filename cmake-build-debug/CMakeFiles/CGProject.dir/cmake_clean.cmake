@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CGProject.exe.manifest"
   "CGProject.pdb"
   "CMakeFiles/CGProject.dir/main.cpp.obj"
+  "CMakeFiles/CGProject.dir/src/Camera.cpp.obj"
   "CMakeFiles/CGProject.dir/src/Intersection.cpp.obj"
   "CMakeFiles/CGProject.dir/src/PointLight.cpp.obj"
   "CMakeFiles/CGProject.dir/src/lambertian_reflection.cpp.obj"

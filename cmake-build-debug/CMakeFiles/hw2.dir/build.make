@@ -168,6 +168,20 @@ CMakeFiles/hw2.dir/src/lambertian_reflection.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw2.dir/src/lambertian_reflection.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\CGProject\src\lambertian_reflection.cpp -o CMakeFiles\hw2.dir\src\lambertian_reflection.cpp.s
 
+CMakeFiles/hw2.dir/src/Camera.cpp.obj: CMakeFiles/hw2.dir/flags.make
+CMakeFiles/hw2.dir/src/Camera.cpp.obj: CMakeFiles/hw2.dir/includes_CXX.rsp
+CMakeFiles/hw2.dir/src/Camera.cpp.obj: ../src/Camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/hw2.dir/src/Camera.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw2.dir\src\Camera.cpp.obj -c C:\CGProject\src\Camera.cpp
+
+CMakeFiles/hw2.dir/src/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw2.dir/src/Camera.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\CGProject\src\Camera.cpp > CMakeFiles\hw2.dir\src\Camera.cpp.i
+
+CMakeFiles/hw2.dir/src/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw2.dir/src/Camera.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\CGProject\src\Camera.cpp -o CMakeFiles\hw2.dir\src\Camera.cpp.s
+
 # Object files for target hw2
 hw2_OBJECTS = \
 "CMakeFiles/hw2.dir/src/Plane.cpp.obj" \
@@ -177,7 +191,8 @@ hw2_OBJECTS = \
 "CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.obj" \
 "CMakeFiles/hw2.dir/src/write_ppm.cpp.obj" \
 "CMakeFiles/hw2.dir/src/Intersection.cpp.obj" \
-"CMakeFiles/hw2.dir/src/lambertian_reflection.cpp.obj"
+"CMakeFiles/hw2.dir/src/lambertian_reflection.cpp.obj" \
+"CMakeFiles/hw2.dir/src/Camera.cpp.obj"
 
 # External object files for target hw2
 hw2_EXTERNAL_OBJECTS =
@@ -190,9 +205,10 @@ libhw2.a: CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.obj
 libhw2.a: CMakeFiles/hw2.dir/src/write_ppm.cpp.obj
 libhw2.a: CMakeFiles/hw2.dir/src/Intersection.cpp.obj
 libhw2.a: CMakeFiles/hw2.dir/src/lambertian_reflection.cpp.obj
+libhw2.a: CMakeFiles/hw2.dir/src/Camera.cpp.obj
 libhw2.a: CMakeFiles/hw2.dir/build.make
 libhw2.a: CMakeFiles/hw2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library libhw2.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\CGProject\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library libhw2.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\hw2.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\hw2.dir\link.txt --verbose=$(VERBOSE)
 

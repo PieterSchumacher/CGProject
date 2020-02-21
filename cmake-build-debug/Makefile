@@ -162,6 +162,36 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/Camera.obj: src/Camera.cpp.obj
+
+.PHONY : src/Camera.obj
+
+# target to build an object file
+src/Camera.cpp.obj:
+	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/Camera.cpp.obj
+	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/Camera.cpp.obj
+.PHONY : src/Camera.cpp.obj
+
+src/Camera.i: src/Camera.cpp.i
+
+.PHONY : src/Camera.i
+
+# target to preprocess a source file
+src/Camera.cpp.i:
+	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/Camera.cpp.i
+	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/Camera.cpp.i
+.PHONY : src/Camera.cpp.i
+
+src/Camera.s: src/Camera.cpp.s
+
+.PHONY : src/Camera.s
+
+# target to generate assembly for a file
+src/Camera.cpp.s:
+	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/Camera.cpp.s
+	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/Camera.cpp.s
+.PHONY : src/Camera.cpp.s
+
 src/Intersection.obj: src/Intersection.cpp.obj
 
 .PHONY : src/Intersection.obj
@@ -427,6 +457,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... src/Camera.obj
+	@echo ... src/Camera.i
+	@echo ... src/Camera.s
 	@echo ... src/Intersection.obj
 	@echo ... src/Intersection.i
 	@echo ... src/Intersection.s

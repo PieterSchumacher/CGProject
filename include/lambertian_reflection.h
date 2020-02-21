@@ -4,7 +4,6 @@
 #include "Light.h"
 #include <memory>
 #include <vector>
-
 using std::vector;
 using std::shared_ptr;
 using Eigen::Vector3d;

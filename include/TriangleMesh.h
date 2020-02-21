@@ -15,7 +15,7 @@ class TriangleMesh : public Object {
   public:
     vector<shared_ptr<Object> > triangles;
     bool
-    intersect(const Ray &ray, double min_t, double &smallest_t_so_far, Vector3d &n) const override;
+    intersect(const Ray &ray, double t_min, double &t_max) const override;
 };
 
 #endif

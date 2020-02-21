@@ -12,7 +12,8 @@ class Sphere : public Object {
     double radius;
   public:
     bool
-    intersect(const Ray &ray, double min_t, double &smallest_t_so_far, Vector3d &n) const override;
+    intersect(const Ray &ray, double t_min, double &t_max) const override;
+    void get_normal(const Vector3d &l, Vector3d &n) const override;
 };
 
 #endif

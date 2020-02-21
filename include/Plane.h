@@ -10,7 +10,7 @@ class Plane : public Object {
   public:
     Vector3d point;
     Vector3d normal;
-    bool intersect(const Ray &ray, double min_t, double &smallest_t_so_far, Eigen::Vector3d &n) const override;
+    bool intersect(const Ray &ray, double t_min, double &t_max) const override;
 };
 
 #endif
