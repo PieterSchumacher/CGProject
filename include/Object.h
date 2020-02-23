@@ -12,8 +12,7 @@ class Object {
   public:
     shared_ptr<Material> material;
     virtual ~Object() {}
-    virtual bool
-    intersect(const Ray &ray, double t_min, double &t_max) const = 0;
+    virtual bool intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const = 0;
     virtual void get_normal(const Vector3d &l, Vector3d &n) const = 0;
 };
 

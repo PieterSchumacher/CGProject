@@ -2,20 +2,25 @@
 #define TRIANGLE_MESH_H
 
 #include "Object.h"
-#include "../Eigen/Core"
+#include "Eigen"
 #include <memory>
+#include <numeric>
+#include <tuple>
 #include <vector>
 
 using std::shared_ptr;
+using std::tuple;
+using std::get;
+using std::accumulate;
 using std::vector;
 using Eigen::Vector3d;
 
 class Triangle;
 class TriangleMesh : public Object {
   public:
-    vector<shared_ptr<Object> > triangles;
-    bool
-    intersect(const Ray &ray, double t_min, double &t_max) const override;
+    vector<shared_ptr<Triangle>> triangles;
+    bool intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const override;
+    void get_normal(const Vector3d &l, Vector3d &n) const override;
 };
 
 #endif

@@ -12,7 +12,7 @@ class Sphere : public Object {
     double radius;
   public:
     bool
-    intersect(const Ray &ray, double t_min, double &t_max) const override;
+    intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const override;
     void get_normal(const Vector3d &l, Vector3d &n) const override;
 };
 
