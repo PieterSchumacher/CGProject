@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/CGProject/src/AABB.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/hw2.dir/src/AABB.cpp.obj"
   "C:/CGProject/src/Camera.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/hw2.dir/src/Camera.cpp.obj"
   "C:/CGProject/src/Intersection.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/hw2.dir/src/Intersection.cpp.obj"
   "C:/CGProject/src/Plane.cpp" "C:/CGProject/cmake-build-debug/CMakeFiles/hw2.dir/src/Plane.cpp.obj"
