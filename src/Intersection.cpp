@@ -1,6 +1,5 @@
 #include "Intersection.h"
 #include <iostream>
-using std::cout;
 bool find_nearest_intersection(const vector<shared_ptr<Object>> &objects, const Ray &ray, double offset,
                                Intersection &intersection) {
     Vector3d n;
@@ -8,7 +7,6 @@ bool find_nearest_intersection(const vector<shared_ptr<Object>> &objects, const 
     double smallest_t_so_far = 1e6;
     for (const shared_ptr<Object> &object : objects) {
         if (object->intersect(ray, offset, smallest_t_so_far, n)) {
-            cout << "hoi";
             did_intersect = true;
             intersection = {smallest_t_so_far, n, object, ray}; // what to do with object? if the original object gets deleted, will this too?
         }
@@ -25,7 +23,3 @@ bool find_intersection(const vector<shared_ptr<Object>> &objects, const Ray &ray
     }
     return false;
 }
-
-
-
-#pragma clang diagnostic pop

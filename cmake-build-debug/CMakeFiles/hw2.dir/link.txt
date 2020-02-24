@@ -1,2 +1,2 @@
-C:\MinGW\bin\ar.exe qc libhw2.a  CMakeFiles/hw2.dir/src/Plane.cpp.obj CMakeFiles/hw2.dir/src/Sphere.cpp.obj CMakeFiles/hw2.dir/src/Triangle.cpp.obj CMakeFiles/hw2.dir/src/TriangleMesh.cpp.obj CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.obj CMakeFiles/hw2.dir/src/write_ppm.cpp.obj CMakeFiles/hw2.dir/src/Intersection.cpp.obj CMakeFiles/hw2.dir/src/lambertian_reflection.cpp.obj CMakeFiles/hw2.dir/src/Camera.cpp.obj
-C:\MinGW\bin\ranlib.exe libhw2.a
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ar.exe qc libhw2.a  CMakeFiles/hw2.dir/src/Plane.cpp.obj CMakeFiles/hw2.dir/src/Sphere.cpp.obj CMakeFiles/hw2.dir/src/Triangle.cpp.obj CMakeFiles/hw2.dir/src/TriangleMesh.cpp.obj CMakeFiles/hw2.dir/src/WaveFrontParser.cpp.obj CMakeFiles/hw2.dir/src/write_ppm.cpp.obj CMakeFiles/hw2.dir/src/Intersection.cpp.obj CMakeFiles/hw2.dir/src/lambertian_reflection.cpp.obj CMakeFiles/hw2.dir/src/Camera.cpp.obj
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ranlib.exe libhw2.a

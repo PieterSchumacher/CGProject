@@ -9,5 +9,5 @@
 using std::vector;
 using std::shared_ptr;
 using Eigen::Vector3d;
-void compute_reflected_light(rgb &diffuse_light, rgb &specular_light, vector<shared_ptr<Light>> &lights, Vector3d x, Vector3d n);
+void compute_reflected_light(rgb &diffuse_light, rgb &specular_light, vector<shared_ptr<Light>> &lights, const Vector3d& x, const Vector3d& n);
 #endif

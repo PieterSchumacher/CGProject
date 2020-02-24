@@ -1,5 +1,6 @@
+#include <iostream>
 #include "lambertian_reflection.h"
-void compute_reflected_light(rgb &diffuse_light, rgb &specular_light, vector<shared_ptr<Light>> &lights, Vector3d x, Vector3d n) {
+void compute_reflected_light(rgb &diffuse_light, rgb &specular_light, vector<shared_ptr<Light>> &lights, const Vector3d& x, const Vector3d& n) {
     for (shared_ptr<Light> &light : lights) {
         Vector3d l;
         double max_t;

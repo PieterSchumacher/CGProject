@@ -12,7 +12,7 @@
 #include <lambertian_reflection.h>
 #include "Eigen/Dense"
 
-void initialize_scene(vector<shared_ptr<Object>> objects, vector<shared_ptr<Light>> lights) ;
+void initialize_scene(vector<shared_ptr<Object>> &objects, vector<shared_ptr<Light>> &lights) ;
 
 using Eigen::Vector3d;
 using std::max;
@@ -53,7 +53,6 @@ int main(int argc, char * argv[]) {
             rgb specular_light  = rgb(0, 0, 0);
             rgb pigment         = rgb(1, 0.98, 0.94);   // default pigment
             if (did_intersect) {
-                cout << intersection.n << "\n";
                 compute_reflected_light(diffuse_light, specular_light, lights,
                                             intersection.t * ray.direction, intersection.n);
             }
@@ -70,11 +69,11 @@ int main(int argc, char * argv[]) {
     write_ppm(filename, rgb_image, h_res, v_res);
 }
 
-void initialize_scene(vector<shared_ptr<Object>> objects, vector<shared_ptr<Light>> lights) {
+void initialize_scene(vector<shared_ptr<Object>> &objects, vector<shared_ptr<Light>> &lights) {
     shared_ptr<Material> mat(new Material());
     mat->kd = rgb(0.3,0.5,1);
     shared_ptr<Sphere> sphere1(new Sphere());
-    sphere1->center = Vector3d(-1, 3, 0);
+    sphere1->center = Vector3d(0, 2, 0);
     sphere1->radius = 1.0;
     sphere1->material = mat;
     objects.push_back(sphere1);
@@ -90,7 +89,7 @@ void initialize_scene(vector<shared_ptr<Object>> objects, vector<shared_ptr<Ligh
     objects.push_back(sphere3);
     shared_ptr<PointLight> pointLight1(new PointLight());
     pointLight1->I = rgb(253.0, 0.0, 0.0);
-    pointLight1->p = Vector3d(0, 3, 0);
+    pointLight1->p = Vector3d(0, 0, -1);
     lights.push_back(pointLight1);
     shared_ptr<PointLight> pointLight2(new PointLight());
     pointLight2->I = rgb(0.0, 0.0, 153.0);

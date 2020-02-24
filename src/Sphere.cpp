@@ -11,7 +11,7 @@ bool Sphere::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n)
     double sqrt_d = sqrt(discriminant);
     double t = fmin(-loc - sqrt_d,
                     -loc + sqrt_d);
-    if (t < t_max && t >= t_min) {
+    if (t_min <= t && t < t_max) {
         t_max = t;
         n = ((ray.eye + t_max * ray.direction) - center) / radius;
         return true;

@@ -676,7 +676,7 @@ Core
 Jacobi
 ../eigen/Jacobi
 src/Core/util/DisableStupidWarnings.h
-../Eigen/src/Core/util/DisableStupidWarnings.h
+../eigen/src/Core/util/DisableStupidWarnings.h
 src/Cholesky/LLT.h
 ../eigen/src/Cholesky/LLT.h
 src/Cholesky/LDLT.h
@@ -688,7 +688,7 @@ src/misc/lapacke.h
 src/Cholesky/LLT_LAPACKE.h
 ../eigen/src/Cholesky/LLT_LAPACKE.h
 src/Core/util/ReenableStupidWarnings.h
-../Eigen/src/Core/util/ReenableStupidWarnings.h
+../eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/Dense
 Core
@@ -716,7 +716,7 @@ Sparse
 Core
 ../Eigen/Core
 src/Core/util/DisableStupidWarnings.h
-../Eigen/src/Core/util/DisableStupidWarnings.h
+../eigen/src/Core/util/DisableStupidWarnings.h
 Cholesky
 ../eigen/Cholesky
 Jacobi
@@ -762,13 +762,13 @@ src/Eigenvalues/ComplexSchur_LAPACKE.h
 src/Eigenvalues/SelfAdjointEigenSolver_LAPACKE.h
 ../eigen/src/Eigenvalues/SelfAdjointEigenSolver_LAPACKE.h
 src/Core/util/ReenableStupidWarnings.h
-../Eigen/src/Core/util/ReenableStupidWarnings.h
+../eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/Geometry
 Core
 ../Eigen/Core
 src/Core/util/DisableStupidWarnings.h
-../Eigen/src/Core/util/DisableStupidWarnings.h
+../eigen/src/Core/util/DisableStupidWarnings.h
 SVD
 ../eigen/SVD
 LU
@@ -806,13 +806,13 @@ src/Geometry/Umeyama.h
 src/Geometry/arch/Geometry_SSE.h
 ../eigen/src/Geometry/arch/Geometry_SSE.h
 src/Core/util/ReenableStupidWarnings.h
-../Eigen/src/Core/util/ReenableStupidWarnings.h
+../eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/Householder
 Core
 ../Eigen/Core
 src/Core/util/DisableStupidWarnings.h
-../Eigen/src/Core/util/DisableStupidWarnings.h
+../eigen/src/Core/util/DisableStupidWarnings.h
 src/Householder/Householder.h
 ../eigen/src/Householder/Householder.h
 src/Householder/HouseholderSequence.h
@@ -820,7 +820,7 @@ src/Householder/HouseholderSequence.h
 src/Householder/BlockHouseholder.h
 ../eigen/src/Householder/BlockHouseholder.h
 src/Core/util/ReenableStupidWarnings.h
-../Eigen/src/Core/util/ReenableStupidWarnings.h
+../eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/IterativeLinearSolvers
 SparseCore
@@ -828,7 +828,7 @@ SparseCore
 OrderingMethods
 ../eigen/OrderingMethods
 src/Core/util/DisableStupidWarnings.h
-../Eigen/src/Core/util/DisableStupidWarnings.h
+../eigen/src/Core/util/DisableStupidWarnings.h
 Eigen/IterativeLinearSolvers
 -
 src/IterativeLinearSolvers/SolveWithGuess.h
@@ -848,23 +848,23 @@ src/IterativeLinearSolvers/IncompleteLUT.h
 src/IterativeLinearSolvers/IncompleteCholesky.h
 ../eigen/src/IterativeLinearSolvers/IncompleteCholesky.h
 src/Core/util/ReenableStupidWarnings.h
-../Eigen/src/Core/util/ReenableStupidWarnings.h
+../eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/Jacobi
 Core
 ../Eigen/Core
 src/Core/util/DisableStupidWarnings.h
-../Eigen/src/Core/util/DisableStupidWarnings.h
+../eigen/src/Core/util/DisableStupidWarnings.h
 src/Jacobi/Jacobi.h
 ../eigen/src/Jacobi/Jacobi.h
 src/Core/util/ReenableStupidWarnings.h
-../Eigen/src/Core/util/ReenableStupidWarnings.h
+../eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/LU
 Core
 ../Eigen/Core
 src/Core/util/DisableStupidWarnings.h
-../Eigen/src/Core/util/DisableStupidWarnings.h
+../eigen/src/Core/util/DisableStupidWarnings.h
 src/misc/Kernel.h
 ../eigen/src/misc/Kernel.h
 src/misc/Image.h
@@ -886,25 +886,25 @@ src/LU/InverseImpl.h
 src/LU/arch/Inverse_SSE.h
 ../eigen/src/LU/arch/Inverse_SSE.h
 src/Core/util/ReenableStupidWarnings.h
-../Eigen/src/Core/util/ReenableStupidWarnings.h
+../eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/OrderingMethods
 SparseCore
 ../eigen/SparseCore
 src/Core/util/DisableStupidWarnings.h
-../Eigen/src/Core/util/DisableStupidWarnings.h
+../eigen/src/Core/util/DisableStupidWarnings.h
 src/OrderingMethods/Amd.h
 ../eigen/src/OrderingMethods/Amd.h
 src/OrderingMethods/Ordering.h
 ../eigen/src/OrderingMethods/Ordering.h
 src/Core/util/ReenableStupidWarnings.h
-../Eigen/src/Core/util/ReenableStupidWarnings.h
+../eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/QR
 Core
 ../Eigen/Core
 src/Core/util/DisableStupidWarnings.h
-../Eigen/src/Core/util/DisableStupidWarnings.h
+../eigen/src/Core/util/DisableStupidWarnings.h
 Cholesky
 ../eigen/Cholesky
 Jacobi
@@ -928,7 +928,7 @@ src/QR/HouseholderQR_LAPACKE.h
 src/QR/ColPivHouseholderQR_LAPACKE.h
 ../eigen/src/QR/ColPivHouseholderQR_LAPACKE.h
 src/Core/util/ReenableStupidWarnings.h
-../Eigen/src/Core/util/ReenableStupidWarnings.h
+../eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/SVD
 QR
@@ -938,7 +938,7 @@ Householder
 Jacobi
 ../eigen/Jacobi
 src/Core/util/DisableStupidWarnings.h
-../Eigen/src/Core/util/DisableStupidWarnings.h
+../eigen/src/Core/util/DisableStupidWarnings.h
 src/misc/RealSvd2x2.h
 ../eigen/src/misc/RealSvd2x2.h
 src/SVD/UpperBidiagonalization.h
@@ -956,7 +956,7 @@ src/misc/lapacke.h
 src/SVD/JacobiSVD_LAPACKE.h
 ../eigen/src/SVD/JacobiSVD_LAPACKE.h
 src/Core/util/ReenableStupidWarnings.h
-../Eigen/src/Core/util/ReenableStupidWarnings.h
+../eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/Sparse
 Eigen/Sparse
@@ -980,19 +980,19 @@ SparseCore
 OrderingMethods
 ../eigen/OrderingMethods
 src/Core/util/DisableStupidWarnings.h
-../Eigen/src/Core/util/DisableStupidWarnings.h
+../eigen/src/Core/util/DisableStupidWarnings.h
 src/SparseCholesky/SimplicialCholesky.h
 ../eigen/src/SparseCholesky/SimplicialCholesky.h
 src/SparseCholesky/SimplicialCholesky_impl.h
 ../eigen/src/SparseCholesky/SimplicialCholesky_impl.h
 src/Core/util/ReenableStupidWarnings.h
-../Eigen/src/Core/util/ReenableStupidWarnings.h
+../eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/SparseCore
 Core
 ../Eigen/Core
 src/Core/util/DisableStupidWarnings.h
-../Eigen/src/Core/util/DisableStupidWarnings.h
+../eigen/src/Core/util/DisableStupidWarnings.h
 vector
 -
 map
@@ -1062,7 +1062,7 @@ src/SparseCore/SparseFuzzy.h
 src/SparseCore/SparseSolverBase.h
 ../eigen/src/SparseCore/SparseSolverBase.h
 src/Core/util/ReenableStupidWarnings.h
-../Eigen/src/Core/util/ReenableStupidWarnings.h
+../eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/SparseLU
 SparseCore
@@ -1112,7 +1112,7 @@ SparseCore
 OrderingMethods
 ../eigen/OrderingMethods
 src/Core/util/DisableStupidWarnings.h
-../Eigen/src/Core/util/DisableStupidWarnings.h
+../eigen/src/Core/util/DisableStupidWarnings.h
 OrderingMethods
 ../eigen/OrderingMethods
 src/SparseCore/SparseColEtree.h
@@ -1120,7 +1120,7 @@ src/SparseCore/SparseColEtree.h
 src/SparseQR/SparseQR.h
 ../eigen/src/SparseQR/SparseQR.h
 src/Core/util/ReenableStupidWarnings.h
-../Eigen/src/Core/util/ReenableStupidWarnings.h
+../eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/src/Cholesky/LDLT.h
 
@@ -1314,15 +1314,15 @@ Eigen_Colamd.h
 
 ../eigen/src/SparseCore/SparseMatrixBase.h
 ../plugins/CommonCwiseUnaryOps.h
-../Eigen/src/plugins/CommonCwiseUnaryOps.h
+../eigen/src/plugins/CommonCwiseUnaryOps.h
 ../plugins/CommonCwiseBinaryOps.h
-../Eigen/src/plugins/CommonCwiseBinaryOps.h
+../eigen/src/plugins/CommonCwiseBinaryOps.h
 ../plugins/MatrixCwiseUnaryOps.h
-../Eigen/src/plugins/MatrixCwiseUnaryOps.h
+../eigen/src/plugins/MatrixCwiseUnaryOps.h
 ../plugins/MatrixCwiseBinaryOps.h
-../Eigen/src/plugins/MatrixCwiseBinaryOps.h
+../eigen/src/plugins/MatrixCwiseBinaryOps.h
 ../plugins/BlockMethods.h
-../Eigen/src/plugins/BlockMethods.h
+../eigen/src/plugins/BlockMethods.h
 
 ../eigen/src/SparseCore/SparsePermutation.h
 
@@ -1406,14 +1406,6 @@ lapacke_mangling.h
 
 ../eigen/src/misc/lapacke_mangling.h
 
-../include/Intersection.h
-Object.h
-../include/Object.h
-vector
--
-Ray.h
--
-
 ../include/Material.h
 RGB.h
 ../include/RGB.h
@@ -1434,9 +1426,15 @@ cmath
 ../Eigen/Core
 ../Eigen/Core
 
-C:/CGProject/src/Intersection.cpp
-Intersection.h
-C:/CGProject/src/Intersection.h
-iostream
--
+../include/Sphere.h
+Object.h
+../include/Object.h
+../Eigen/Core
+../Eigen/Core
+
+C:/CGProject/src/Sphere.cpp
+Sphere.h
+C:/CGProject/src/Sphere.h
+Ray.h
+C:/CGProject/src/Ray.h
 
