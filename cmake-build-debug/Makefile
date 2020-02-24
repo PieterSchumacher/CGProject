@@ -162,6 +162,36 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/AABB.obj: src/AABB.cpp.obj
+
+.PHONY : src/AABB.obj
+
+# target to build an object file
+src/AABB.cpp.obj:
+	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/AABB.cpp.obj
+	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/AABB.cpp.obj
+.PHONY : src/AABB.cpp.obj
+
+src/AABB.i: src/AABB.cpp.i
+
+.PHONY : src/AABB.i
+
+# target to preprocess a source file
+src/AABB.cpp.i:
+	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/AABB.cpp.i
+	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/AABB.cpp.i
+.PHONY : src/AABB.cpp.i
+
+src/AABB.s: src/AABB.cpp.s
+
+.PHONY : src/AABB.s
+
+# target to generate assembly for a file
+src/AABB.cpp.s:
+	$(MAKE) -f CMakeFiles\CGProject.dir\build.make CMakeFiles/CGProject.dir/src/AABB.cpp.s
+	$(MAKE) -f CMakeFiles\hw2.dir\build.make CMakeFiles/hw2.dir/src/AABB.cpp.s
+.PHONY : src/AABB.cpp.s
+
 src/Camera.obj: src/Camera.cpp.obj
 
 .PHONY : src/Camera.obj
@@ -457,6 +487,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... src/AABB.obj
+	@echo ... src/AABB.i
+	@echo ... src/AABB.s
 	@echo ... src/Camera.obj
 	@echo ... src/Camera.i
 	@echo ... src/Camera.s

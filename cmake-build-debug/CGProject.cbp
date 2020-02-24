@@ -134,6 +134,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/CGProject/include/AABB.h">
+			<Option target="hw2"/>
+		</Unit>
 		<Unit filename="C:/CGProject/include/Intersection.h">
 			<Option target="hw2"/>
 		</Unit>
@@ -145,6 +148,10 @@
 		</Unit>
 		<Unit filename="C:/CGProject/main.cpp">
 			<Option target="CGProject"/>
+		</Unit>
+		<Unit filename="C:/CGProject/src/AABB.cpp">
+			<Option target="CGProject"/>
+			<Option target="hw2"/>
 		</Unit>
 		<Unit filename="C:/CGProject/src/Camera.cpp">
 			<Option target="CGProject"/>
