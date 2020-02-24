@@ -19,6 +19,6 @@ struct Intersection {
 bool find_nearest_intersection(const vector<shared_ptr<Object>> &objects, const Ray &ray, double offset,
                                Intersection &intersection);
 
-bool find_intersection(const vector<shared_ptr<Object>> &objects, const Ray &ray, double &t_max);
+bool find_intersection(const vector<shared_ptr<Object>> &objects, const Ray &ray, double t_max);
 
 #endif //CGPROJECT_INTERSECTION_H

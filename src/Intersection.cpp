@@ -16,7 +16,7 @@ bool find_nearest_intersection(const vector<shared_ptr<Object>> &objects, const 
     return did_intersect;
 }
 
-bool find_intersection(const vector<shared_ptr<Object>> &objects, const Ray &ray, double &t_max) {
+bool find_intersection(const vector<shared_ptr<Object>> &objects, const Ray &ray, double t_max) {
     Vector3d n; // not needed, maybe overload Object.intersect() without the normal? BUT then code duplication
     for (const shared_ptr<Object> &object : objects) {
         if (object->intersect(ray, -1e-6, t_max, n)) {
