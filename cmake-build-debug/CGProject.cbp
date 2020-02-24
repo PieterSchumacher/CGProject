@@ -140,6 +140,9 @@
 		<Unit filename="C:/CGProject/include/Intersection.h">
 			<Option target="hw2"/>
 		</Unit>
+		<Unit filename="C:/CGProject/include/WaveFrontParser.h">
+			<Option target="hw2"/>
+		</Unit>
 		<Unit filename="C:/CGProject/include/lambertian_reflection.h">
 			<Option target="hw2"/>
 		</Unit>
