@@ -19,7 +19,4 @@ bool Sphere::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n)
     return false;
 }
 
-void Sphere::get_normal(const Vector3d &l, Vector3d &n) const {
-    n = (l - center) / radius;
-}
 

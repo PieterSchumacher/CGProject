@@ -10,7 +10,3 @@ bool TriangleMesh::intersect(const Ray &ray, double t_min, double &t_max, Vector
     }
     return did_intersect;
 }
-
-void TriangleMesh::get_normal(const Vector3d &l, Vector3d &n) const {
-    // Phong shading
-}

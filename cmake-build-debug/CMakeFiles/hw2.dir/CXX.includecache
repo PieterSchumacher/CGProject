@@ -1406,6 +1406,20 @@ lapacke_mangling.h
 
 ../eigen/src/misc/lapacke_mangling.h
 
+../include/Intersection.h
+Object.h
+../include/Object.h
+vector
+-
+Ray.h
+-
+
+../include/Light.h
+../Eigen/Core
+../Eigen/Core
+RGB.h
+../include/RGB.h
+
 ../include/Material.h
 RGB.h
 ../include/RGB.h
@@ -1426,15 +1440,27 @@ cmath
 ../Eigen/Core
 ../Eigen/Core
 
-../include/Sphere.h
+../include/lambertian_reflection.h
+RGB.h
+../include/RGB.h
+Light.h
+../include/Light.h
 Object.h
 ../include/Object.h
-../Eigen/Core
-../Eigen/Core
-
-C:/CGProject/src/Sphere.cpp
-Sphere.h
-C:/CGProject/src/Sphere.h
 Ray.h
-C:/CGProject/src/Ray.h
+../include/Ray.h
+memory
+-
+vector
+-
+cmath
+-
+
+C:/CGProject/src/lambertian_reflection.cpp
+iostream
+-
+lambertian_reflection.h
+C:/CGProject/src/lambertian_reflection.h
+Intersection.h
+C:/CGProject/src/Intersection.h
 

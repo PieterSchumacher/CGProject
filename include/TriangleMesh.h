@@ -20,7 +20,6 @@ class TriangleMesh : public Object {
   public:
     vector<shared_ptr<Triangle>> triangles;
     bool intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const override;
-    void get_normal(const Vector3d &l, Vector3d &n) const override;
 };
 
 #endif
