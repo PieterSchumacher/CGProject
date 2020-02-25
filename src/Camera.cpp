@@ -8,9 +8,6 @@ Camera::Camera(Vector3d e, Vector3d l, double plane_offset, double hres, double 
     w = (eye - look_at).normalized();
     u = Vector3d(0,0, 1).cross(w).normalized();
     v = u.cross(w);
-    cout << "w: " << w << "\n";
-    cout << "u: " << u << "\n";
-    cout << "v: " << v << "\n";
 }
 void Camera::shoot_ray(double c, double r, Ray &ray) {
     double x = s*(c - (h_res/2.0) + 0.5);
