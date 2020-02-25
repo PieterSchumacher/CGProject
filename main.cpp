@@ -14,6 +14,7 @@
 #include <Plane.h>
 #include <AABB.h>
 #include "Eigen/Dense"
+#include "omp.h"
 
 void initialize_scene(vector<shared_ptr<Object>> &objects, vector<shared_ptr<Light>> &lights) ;
 
@@ -29,7 +30,7 @@ int main(int argc, char * argv[]) {
     const unsigned int v_res = 1080;
     const double s = 0.003125; // pixel size
     const double plane_offset = 1.0;
-    const double gamma = 2.2;
+    const double gamma = 1.1;
     Camera camera = Camera(
             Vector3d(3,-4,5),
             Vector3d(0,6,0),
@@ -43,7 +44,6 @@ int main(int argc, char * argv[]) {
 
     vector<unsigned char> rgb_image(3*h_res*v_res);
     // For each pixel (i,j)
-    #pragma omp parallel for
     for (unsigned r=0; r < v_res; ++r) {
         for (unsigned c=0; c < h_res; ++c) {
             // Shoot ray through pixel
@@ -62,9 +62,9 @@ int main(int argc, char * argv[]) {
             rgb color = (diffuse_light + specular_light) * pigment;
             // pixel <- color
             auto clamp = [](double s){return max(min(s,255.0),0.0);};
-            rgb_image[0+3*(c+h_res*r)] = clamp(color.r);
-            rgb_image[1+3*(c+h_res*r)] = clamp(color.g);
-            rgb_image[2+3*(c+h_res*r)] = clamp(color.b);
+            rgb_image[0+3*(c+h_res*r)] = pow(clamp(color.r), 1/gamma);
+            rgb_image[1+3*(c+h_res*r)] = pow(clamp(color.g), 1/gamma);
+            rgb_image[2+3*(c+h_res*r)] = pow(clamp(color.b), 1/gamma);
         }
     }
     // write to file
@@ -119,15 +119,15 @@ void initialize_scene(vector<shared_ptr<Object>> &objects, vector<shared_ptr<Lig
 //    triangle1->material = mat6;
 //    objects.push_back(triangle1);
     shared_ptr<PointLight> pointLight1(new PointLight());
-    pointLight1->I = rgb(153, 40.0, 40.0);
+    pointLight1->I = rgb(253, 40.0, 40.0);
     pointLight1->p = Vector3d(0,4,0) + Vector3d(-3.5,-7,1);
     lights.push_back(pointLight1);
     shared_ptr<PointLight> pointLight2(new PointLight());
-    pointLight2->I = rgb(40.0, 153, 40.0);
+    pointLight2->I = rgb(40.0, 253, 40.0);
     pointLight2->p = Vector3d(0,4,0) + Vector3d(3.5,-7,1);
     lights.push_back(pointLight2);
     shared_ptr<PointLight> pointLight3(new PointLight());
-    pointLight3->I = rgb(40.0, 40.0, 153);
+    pointLight3->I = rgb(40.0, 40.0, 253);
     pointLight3->p = Vector3d(0,4,0) + Vector3d(0,-7,5);
     lights.push_back(pointLight3);
 }
