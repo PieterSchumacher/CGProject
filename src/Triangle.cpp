@@ -2,25 +2,38 @@
 
 
 bool Triangle::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const {
-    Matrix3d A;
-    Vector3d b;
-    A << vertices.col(0) - vertices.col(1), // Xa - Xb
-         vertices.col(0) - vertices.col(2), // Xa - Xc
-         ray.direction;                     // Xd
-    b << vertices.col(0) - ray.eye;         // Xa - Xe
-    Vector3d x = A.lu().solve(b);  // does the compiler replace vertices.col(0) with a variable?
-    double a = x(0) + x(1);
-    if (0 < x(0) && x(0) < 1 &&
-        0 < x(1) && x(1) < 1 &&
-        0 < a    && a    < 1 &&
-        0 < x(2) && x(2) < t_max) { // how to speed up branch?
-        t_max = x(2);
-        n = ( a   *normals.col(0) +
-              x(0)*normals.col(1) +
-              x(1)*normals.col(2) ); // Phong shading
+    Vector3d Xa, Xb, Xc, edge1, edge2, h, s, q;
+    Xa = vertices.col(0);
+    Xb = vertices.col(1);
+    Xc = vertices.col(2);
+    edge1 = Xb - Xa;
+    edge2 = Xc - Xa;
+    Vector3d rayDirection = ray.direction;
+    h = rayDirection.cross(edge2);
+    double a = edge1.dot(h);
+    if (a > 1e-6 && a < 1e-6) {
+        return false;
+    }
+    double f = 1.0 / a;
+    s = ray.eye - Xa;
+    double u = f * s.dot(h);
+    if (u < 0.0 || u > 1.0) {
+        return false;
+    }
+    q = s.cross(edge1);
+    double v = f * rayDirection.dot(q);
+    if (v < 0.0 || u + v > 1.0) {
+        return false;
+    }
+    double t = f * edge2.dot(q);
+    if (t > 1e-6 && t < t_max) {
+        t_max = t;
+        n = ((u + v)*normals.col(0) +
+              u     *normals.col(1) +
+              v     *normals.col(2) ); // Phong shading
         return true;
     }
-    return false; // VERY slow
+    return false;
 }
 
 
