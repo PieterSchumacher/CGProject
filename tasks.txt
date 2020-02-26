@@ -64,5 +64,8 @@ zoek op: stack vs heap
   The coordinate systems still behave strangely, putting eye at (0, 2.5, -10) gives a pink screen, while (1e-6, 2.5, -10)
   does not.
 
+26/02/2020:
+  BVH: First hierarchy of scene, then new hierarchy for triangle mesh OR entire hierarchy for scene? Difference in performance?
+
 
 

@@ -1,0 +1,4 @@
+C:/CGProject/cmake-build-release/CMakeFiles/CGProject.dir
+C:/CGProject/cmake-build-release/CMakeFiles/hw2.dir
+C:/CGProject/cmake-build-release/CMakeFiles/edit_cache.dir
+C:/CGProject/cmake-build-release/CMakeFiles/rebuild_cache.dir

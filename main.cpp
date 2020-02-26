@@ -67,6 +67,7 @@ int main(int argc, char * argv[]) {
             }
             rgb color = (diffuse_light + specular_light) * pigment;
             // pixel <- color
+            
             auto clamp = [](double s){return max(min(s,255.0),0.0);};
             rgb_image[0+3*(c+h_res*r)] = pow(clamp(color.r), 1/gamma);
             rgb_image[1+3*(c+h_res*r)] = pow(clamp(color.g), 1/gamma);
