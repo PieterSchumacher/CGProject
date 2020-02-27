@@ -75,4 +75,9 @@ zoek op: stack vs heap
   Easy way to parallelize the outer loop?
   Clamping & color representation still not 100% clear
   Difference in complexity between nearest intersection for viewing ray and computing reflected light radiances
+  -- Notes --
   Debugged the wavefront parser. Shading normals are now interpolated according to Phong interpolation.
+  Anti-aliasing makes seemingly no difference. Can test this by plotting the color values before and after to see
+  if the curve smooths because of super sampling.
+  BVH representation -> Composite pattern
+  2D/3D transformations -> Visitor pattern
