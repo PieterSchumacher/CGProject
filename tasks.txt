@@ -18,11 +18,11 @@ Notes:
     1. write a .ppm with random colours                         DONE
     2. write a sphere with predetermined colours to .ppm        DONE
     3. ray trace a sphere with point light and write to .ppm    DONE
-    4. do 3 for a triangles
-    5. write a WaveFront Parser and render a triangle
-    6. do 3 for planes, rectangles, meshes
+    4. do 3 for a triangles                                     DONE
+    5. write a WaveFront Parser and render a triangle           DONE
+    6. do 3 for planes, rectangles, meshes                      DONE
     7. think about possible bugs/artefacts and write a draft
-        for the report
+        for the report                                          DONE
 
 
 Questions for assistant:
@@ -67,8 +67,12 @@ zoek op: stack vs heap
 26/02/2020:
   BVH: First hierarchy of scene, then new hierarchy for triangle mesh OR entire hierarchy for scene? Difference in performance?
 
-
-
- 0.220s & 1 & 1 \\
- 0.678s & 2 & 1 \\
- 0.963s   & 3 & 1 \\
+27/02/2020:
+  Visibility & viewing ray intersections are working for all objects. Optimized triangle intersection. Now writing a
+  wavefront obj parser. Next up is anti-aliasing or BVH.
+  -- Questions --
+  Seemingly left-handedness for eigen vector operations?
+  Easy way to parallelize the outer loop?
+  Clamping & color representation still not 100% clear
+  Difference in complexity between nearest intersection for viewing ray and computing reflected light radiances
+  Debugged the wavefront parser. Shading normals are now interpolated according to Phong interpolation.

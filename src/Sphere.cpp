@@ -5,7 +5,7 @@ bool Sphere::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n)
     Vector3d oc = ray.eye - center;
     double loc = ray.direction.dot(oc);
     double discriminant = pow(loc,2.0) - (oc.squaredNorm() - pow(radius,2.0));
-    if (discriminant < 1e-6) {
+    if (discriminant < 1e-12) {
         return false;
     }
     double sqrt_d = sqrt(discriminant);

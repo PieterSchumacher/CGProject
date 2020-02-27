@@ -12,7 +12,7 @@ void compute_reflected_light(rgb &diffuse_light, rgb &specular_light, vector<sha
         light->direction(x, l, max_t);
         double cosTheta = n.dot(l) / l.norm();
 
-        if (cosTheta > 1e-6 && !find_intersection(objects, {l + x, -l.normalized()}, l.norm() - 1e-6) ) {
+        if (cosTheta > 1e-12 && !find_intersection(objects, {l + x, -l.normalized()}, l.norm() - 1e-12) ) {
             diffuse_light += kd * light->I * cosTheta;
         }
     }

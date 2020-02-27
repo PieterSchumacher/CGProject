@@ -13,8 +13,8 @@ bool AABB::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) c
         if (t_1 < t_2) {
             t_max = t_1;
             Vector3d diff = (v_min - (ray.eye + t_max*ray.direction)).cwiseAbs();
-            n = diff(0) < 1e-6 ? Vector3d(-1,0,0)
-              : diff(1) < 1e-6 ? Vector3d(0,-1,0)
+            n = diff(0) < 1e-12 ? Vector3d(-1,0,0)
+              : diff(1) < 1e-12 ? Vector3d(0,-1,0)
               :                  Vector3d(0,0,-1);
             return true;
         }

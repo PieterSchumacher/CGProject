@@ -16,7 +16,7 @@ void parseWaveFrontFile(
     vector<shared_ptr<Vector3d>> vertexes, normals;
     shared_ptr<TriangleMesh> mesh(new TriangleMesh);
     String s;
-    std::ifstream fin("../data/sphere.obj");
+    std::ifstream fin(filename);
     if (!fin)
         return;
     while (fin >> s) {
@@ -27,16 +27,16 @@ void parseWaveFrontFile(
                     fin >> u >> v;
                 } else if (s[1] == 'n') {
                     double x, y, z;
-                    shared_ptr<Vector3d> vertex(new Vector3d);
                     fin >> x >> y >> z;
+                    shared_ptr<Vector3d> vertex(new Vector3d());
                     vertex->x() = x;
                     vertex->y() = y;
                     vertex->z() = z;
                     normals.push_back(vertex);
                 } else {
                     double x, y, z;
-                    shared_ptr<Vector3d> vertex;
                     fin >> x >> y >> z;
+                    shared_ptr<Vector3d> vertex(new Vector3d());
                     vertex->x() = x;
                     vertex->y() = y;
                     vertex->z() = z;
@@ -61,13 +61,12 @@ void parseWaveFrontFile(
                 while (std::getline(ss3, token, '/')) {
                     temp.push_back(std::stoul(token));
                 }
-                v1 = temp[0]; vt1 = temp[1]; vn1 = temp[2];
-                v2 = temp[3]; vt2 = temp[4]; vn2 = temp[5];
-                v3 = temp[6]; vt3 = temp[7]; vn3 = temp[8];
-                shared_ptr<Triangle> triangle(new Triangle);
+                v1 = temp[0] - 1; vt1 = temp[1] - 1; vn1 = temp[2] - 1;
+                v2 = temp[3] - 1; vt2 = temp[4] - 1; vn2 = temp[5] - 1;
+                v3 = temp[6] - 1; vt3 = temp[7] - 1; vn3 = temp[8] - 1;
+                shared_ptr<Triangle> triangle(new Triangle());
                 triangle->vertices  << *vertexes[v1], *vertexes[v2], *vertexes[v3];
                 triangle->normals   << *normals[vn1], *normals[vn2], *normals[vn3];
-                std::cout << vertexes[v1].get() << "\n";
                 mesh->triangles.push_back(triangle);
             } break;
         }

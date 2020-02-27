@@ -698,7 +698,7 @@ SparseCore
 OrderingMethods
 ../eigen/OrderingMethods
 src/Core/util/DisableStupidWarnings.h
-../eigen/src/Core/util/DisableStupidWarnings.h
+../Eigen/src/Core/util/DisableStupidWarnings.h
 Eigen/IterativeLinearSolvers
 -
 src/IterativeLinearSolvers/SolveWithGuess.h
@@ -718,19 +718,19 @@ src/IterativeLinearSolvers/IncompleteLUT.h
 src/IterativeLinearSolvers/IncompleteCholesky.h
 ../eigen/src/IterativeLinearSolvers/IncompleteCholesky.h
 src/Core/util/ReenableStupidWarnings.h
-../eigen/src/Core/util/ReenableStupidWarnings.h
+../Eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/OrderingMethods
 SparseCore
 ../eigen/SparseCore
 src/Core/util/DisableStupidWarnings.h
-../eigen/src/Core/util/DisableStupidWarnings.h
+../Eigen/src/Core/util/DisableStupidWarnings.h
 src/OrderingMethods/Amd.h
 ../eigen/src/OrderingMethods/Amd.h
 src/OrderingMethods/Ordering.h
 ../eigen/src/OrderingMethods/Ordering.h
 src/Core/util/ReenableStupidWarnings.h
-../eigen/src/Core/util/ReenableStupidWarnings.h
+../Eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/Sparse
 Eigen/Sparse
@@ -754,19 +754,19 @@ SparseCore
 OrderingMethods
 ../eigen/OrderingMethods
 src/Core/util/DisableStupidWarnings.h
-../eigen/src/Core/util/DisableStupidWarnings.h
+../Eigen/src/Core/util/DisableStupidWarnings.h
 src/SparseCholesky/SimplicialCholesky.h
 ../eigen/src/SparseCholesky/SimplicialCholesky.h
 src/SparseCholesky/SimplicialCholesky_impl.h
 ../eigen/src/SparseCholesky/SimplicialCholesky_impl.h
 src/Core/util/ReenableStupidWarnings.h
-../eigen/src/Core/util/ReenableStupidWarnings.h
+../Eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/SparseCore
 Core
 ../Eigen/Core
 src/Core/util/DisableStupidWarnings.h
-../eigen/src/Core/util/DisableStupidWarnings.h
+../Eigen/src/Core/util/DisableStupidWarnings.h
 vector
 -
 map
@@ -836,7 +836,7 @@ src/SparseCore/SparseFuzzy.h
 src/SparseCore/SparseSolverBase.h
 ../eigen/src/SparseCore/SparseSolverBase.h
 src/Core/util/ReenableStupidWarnings.h
-../eigen/src/Core/util/ReenableStupidWarnings.h
+../Eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/SparseLU
 SparseCore
@@ -886,7 +886,7 @@ SparseCore
 OrderingMethods
 ../eigen/OrderingMethods
 src/Core/util/DisableStupidWarnings.h
-../eigen/src/Core/util/DisableStupidWarnings.h
+../Eigen/src/Core/util/DisableStupidWarnings.h
 OrderingMethods
 ../eigen/OrderingMethods
 src/SparseCore/SparseColEtree.h
@@ -894,7 +894,7 @@ src/SparseCore/SparseColEtree.h
 src/SparseQR/SparseQR.h
 ../eigen/src/SparseQR/SparseQR.h
 src/Core/util/ReenableStupidWarnings.h
-../eigen/src/Core/util/ReenableStupidWarnings.h
+../Eigen/src/Core/util/ReenableStupidWarnings.h
 
 ../eigen/src/Core/util/NonMPL2.h
 
@@ -968,15 +968,15 @@ Eigen_Colamd.h
 
 ../eigen/src/SparseCore/SparseMatrixBase.h
 ../plugins/CommonCwiseUnaryOps.h
-../eigen/src/plugins/CommonCwiseUnaryOps.h
+../Eigen/src/plugins/CommonCwiseUnaryOps.h
 ../plugins/CommonCwiseBinaryOps.h
-../eigen/src/plugins/CommonCwiseBinaryOps.h
+../Eigen/src/plugins/CommonCwiseBinaryOps.h
 ../plugins/MatrixCwiseUnaryOps.h
-../eigen/src/plugins/MatrixCwiseUnaryOps.h
+../Eigen/src/plugins/MatrixCwiseUnaryOps.h
 ../plugins/MatrixCwiseBinaryOps.h
-../eigen/src/plugins/MatrixCwiseBinaryOps.h
+../Eigen/src/plugins/MatrixCwiseBinaryOps.h
 ../plugins/BlockMethods.h
-../eigen/src/plugins/BlockMethods.h
+../Eigen/src/plugins/BlockMethods.h
 
 ../eigen/src/SparseCore/SparsePermutation.h
 

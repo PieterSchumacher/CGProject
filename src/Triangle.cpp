@@ -11,7 +11,7 @@ bool Triangle::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &
     Vector3d rayDirection = ray.direction;
     h = rayDirection.cross(edge2);
     double a = edge1.dot(h);
-    if (a > 1e-6 && a < 1e-6) {
+    if (a > 1e-12 && a < 1e-12) {
         return false;
     }
     double f = 1.0 / a;
@@ -26,11 +26,11 @@ bool Triangle::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &
         return false;
     }
     double t = f * edge2.dot(q);
-    if (t > 1e-6 && t < t_max) {
+    if (t > t_min && t < t_max) {
         t_max = t;
-        n = ((u + v)*normals.col(0) +
-              u     *normals.col(1) +
-              v     *normals.col(2) ); // Phong shading
+        n = ((1 - (u+v))*normals.col(0) +
+              u         *normals.col(1) +
+              v         *normals.col(2) ).normalized(); // Phong shading
         return true;
     }
     return false;
