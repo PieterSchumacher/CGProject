@@ -225,6 +225,7 @@ CMakeFiles/CGProject.dir/main.cpp.obj: ../include/Ray.h
 CMakeFiles/CGProject.dir/main.cpp.obj: ../include/Sphere.h
 CMakeFiles/CGProject.dir/main.cpp.obj: ../include/Triangle.h
 CMakeFiles/CGProject.dir/main.cpp.obj: ../include/TriangleMesh.h
+CMakeFiles/CGProject.dir/main.cpp.obj: ../include/WaveFrontParser.h
 CMakeFiles/CGProject.dir/main.cpp.obj: ../include/lambertian_reflection.h
 CMakeFiles/CGProject.dir/main.cpp.obj: ../include/write_ppm.h
 CMakeFiles/CGProject.dir/main.cpp.obj: ../Eigen/Cholesky

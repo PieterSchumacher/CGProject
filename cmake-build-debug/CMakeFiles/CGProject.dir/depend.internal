@@ -226,6 +226,7 @@ CMakeFiles/CGProject.dir/main.cpp.obj
  ../include/Sphere.h
  ../include/Triangle.h
  ../include/TriangleMesh.h
+ ../include/WaveFrontParser.h
  ../include/lambertian_reflection.h
  ../include/write_ppm.h
  C:/CGProject/Eigen/Cholesky

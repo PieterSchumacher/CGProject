@@ -1134,6 +1134,18 @@ tuple
 vector
 -
 
+../include/WaveFrontParser.h
+Light.h
+../include/Light.h
+Object.h
+../include/Object.h
+Eigen
+../include/Eigen
+vector
+-
+memory
+-
+
 ../include/lambertian_reflection.h
 RGB.h
 ../include/RGB.h
@@ -1934,5 +1946,7 @@ C:/CGProject/Eigen/Dense
 omp.h
 C:/CGProject/omp.h
 random
+-
+WaveFrontParser.h
 -
 

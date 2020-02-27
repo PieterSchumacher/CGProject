@@ -3,6 +3,7 @@
 
 #include "Light.h"
 #include "Object.h"
+#include "Eigen"
 #include <vector>
 #include <memory>
 using String = std::string;
