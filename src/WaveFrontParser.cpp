@@ -4,8 +4,6 @@
 #include "TriangleMesh.h"
 #include <memory>
 #include <vector>
-#include "Eigen"
-#include <iostream>
 using Eigen::Vector3d;
 using std::vector;
 using std::shared_ptr;

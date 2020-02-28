@@ -8,7 +8,7 @@ bool Plane::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) 
         if (t_min <= d && d < t_max) {
             t_max = d;
             n = normal;
-            return true; // doesn't work
+            return true;
         }
     }
     return false;

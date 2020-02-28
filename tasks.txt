@@ -1,30 +1,4 @@
 --- 12/02/2020 through 19/02/2020 ---
-
-Goal: Read Wavefront Object, write a .ppm (or other format) image in a perspective
-
-Tasks:
-  Camera                        Probably done
-  Shape                         Kind of done
-  Sphere                        Probably done
-  Ray                           Most likely done
-  Image file writer             DONE
-  Wavefront Object parser
-  Material
-  Plane
-  Pixel? Maybe, must ask. NO
-
-Notes:
-  Split into subtasks (this might change for the file format):
-    1. write a .ppm with random colours                         DONE
-    2. write a sphere with predetermined colours to .ppm        DONE
-    3. ray trace a sphere with point light and write to .ppm    DONE
-    4. do 3 for a triangles                                     DONE
-    5. write a WaveFront Parser and render a triangle           DONE
-    6. do 3 for planes, rectangles, meshes                      DONE
-    7. think about possible bugs/artefacts and write a draft
-        for the report                                          DONE
-
-
 Questions for assistant:
   Suggestion for image format, prefer an industry standard  -> .ppm or .png or .jpeg
   Way to read Wavefront Object files with notepad/any other application program -> just unzip the file and open
@@ -58,7 +32,7 @@ zoek op: stack vs heap
 21/02/2020:
   -- Notes --
   Wouldn't it be nicer if the origin of the ray was set to the intersection of the direction with the image plane,
-  instead of the eye of the camera? That way no check for t >= min_t is needed in intersection calculations.
+  instead of the eye of the camera? That way no check for t >= min_t is needed in intersection calculations. (27/02/2020: this is definitely not true)
 
   Rays now 'shoot' correctly through a camera. Did some refactoring relating to intersection methods.
   The coordinate systems still behave strangely, putting eye at (0, 2.5, -10) gives a pink screen, while (1e-6, 2.5, -10)
@@ -79,5 +53,19 @@ zoek op: stack vs heap
   Debugged the wavefront parser. Shading normals are now interpolated according to Phong interpolation.
   Anti-aliasing makes seemingly no difference. Can test this by plotting the color values before and after to see
   if the curve smooths because of super sampling.
-  BVH representation -> Composite pattern
+  BVH representation -> Composite pattern (some papers say this is slow because of virtual function calls)
   2D/3D transformations -> Visitor pattern
+
+28/02/2020:
+  On the use of design patterns:
+  BVH construction might be best done with a Builder pattern, however should look into other creational patterns to
+  assess whether this gives the most utility overall. Why? Because BVH construction can be done in several ways,
+  and it might be useful to make the code reusable and adaptable to several different construction algorithms.
+  Also, transformations must also work for any type of light source. Thinking about whether or not it would be
+  prudent to make a more general abstract class which Object and Light inherit from, and let transformations call
+  on that.
+  --> after reading some papers, some of these things are actually used. Object and Light usually inherit from a more
+      abstract class Primitive. Acceleration structures often have Builders. Composite pattern for BVH representation is
+      often claimed to be inefficient because of the way virtual function calls work. Haven't found any data to back up
+      these claims however. Function templates might solve this. Does this mean for loops over polymorphic vectors are
+      inefficient as well?

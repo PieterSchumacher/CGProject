@@ -1,6 +1,6 @@
 #include "Triangle.h"
 
-
+// https://en.wikipedia.org/wiki/M%C3%B6ller%E2%80%93Trumbore_intersection_algorithm
 bool Triangle::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const {
     Vector3d Xa, Xb, Xc, edge1, edge2, h, s, q;
     Xa = vertices.col(0);

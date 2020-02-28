@@ -6,7 +6,7 @@ bool find_nearest_intersection(const vector<shared_ptr<Object>> &objects, const 
     bool did_intersect = false;
     double smallest_t_so_far = 1e6;
     for (const shared_ptr<Object> &object : objects) {
-        if (object->intersect(ray, offset, smallest_t_so_far, n)) {
+        if (object->intersect(ray, offset, smallest_t_so_far, n)) { // virtual function calls cause a lot of overhead?
             did_intersect = true;
             intersection = {smallest_t_so_far, n, object, ray}; // what to do with object? if the original object gets deleted, will this too?
         }

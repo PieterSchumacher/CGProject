@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CGProject.pdb"
   "CMakeFiles/CGProject.dir/main.cpp.obj"
   "CMakeFiles/CGProject.dir/src/AABB.cpp.obj"
+  "CMakeFiles/CGProject.dir/src/BVH.cpp.obj"
   "CMakeFiles/CGProject.dir/src/Camera.cpp.obj"
   "CMakeFiles/CGProject.dir/src/Intersection.cpp.obj"
   "CMakeFiles/CGProject.dir/src/PointLight.cpp.obj"

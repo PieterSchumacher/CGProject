@@ -10,16 +10,10 @@
 #include <Intersection.h>
 #include <PointLight.h>
 #include <lambertian_reflection.h>
-#include <Triangle.h>
-#include <Plane.h>
-#include <AABB.h>
 #include <ctime>
 #include <chrono>
-#include <TriangleMesh.h>
 #include "Eigen/Dense"
-#include "omp.h"
 #include <random>
-#include <WaveFrontParser.h>
 
 void initialize_scene(vector<shared_ptr<Object>> &objects, vector<shared_ptr<Light>> &lights) ;
 
@@ -72,9 +66,6 @@ int main(int argc, char * argv[]) {
                     // Shoot ray through pixel
                     Ray ray;
                     camera.shoot_ray(c + dc, r + dr, ray);
-//                    cout << "pixel width - dr: " << s - dr << "\n";
-//                    cout << "k: " << k << " l: " << l << "\n";
-//                    cout << ray.direction << "\n";
                     // Compute nearest intersection
                     Intersection intersection;
                     bool did_intersect = find_nearest_intersection(objects, ray, 1e-12, intersection);

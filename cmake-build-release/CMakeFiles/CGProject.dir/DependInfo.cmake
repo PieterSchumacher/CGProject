@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/CGProject/main.cpp" "C:/CGProject/cmake-build-release/CMakeFiles/CGProject.dir/main.cpp.obj"
   "C:/CGProject/src/AABB.cpp" "C:/CGProject/cmake-build-release/CMakeFiles/CGProject.dir/src/AABB.cpp.obj"
+  "C:/CGProject/src/BVH.cpp" "C:/CGProject/cmake-build-release/CMakeFiles/CGProject.dir/src/BVH.cpp.obj"
   "C:/CGProject/src/Camera.cpp" "C:/CGProject/cmake-build-release/CMakeFiles/CGProject.dir/src/Camera.cpp.obj"
   "C:/CGProject/src/Intersection.cpp" "C:/CGProject/cmake-build-release/CMakeFiles/CGProject.dir/src/Intersection.cpp.obj"
   "C:/CGProject/src/PointLight.cpp" "C:/CGProject/cmake-build-release/CMakeFiles/CGProject.dir/src/PointLight.cpp.obj"
