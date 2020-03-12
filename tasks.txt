@@ -69,3 +69,12 @@ zoek op: stack vs heap
       often claimed to be inefficient because of the way virtual function calls work. Haven't found any data to back up
       these claims however. Function templates might solve this. Does this mean for loops over polymorphic vectors are
       inefficient as well?
+
+04/03/2020:
+  Wrote a draft for BVH definition, intersection and construction. Recursive definition
+  is giving problems, however the intersection code is very compact. Construction is done using
+  a builder and a recursive method. This has a strange problem where defining BVH bvh at the start does not
+  work because you need to construct either a leaf or a node, which have two different constructors.
+  Something strange is going on with the intersection method in BVH and the constructor for BVH.
+  Also, sometimes the initializer syntax doesn't work (for example when initializing Vector3ds in Sphere.
+  Starting with draft for AreaLight today, tomorrow try to fix the BVH bugs with help from assistant.

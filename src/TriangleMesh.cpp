@@ -1,3 +1,6 @@
+
+#include <TriangleMesh.h>
+
 #include "TriangleMesh.h"
 #include "Triangle.h"
 
@@ -9,4 +12,16 @@ bool TriangleMesh::intersect(const Ray &ray, double t_min, double &t_max, Vector
         }
     }
     return did_intersect;
+}
+
+Vector3d TriangleMesh::v_min() const {
+    return Eigen::Vector3d();
+}
+
+Vector3d TriangleMesh::v_max() const {
+    return Eigen::Vector3d();
+}
+
+Vector3d TriangleMesh::center() const {
+    return Eigen::Vector3d();
 }

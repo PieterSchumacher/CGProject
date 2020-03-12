@@ -5,7 +5,7 @@ bool Plane::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) 
     double ln = ray.direction.dot(normal);
     if (ln < -1e-12) {
         double d = (point - ray.eye).dot(normal) / ln;
-        if (t_min <= d && d < t_max) {
+        if (t_min <= d && d <= t_max) {
             t_max = d;
             n = normal;
             return true;
@@ -14,3 +14,15 @@ bool Plane::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) 
     return false;
 }
 
+
+Vector3d Plane::v_min() const {
+    return Eigen::Vector3d();
+}
+
+Vector3d Plane::v_max() const {
+    return Eigen::Vector3d();
+}
+
+Vector3d Plane::center() const {
+    return Eigen::Vector3d();
+}

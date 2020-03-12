@@ -4,6 +4,8 @@
 #include "TriangleMesh.h"
 #include <memory>
 #include <vector>
+#include <BVH.h>
+
 using Eigen::Vector3d;
 using std::vector;
 using std::shared_ptr;
@@ -12,7 +14,7 @@ void parseWaveFrontFile(
         vector<shared_ptr<Object>> & objects,
         vector<shared_ptr<Light>> & lights) {
     vector<shared_ptr<Vector3d>> vertexes, normals;
-    shared_ptr<TriangleMesh> mesh(new TriangleMesh);
+    vector<shared_ptr<Object>> triangles;
     String s;
     std::ifstream fin(filename);
     if (!fin)
@@ -62,16 +64,24 @@ void parseWaveFrontFile(
                 v1 = temp[0] - 1; vt1 = temp[1] - 1; vn1 = temp[2] - 1;
                 v2 = temp[3] - 1; vt2 = temp[4] - 1; vn2 = temp[5] - 1;
                 v3 = temp[6] - 1; vt3 = temp[7] - 1; vn3 = temp[8] - 1;
-                shared_ptr<Triangle> triangle(new Triangle());
-                triangle->vertices  << *vertexes[v1], *vertexes[v2], *vertexes[v3];
-                triangle->normals   << *normals[vn1], *normals[vn2], *normals[vn3];
-                mesh->triangles.push_back(triangle);
+                Matrix3d vertices, norms;
+                vertices  << *vertexes[v1], *vertexes[v2], *vertexes[v3];
+                norms   << *normals[vn1], *normals[vn2], *normals[vn3];
+                shared_ptr<Triangle> triangle(new Triangle(vertices, norms));
+                triangles.push_back(triangle);
+//                mesh->triangles.push_back(triangle);
             } break;
         }
     }
+//    mesh->material = mat1;
+    shared_ptr<BVH> bvh = top_down(triangles, 2);
+//    bvh->bounding_boxes(objects);
     shared_ptr<Material> mat1(new Material());
     mat1->kd = rgb(1.0,1.0,1.0);
-    mesh->material = mat1;
-    objects.push_back(mesh);
+    bvh->material = mat1;
+    objects.push_back(bvh);
+//    shared_ptr<TriangleMesh> mesh(new TriangleMesh(triangles));
+//    mesh->material = mat1;
+//    objects.push_back(mesh);
 }
 

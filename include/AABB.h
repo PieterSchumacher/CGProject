@@ -8,12 +8,18 @@
 using Eigen::Vector3d;
 using std::fmin;
 using std::fmax;
+using std::move;
 
 class AABB : public Object {
 public:
-    Vector3d v_min;
-    Vector3d v_max;
+    Vector3d vmin, vmax;
+    AABB() {};
+    AABB(Vector3d v_min, Vector3d v_max);
     bool intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const override;
+    bool intersect(const Ray &ray, double t_min, double t_max) const;
+    Vector3d v_min() const override;
+    Vector3d v_max() const override;
+    Vector3d center() const override;
 };
 
 

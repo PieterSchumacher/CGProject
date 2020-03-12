@@ -19,7 +19,11 @@ class Triangle;
 class TriangleMesh : public Object {
   public:
     vector<shared_ptr<Triangle>> triangles;
+    TriangleMesh(vector<shared_ptr<Triangle>> &triangles) : triangles(move(triangles)){};
     bool intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const override;
+    Vector3d v_min() const override;
+    Vector3d v_max() const override;
+    Vector3d center() const override;
 };
 
 #endif
