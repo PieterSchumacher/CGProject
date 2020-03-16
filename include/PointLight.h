@@ -1,15 +1,20 @@
 #ifndef POINTLIGHT_H
 #define POINTLIGHT_H
 #include "Light.h"
+
+#include <utility>
 #include "../Eigen/Core"
 
 using Eigen::Vector3d;
+using std::move;
 
 class PointLight : public Light {
-  public:
+private:
     Vector3d p;
-    void direction(const Vector3d & q, Vector3d & d, double & max_t) const override;
-    rgb Le(const Vector3d &n, const Vector3d &x, const vector<shared_ptr<Object>> &objects) const override;
+public:
+    PointLight(Vector3d p) : p(move(p)) {};
+    auto wi(const Vector3d &x) const -> Vector3d override;
+    auto samples(const Vector3d &x) const -> vector<Vector3d> override;
 };
 #endif
 

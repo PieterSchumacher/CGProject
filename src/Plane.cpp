@@ -1,28 +1,29 @@
 #include "Plane.h"
 #include "Ray.h"
-#include <iostream>
-bool Plane::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const {
+
+auto Plane::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const -> bool {
     double ln = ray.direction.dot(normal);
-    if (ln < -1e-12) {
-        double d = (point - ray.eye).dot(normal) / ln;
-        if (t_min <= d && d <= t_max) {
-            t_max = d;
-            n = normal;
-            return true;
-        }
+    if (ln > -1e-12) {
+        return false;
     }
-    return false;
+    double d = (point - ray.eye).dot(normal) / ln;
+    if (d < t_min || t_max < d) {
+        return false;
+    }
+    t_max = d;
+    n = normal;
+    return true;
 }
 
 
-Vector3d Plane::v_min() const {
+auto Plane::v_min() const -> Vector3d {
     return Eigen::Vector3d();
 }
 
-Vector3d Plane::v_max() const {
+auto Plane::v_max() const -> Vector3d {
     return Eigen::Vector3d();
 }
 
-Vector3d Plane::center() const {
+auto Plane::center() const -> Vector3d {
     return Eigen::Vector3d();
 }

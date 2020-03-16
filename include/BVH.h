@@ -15,7 +15,6 @@ using std::size_t;
 using std::tuple;
 using std::fmod;
 using std::move;
-using std::make_shared;
 using Eigen::Vector3d;
 struct Ray;
 
@@ -23,29 +22,27 @@ struct Ray;
 class BVH : public Object {
 public:
     AABB box;
-    virtual ~BVH() {};
-    Vector3d v_min() const override;
-    Vector3d v_max() const override;
-    Vector3d center() const override;
-    virtual void bounding_boxes(vector<shared_ptr<Object>> &objects) const = 0;
+    virtual ~BVH() = default;;
+    auto v_min() const -> Vector3d override;
+    auto v_max() const -> Vector3d override;
+    auto center() const -> Vector3d override;
 };
 
 class BVHNode : public BVH {
 public:
-    BVHNode(const shared_ptr<BVH> &right, const shared_ptr<BVH> &left) : right(move(right)), left(move(left)) {};
+    BVHNode(shared_ptr<BVH> right, shared_ptr<BVH> &left) : right(move(right)), left(move(left)) {};
     shared_ptr<BVH> right;
     shared_ptr<BVH> left;
-    bool intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const override;
-    void bounding_boxes(vector<shared_ptr<Object>> &objects) const override;
+    auto intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const -> bool override;
 };
 
 class BVHLeaf : public BVH {
 public:
-    explicit BVHLeaf(const vector<shared_ptr<Object>> objects) : objects(move(objects)) {};
+    explicit BVHLeaf(vector<shared_ptr<Object>>  objects) : objects(move(objects)) {};
     vector<shared_ptr<Object>> objects;
-    bool intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const override;
-    void bounding_boxes(vector<shared_ptr<Object>> &objects) const override;
+    auto intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const -> bool override;
 };
 
-shared_ptr<BVH> top_down(vector<shared_ptr<Object>> &objects, const unsigned int splitType, Vector3d v_min = Vector3d(1e6, 1e6, 1e6), Vector3d v_max = Vector3d(-1e6, -1e6, -1e6));
+auto top_down(vector<shared_ptr<Object>> &objects, const unsigned int splitType) -> shared_ptr<BVH>;
+
 #endif //CGPROJECT_BVH_H

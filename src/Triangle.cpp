@@ -6,14 +6,14 @@ Triangle::Triangle(Matrix3d &vertices, Matrix3d &normals) : vertices(move(vertic
                                                             normals(move(normals)) {};
 
 Vector3d Triangle::v_min() const {
-    Vector3d v_min(vertices.col(0));
+    Vector3d v_min = vertices.col(0);
     v_min = v_min.cwiseMin(vertices.col(1));
     v_min = v_min.cwiseMin(vertices.col(2));
     return v_min;
 }
 
 Vector3d Triangle::v_max() const {
-    Vector3d v_max(vertices.col(0));
+    Vector3d v_max = vertices.col(0);
     v_max = v_max.cwiseMax(vertices.col(1));
     v_max = v_max.cwiseMax(vertices.col(2));
     return v_max;
@@ -49,14 +49,14 @@ bool Triangle::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &
         return false;
     }
     double t = f * edge2.dot(q);
-    if (t > t_min && t < t_max) {
-        t_max = t;
-        n = ((1 - (u+v))*normals.col(0) +
-              u         *normals.col(1) +
-              v         *normals.col(2) ).normalized(); // Phong shading
-        return true;
+    if (t < t_min || t > t_max) {
+        return false;
     }
-    return false;
+    t_max = t;
+    n = ((1 - (u+v))*normals.col(0) +
+          u         *normals.col(1) +
+          v         *normals.col(2) ).normalized(); // Phong shading
+    return true;
 }
 
 

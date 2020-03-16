@@ -11,32 +11,32 @@ struct rgb {
     rgb(double r_, double g_, double b_) : r(r_), g(g_), b(b_), f(1.0) {}
     rgb(double r_, double g_, double b_, double f_) : r(r_), g(g_), b(b_), f(f_) {}
 
-    rgb operator+(rgb c) {
+    auto operator+(rgb c) -> rgb {
         return {r+c.r, g+c.g, b+c.b};
     }
 
-    rgb& operator+=(const rgb &c) {
+    auto operator+=(const rgb &c) -> rgb& {
         r += c.r, g += c.g, b += c.b;
         return *this;
     }
 
-    rgb operator*(rgb c) {
+    auto operator*(rgb c) -> rgb {
         return {r*c.r, g*c.g, b*c.b};
     }
 
-    rgb operator*(double d) {
+    auto operator*(double d) -> rgb {
         return {r*d, g*d, b*d};
     }
 
-    rgb operator/(rgb c) {
+    auto operator/(rgb c) -> rgb {
         return {r/c.r, g/c.g, b/c.b};
     }
 
-    rgb operator/(double d) {
+    auto operator/(double d) -> rgb {
         return {r/d, g/d, b/d};
     }
 
-    rgb operator^(double e) {
+    auto operator^(double e) -> rgb {
         return {pow(r, e), pow(g, e), pow(b, e)};
     }
 };

@@ -6,7 +6,7 @@ if(UNIX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
 endif()
-
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp")
 # Add your project files
 include_directories("include/")
 set(SRC_DIR "src/")
@@ -16,7 +16,7 @@ set(HW2FILES
         "${CMAKE_CURRENT_SOURCE_DIR}/${SRC_DIR}/Sphere.cpp"
         "${CMAKE_CURRENT_SOURCE_DIR}/${SRC_DIR}/Triangle.cpp"
         "${CMAKE_CURRENT_SOURCE_DIR}/${SRC_DIR}/TriangleMesh.cpp"
-        "${CMAKE_CURRENT_SOURCE_DIR}/${SRC_DIR}/WaveFrontParser.cpp" include/WaveFrontParser.h include/write_ppm.h src/write_ppm.cpp include/Intersection.h src/Intersection.cpp src/lambertian_reflection.cpp include/lambertian_reflection.h src/Camera.cpp include/AABB.h src/AABB.cpp include/BVH.h src/BVH.cpp include/AreaLight.h src/AreaLight.cpp)
+        "${CMAKE_CURRENT_SOURCE_DIR}/${SRC_DIR}/WaveFrontParser.cpp" include/WaveFrontParser.h include/write_ppm.h src/write_ppm.cpp include/Intersection.h src/Intersection.cpp src/lambertian_reflection.cpp include/lambertian_reflection.h src/Camera.cpp include/AABB.h src/AABB.cpp include/BVH.h src/BVH.cpp include/AreaLight.h src/AreaLight.cpp include/sampling.h src/sampling.cpp)
 list(REMOVE_ITEM SRCFILES ${HW2FILES})
 list(APPEND SRCFILES main.cpp)
 # create executable

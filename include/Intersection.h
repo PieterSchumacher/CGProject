@@ -16,12 +16,15 @@ struct Intersection {
     Ray ray;
 };
 
-bool find_nearest_intersection(const vector<shared_ptr<Object>> &objects, const Ray &ray, double offset,
-                               Intersection &intersection);
+auto find_nearest_intersection(const vector<shared_ptr<Object>> &objects, const Ray &ray, double offset,
+                               Intersection &intersection) -> bool;
 
-bool find_nearest_intersection(const vector<shared_ptr<Object>> &objects, const Ray &ray,
-                               double t_min, double &t_max, Vector3d &n);
+auto find_nearest_intersection(const Ray &ray, double &t, Vector3d &n, shared_ptr<Object> &hit_object,
+                               const vector<shared_ptr<Object>> &objects) -> bool;
 
-bool find_intersection(const vector<shared_ptr<Object>> &objects, const Ray &ray, double t_max);
+auto find_nearest_intersection(const vector<shared_ptr<Object>> &objects, const Ray &ray,
+                               double t_min, double &t_max, Vector3d &n) -> bool;
+
+auto find_intersection(const vector<shared_ptr<Object>> &objects, const Ray &ray, double t_max) -> bool;
 
 #endif //CGPROJECT_INTERSECTION_H

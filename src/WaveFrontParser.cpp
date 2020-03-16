@@ -65,23 +65,20 @@ void parseWaveFrontFile(
                 v2 = temp[3] - 1; vt2 = temp[4] - 1; vn2 = temp[5] - 1;
                 v3 = temp[6] - 1; vt3 = temp[7] - 1; vn3 = temp[8] - 1;
                 Matrix3d vertices, norms;
-                vertices  << *vertexes[v1], *vertexes[v2], *vertexes[v3];
+                vertices  << (*vertexes[v1] + Vector3d(0,-1.3,0)), (*vertexes[v2] + Vector3d(0,-1.3,0)), (*vertexes[v3] + Vector3d(0,-1.3,0));
                 norms   << *normals[vn1], *normals[vn2], *normals[vn3];
                 shared_ptr<Triangle> triangle(new Triangle(vertices, norms));
+                shared_ptr<Material> mat1(new Material());
+                mat1->kd = rgb(1.0,1.0,1.0);
+                triangle->material = mat1;
                 triangles.push_back(triangle);
-//                mesh->triangles.push_back(triangle);
             } break;
         }
     }
-//    mesh->material = mat1;
     shared_ptr<BVH> bvh = top_down(triangles, 2);
-//    bvh->bounding_boxes(objects);
     shared_ptr<Material> mat1(new Material());
-    mat1->kd = rgb(1.0,1.0,1.0);
+    mat1->kd = rgb(0.8,0,0.05);
     bvh->material = mat1;
     objects.push_back(bvh);
-//    shared_ptr<TriangleMesh> mesh(new TriangleMesh(triangles));
-//    mesh->material = mat1;
-//    objects.push_back(mesh);
 }
 

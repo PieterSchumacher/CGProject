@@ -4,7 +4,7 @@
 #include "TriangleMesh.h"
 #include "Triangle.h"
 
-bool TriangleMesh::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const {
+auto TriangleMesh::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const -> bool {
     bool did_intersect = false;
     for (const shared_ptr<Triangle> &triangle : triangles) {
         if (triangle->intersect(ray, t_min, t_max, n)) {
@@ -14,14 +14,14 @@ bool TriangleMesh::intersect(const Ray &ray, double t_min, double &t_max, Vector
     return did_intersect;
 }
 
-Vector3d TriangleMesh::v_min() const {
+auto TriangleMesh::v_min() const -> Vector3d {
     return Eigen::Vector3d();
 }
 
-Vector3d TriangleMesh::v_max() const {
+auto TriangleMesh::v_max() const -> Vector3d {
     return Eigen::Vector3d();
 }
 
-Vector3d TriangleMesh::center() const {
+auto TriangleMesh::center() const -> Vector3d {
     return Eigen::Vector3d();
 }
