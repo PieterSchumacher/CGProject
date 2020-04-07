@@ -13,7 +13,7 @@ class Sphere : public Object {
     double radius;
   public:
     Sphere(double radius, Vector3d center);
-    auto intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const -> bool override;
+    auto intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n, rgb &fr) const -> bool override;
     auto v_min() const -> Vector3d override;
     auto v_max() const -> Vector3d override;
     auto center() const -> Vector3d override;

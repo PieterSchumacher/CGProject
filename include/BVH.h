@@ -1,14 +1,10 @@
-#include <utility>
-
 #ifndef CGPROJECT_BVH_H
 #define CGPROJECT_BVH_H
 
-#include <memory>
-#include "Eigen"
-#include "Object.h"
 #include "AABB.h"
 #include "Intersection.h"
 #include "Triangle.h"
+#include <utility>
 
 using std::shared_ptr;
 using std::size_t;
@@ -22,6 +18,7 @@ struct Ray;
 class BVH : public Object {
 public:
     AABB box;
+    unsigned splitType;
     virtual ~BVH() = default;;
     auto v_min() const -> Vector3d override;
     auto v_max() const -> Vector3d override;
@@ -33,16 +30,17 @@ public:
     BVHNode(shared_ptr<BVH> right, shared_ptr<BVH> &left) : right(move(right)), left(move(left)) {};
     shared_ptr<BVH> right;
     shared_ptr<BVH> left;
-    auto intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const -> bool override;
+    auto intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n, rgb &fr) const -> bool override;
 };
 
 class BVHLeaf : public BVH {
 public:
-    explicit BVHLeaf(vector<shared_ptr<Object>>  objects) : objects(move(objects)) {};
-    vector<shared_ptr<Object>> objects;
-    auto intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const -> bool override;
+    explicit BVHLeaf(vector<shared_ptr<Object>> new_objects) : leaf_objects(move(new_objects)) {};
+    vector<shared_ptr<Object>> leaf_objects;
+    auto intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n, rgb &fr) const -> bool override;
 };
 
-auto top_down(vector<shared_ptr<Object>> &objects, const unsigned int splitType) -> shared_ptr<BVH>;
+auto top_down(vector<shared_ptr<Object>> &objects, const unsigned int splitType = 0) -> shared_ptr<BVH>;
+auto top_down_sah(vector<shared_ptr<Object>> &objects, double parent_cost) -> shared_ptr<BVH>;
 
-#endif //CGPROJECT_BVH_H
+#endif

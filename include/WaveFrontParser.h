@@ -2,17 +2,18 @@
 #define CGPROJECT_WAVEFRONTPARSER_H
 
 #include "Light.h"
-#include "Object.h"
-#include "Eigen"
-#include <vector>
-#include <memory>
+#include "TriangleMesh.h"
+#include <BVH.h>
+#include <fstream>
+
 using String = std::string;
 using std::vector;
 using std::shared_ptr;
 
-void parseWaveFrontFile(
-        String filename,
-        vector<shared_ptr<Object>> & objects,
-        vector<shared_ptr<Light>> & lights);
+void parseWaveFrontFile(const String& filename, shared_ptr<BVH>& bvh);
+
+void parseTexture(const String& filename, const shared_ptr<Material>& mat);
+
+void parseNormalMap(String filename);
 
 #endif //CGPROJECT_WAVEFRONTPARSER_H

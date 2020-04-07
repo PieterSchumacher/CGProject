@@ -20,11 +20,24 @@ struct rgb {
         return *this;
     }
 
+    auto operator*=(const rgb &c) -> rgb& {
+        r *= c.r, g *= c.g, b *= c.b;
+        return *this;
+    }
+
     auto operator*(rgb c) -> rgb {
         return {r*c.r, g*c.g, b*c.b};
     }
 
+    auto operator*(rgb c) const -> const rgb {
+        return {r*c.r, g*c.g, b*c.b};
+    }
+
     auto operator*(double d) -> rgb {
+        return {r*d, g*d, b*d};
+    }
+
+    auto operator*(double d) const -> const rgb {
         return {r*d, g*d, b*d};
     }
 
@@ -36,8 +49,24 @@ struct rgb {
         return {r/d, g/d, b/d};
     }
 
+    auto operator/(double d) const -> const rgb {
+        return {r/d, g/d, b/d};
+    }
+
+    auto operator/=(double d) -> rgb {
+        r /= d, g /= d, b /= d;
+        return *this;
+    }
+
     auto operator^(double e) -> rgb {
         return {pow(r, e), pow(g, e), pow(b, e)};
+    }
+
+    auto operator!=(rgb c) -> bool {
+        return r!=c.r && g!=c.g && b!=c.b;
+    }
+    auto operator==(rgb c) -> bool {
+        return r==c.r && g==c.g && b==c.b;
     }
 };
 

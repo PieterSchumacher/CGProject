@@ -1,39 +1,46 @@
 #include <iostream>
-#include <Light.h>
+#include <AreaLight.h>
 #include "lambertian_reflection.h"
-#include "Intersection.h"
 
-auto Lo(Ray &ray,
-        vector<shared_ptr<Light>> &lights,
-        vector<shared_ptr<Object>> &objects) -> rgb {
+auto clamp = [](double s){return s < 1.0/3.0 ? 0.0 : s;};
+
+auto Lo(const Ray &ray, unsigned depth, bool double_path) -> rgb {
     // Outgoing radiance
-    rgb Lo              = rgb(0,0,0);
+    rgb L = rgb(0, 0, 0);
 
-    // Compute nearest intersection
-    double t            = 1e6;
+    // Compute nearest intersection and add it's outgoing radiance value
+    double   t = 1e6;
     Vector3d n;
     shared_ptr<Object> object;
-    bool did_intersect  = find_nearest_intersection(ray, t, n, object, objects);
-
-    // Compute outgoing radiance of nearest intersection
-    if (did_intersect) {
-        const Vector3d wo   = - t * ray.direction;
-        const Vector3d x    = ray.eye - wo;
-        const unsigned N    = Light::N * lights.size();
+    rgb fr, fs;
+    //
+    if (find_nearest_intersection(ray, t, n, object, fr) && (!double_path || dynamic_cast<AreaLight*>(object.get()) == nullptr)) {
         rgb Li              = rgb(0,0,0);
+        rgb Ls              = rgb(0,0,0);
+        const Vector3d wo   = - t * ray.wo;
+        const Vector3d x    = ray.x - wo;
+        fs = object->material->ks;
+        // Alpha
+        const double f  = clamp(1.14*sqrt(tanh(1 - (depth/15.0))));
+        const double ad = f*(fr.r+fr.g+fr.b)/3;
+        const double as = f*(fs.r+fs.g+fs.b)/3;
         for (shared_ptr<Light> &light : lights) {
-            for (const Vector3d &wi : light->samples(x)) {
-                Li += light->Li(x, wi, objects) * n.dot(wi.normalized());
-            }
+            Li += light->Li(x, n);
+        }
+        Vector3d wi, r;
+        // Russian Roulette
+        if (sampler->random() < ad) {
+            // Shoot a new ray somewhere on the unit hemisphere defined by the hit normal. Add the outgoing radiance
+            // from that direction to the total incoming radiance of the hit point
+            wi = sampler->sample(n);
+            Li +=  Lo({x, wi}, depth+1, true) * n.dot(wi) / ad;
+        }
+        if (sampler->random() < as) {
+            r = (-wo + 2 * (n.dot(wo)) * n).normalized();
+            Ls += Lo({x, r}, depth+1) * n.dot(r) / as;
         }
         // https://en.wikipedia.org/wiki/Rendering_equation
-        Lo += object->Le(x, wo) + (object->material->kd * Li / N);
+        L += object->Le(x, wo) + fr*Li + fs*Ls;
     }
-    return Lo;
-}
-
-auto Li(Vector3d &x, Vector3d &wi,
-        vector<shared_ptr<Light>> &lights,
-        vector<shared_ptr<Object>> &objects) -> rgb {
-
+    return L;
 }

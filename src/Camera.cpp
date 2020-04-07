@@ -13,6 +13,5 @@ void Camera::shoot_ray(double c, double r, Ray &ray) {
     double x = s*(c - (h_res/2.0));
     double y = s*(r - (v_res/2.0));
     ray = {eye, (x*u + y*v - d*w).normalized()};
-
 }
 

@@ -13,8 +13,6 @@ private:
     Vector3d p;
 public:
     PointLight(Vector3d p) : p(move(p)) {};
-    auto wi(const Vector3d &x) const -> Vector3d override;
-    auto samples(const Vector3d &x) const -> vector<Vector3d> override;
 };
 #endif
 

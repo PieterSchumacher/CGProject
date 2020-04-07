@@ -3,26 +3,28 @@
 #include <iostream>
 #include <memory>
 
-auto AreaLight::wi(const Vector3d &x) const -> Vector3d {
-    return (p + u*sampler->random() + v*sampler->random()) - x;
+auto AreaLight::wi(const Vector3d &x, const double du, const double dv) const -> Vector3d {
+    return (p + (u*(du+sampler->random()) + v*(dv+sampler->random())) / sample_rate) - x;
 }
 
-AreaLight::AreaLight(const Vector3d& p1, const Vector3d& p2, const Vector3d& p3, shared_ptr<Sampler> sampler)
-                        : p(p1), u(p3-p1), v(p2-p1), normal(u.cross(v).normalized()), sampler(move(sampler)) {
+AreaLight::AreaLight(const Vector3d& p1, const Vector3d& p2, const Vector3d& p3)
+                        : p(p1), u(p3-p1), v(p2-p1) {
     //    p2  --                  --
     //      |    |      == >    |    |
     //      |    |      == >  v |    |
     //    p1  --  p3            p --
     //                            u
-    this->I = rgb(253,233,153)*0.7;
+    this->c = rgb(1,1,1);
+    this->I = 1;
+    this->normal = u.cross(v).normalized();
 }
 
-auto AreaLight::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const -> bool {
-    double t = (p - ray.eye).dot(normal) / ray.direction.dot(normal);
-    if (t < t_min || t_max < t) {
+auto AreaLight::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n, rgb &fr) const -> bool {
+    double t = (p - ray.x).dot(normal) / ray.wo.dot(normal);
+    if (t <= t_min || t_max < t) {
         return false;
     }
-    Vector3d d = ray.eye + t * ray.direction - p;
+    Vector3d d = ray.x + t * ray.wo - p;
     double t1 = d.dot(u);
     if (t1 < 0 || u.squaredNorm() < t1) {
         return false;
@@ -33,6 +35,7 @@ auto AreaLight::intersect(const Ray &ray, double t_min, double &t_max, Vector3d 
     }
     t_max = t;
     n = normal;
+    fr = material->kd;
     return true;
 }
 
@@ -49,14 +52,5 @@ auto AreaLight::center() const -> Vector3d {
 }
 
 auto AreaLight::Le(const Vector3d &x, const Vector3d &wo) const -> rgb {
-    rgb I = this->I;
-    return I;
-}
-
-auto AreaLight::samples(const Vector3d &x) const -> vector<Vector3d> {
-    vector<Vector3d> samples;
-    for (unsigned char i = 0; i < N; ++i) {
-        samples.push_back(wi(x));
-    }
-    return samples;
+    return c * I * material->kd / pdf(x);
 }

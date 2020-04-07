@@ -14,6 +14,8 @@ using std::size_t;
 using std::ofstream;
 using std::ios;
 
-void write_ppm(string filename, vector<unsigned char> image_buffer, unsigned int width, unsigned int height);
+void read_ppm(const string& filename, vector<unsigned char>& image_buffer);
+void write_txt(double nb_intersections);
+void write_ppm(const string& filename, vector<unsigned char> image_buffer, unsigned int width, unsigned int height);
 
 #endif //CGPROJECT_WRITE_PPM_H

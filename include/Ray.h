@@ -1,13 +1,13 @@
 #ifndef RAY_H
 #define RAY_H
 
-#include "../Eigen/Core"
+#include "Eigen"
 
 using Eigen::Vector3d;
 
 struct Ray {
-  Vector3d eye;
-  Vector3d direction;
+  Vector3d x;
+  Vector3d wo;
 };
 
 #endif

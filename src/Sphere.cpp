@@ -19,9 +19,9 @@ Vector3d Sphere::center() const {
     return c;
 }
 
-bool Sphere::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n) const {
-    Vector3d oc = ray.eye - c;
-    double loc = ray.direction.dot(oc);
+auto Sphere::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n, rgb &fr) const -> bool {
+    Vector3d oc = ray.x - c;
+    double loc = ray.wo.dot(oc);
     double discriminant = pow(loc,2.0) - (oc.squaredNorm() - pow(radius,2.0));
     if (discriminant < 1e-12) {
         return false;
@@ -33,7 +33,8 @@ bool Sphere::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n)
         return false;
     }
     t_max = t;
-    n = ((ray.eye + t_max * ray.direction) - c) / radius;
+    n = ((ray.x + t_max * ray.wo) - c) / radius;
+    fr = material->kd;
     return true;
 }
 
