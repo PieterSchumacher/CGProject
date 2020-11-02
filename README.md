@@ -1,4 +1,4 @@
-# CGProject
+# Path Tracer
 
 A CPU-based, naive implementation of the classical path tracer in C++. This algorithm generates rendered images by calculating a solution to the rendering equation using Monte Carlo integration methods.
 The renderer is capable of simulating specular reflection, refraction/transparency and uses BVH as an acceleration data structure. A report in Dutch is included.
