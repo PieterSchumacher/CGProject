@@ -98,16 +98,7 @@ int main(int argc, char * argv[]) {
               << std::chrono::duration<double, std::milli>(t_end-t_start).count()
               << " ms\n";
     // write to file
-//    std::string filename = "teapot_hybrid_" + std::to_string(sample_rate * sample_rate) + "ssp";
-//    std::string filename = "teapot_path_" + std::to_string(sample_rate * sample_rate) + "ssp_uni";
     std::string filename = "CGDemo";
-//    std::string filename = "teapot_hybrid_" + std::to_string(sample_rate * sample_rate) + "ssp_linmat";
-//    std::string filename = "teapot_hybrid_" + std::to_string(sample_rate * sample_rate) + "ssp_tanh";
-//    std::string filename = "teapot_path_" + std::to_string(sample_rate * sample_rate) + "ssp_tanh";
-//    std::string filename = "teapot_highssp_maxdepth_1";
-//    std::string filename = "teapot_depth1_branch200";
-
-//    std::string filename = "teapot_a_" + std::to_string(a);
 
     write_ppm(filename, rgb_image, h_res, v_res);
     write_txt(nb_intersections);
