@@ -13,5 +13,5 @@ https://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function
 
 Images
 
-![asdfasdfasdf](sample_images/Dragon_32ssp_reflectance.ppm)
+![asdfasdfasdf](sample_images/Dragon_32ssp_reflectance.png)
 
