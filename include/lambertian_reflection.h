@@ -13,6 +13,6 @@ using std::vector;
 using std::shared_ptr;
 using Eigen::Vector3d;
 
-auto Lo(const Ray &ray, unsigned depth=0, bool double_path=false) -> rgb;
+auto Lo(const Ray &ray, unsigned depth=0, bool not_double_path=true) -> rgb;
 
 #endif

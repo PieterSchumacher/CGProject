@@ -12,7 +12,8 @@ extern vector<shared_ptr<rgb>> texture;
 
 struct Material {
     // Ambient, Diffuse, Specular
-    rgb ka=rgb(0,0,0),kd=rgb(0,0,0),ks=rgb(0,0,0);
+    rgb ka=rgb(0,0,0),kd=rgb(0,0,0),ks=rgb(0,0,0),kt=rgb(0,0,0);
+    double nu = 1.0;
     rgb texture_colour(const double u, const double v) {
 //        return *texture[floor(u*c + c*floor((1-v)*r))] / 255;
         return kd;

@@ -1455,6 +1455,8 @@ Object.h
 ../include/Object.h
 Intersection.h
 -
+cmath
+-
 
 ../include/Material.h
 RGB.h
@@ -1563,6 +1565,8 @@ iostream
 -
 Eigen
 ../include/Eigen
+math.h
+-
 
 ../include/write_ppm.h
 string
@@ -1613,14 +1617,4 @@ AreaLight.h
 -
 Sphere.h
 -
-
-C:/CGProject/src/write_ppm.cpp
-cstring
--
-cmath
--
-RGB.h
--
-write_ppm.h
-C:/CGProject/src/write_ppm.h
 

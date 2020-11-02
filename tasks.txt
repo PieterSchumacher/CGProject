@@ -78,3 +78,45 @@ zoek op: stack vs heap
   Something strange is going on with the intersection method in BVH and the constructor for BVH.
   Also, sometimes the initializer syntax doesn't work (for example when initializing Vector3ds in Sphere.
   Starting with draft for AreaLight today, tomorrow try to fix the BVH bugs with help from assistant.
+
+08/04/2020:
+  A month has gone by, and a lot has happened. The BVH implementation got some slight changes. It does not use
+  the builder pattern. It uses a spatial medium split on alternating axes. It also keeps track of on what axis was
+  split, in order to do a small optimization in the intersection method. There's a lot to be done on the BVH,
+  but that is not in the scope of the official course. Future changes and features include SAH, creating a BVH out of
+  the entire scene and improving the build method.
+
+  AreaLight implementation took a while. The visibility function was hard to get down correctly. Geometric factors and
+  pdfs were often misplaced. It is fully functional now, correctly following the mathematical formulation. This also
+  holds for indirect lighting computation. After repeatedly refactoring the outgoing radiance function, a sufficiently
+  clean implementation was made. This made adding specular reflection remarkably easy. Some design decisions must be
+  discussed. These are the following:
+    - Coupling diffuse/specular reflection computation
+        (+): Very little code is added/duplicated. Caustics require no extra attention because it is a natural
+             consequence of coupling diffuse & specular reflection.
+        (-): Because they are coupled, changing how specular reflection works might influence how diffuse
+             reflection works if proper care isn't made. It is also harder to control the recursion depth of diffuse
+             and specular rays separately (is this really prudent though?).
+        (?): Efficient CPU usage within a thread is already problematic. If in the future it's decided to compute
+             both terms in separate threads, then the code must be adjusted. The question is, how likely is that situation?
+    - Russian Roulette for path termination
+        (+): Mathematically unbiased. Can save a lot of computation time when used properly. The research
+             recommends this technique.
+        (-): Choosing the value of alpha (chance to stop the recursion) is very tricky. The 'best' value varies from
+             scene to scene. If done improperly, it can lead to much more computation time than is needed.
+        (!): As of right now, the probability for termination is calculated as a function of the average
+             reflection coefficient (across the three wavelengths rgb) and a special depth termination function.
+             To expand on the latter, the function is designed to 'favor' lower recursion depths and punish depths
+             close to a certain limit chosen by the developer. It cuts off at a value of 1/3 in order to avoid
+             exploding the estimator value with a large exponentially growing correction factor. Example: a pixel is
+             at depth 19, close to the limit of 20. A termination probability of 0.95 results in a bounce. This means the
+             estimator is multiplied by a value of 1/0.05 = 50! The estimator at depth 0 is already multiplied by 18
+             other factors, with the last few most likely being > 10. An explosion of radiance like this makes some
+             pixels extremely bright, resulting in an overall darker picture. Proper research is needed to find out
+             a good implementation for this idea.
+
+  What's next:
+    - Writing a draft for the scientific report on the convergence of Monte Carlo sampling applied to direct/hybrid/path
+      tracing.
+    - Transparent materials (with caustics)
+

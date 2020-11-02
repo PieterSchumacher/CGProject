@@ -33,22 +33,22 @@ shared_ptr<Sampler> sampler(new Sampler());
 vector<shared_ptr<rgb>> texture;
 vector<shared_ptr<Vector3d>> normal_map;
 double nb_intersections = 0;
-
+double a = 1.0;
 int main(int argc, char * argv[]) {
-    const unsigned int  h_res           = 1200;
-    const unsigned int  v_res           = 1200;
+    const unsigned int  h_res           = 1920;
+    const unsigned int  v_res           = 1080;
     const float         s               = 0.003125; // pixel size
-    const unsigned      plane_offset    = 6;
+    const unsigned      plane_offset    = 12;
     const double        gamma           = 2.2;
-    const unsigned      sample_rate     = 1;
+    const unsigned      sample_rate     = 64;
     const double        N               = pow(sample_rate,2);
     const double        delta           = 1.0 / sample_rate;
 
     std::clock_t c_start = std::clock();
 
     auto t_start = std::chrono::high_resolution_clock::now();
-    Camera camera = Camera(Vector3d(3,2,0),
-                           Vector3d(0,0.3,0),
+    Camera camera = Camera(Vector3d(-0.5,3,-8),
+                           Vector3d(-0.5,0.5,0),
                            plane_offset,
                            (double) h_res, (double) v_res,
                            s);
@@ -57,7 +57,7 @@ int main(int argc, char * argv[]) {
     vector<unsigned char> rgb_image(3*h_res*v_res);
     vector<double> temp(3*h_res*v_res);
     // For each pixel (i,j)
-    #pragma omp parallel for default(none) shared(scene_objects, lights, sampler, camera, temp, nb_intersections, percentage, cout)
+    #pragma omp parallel for schedule(dynamic, 1) default(none) shared(scene_objects, lights, sampler, camera, temp, nb_intersections, percentage, cout)
     for (unsigned r=0; r < v_res; ++r) {
         for (unsigned c=0; c < h_res; ++c) {
             rgb L       = rgb(0,0,0);
@@ -98,7 +98,17 @@ int main(int argc, char * argv[]) {
               << std::chrono::duration<double, std::milli>(t_end-t_start).count()
               << " ms\n";
     // write to file
+//    std::string filename = "teapot_hybrid_" + std::to_string(sample_rate * sample_rate) + "ssp";
+//    std::string filename = "teapot_path_" + std::to_string(sample_rate * sample_rate) + "ssp_uni";
     std::string filename = "CGDemo";
+//    std::string filename = "teapot_hybrid_" + std::to_string(sample_rate * sample_rate) + "ssp_linmat";
+//    std::string filename = "teapot_hybrid_" + std::to_string(sample_rate * sample_rate) + "ssp_tanh";
+//    std::string filename = "teapot_path_" + std::to_string(sample_rate * sample_rate) + "ssp_tanh";
+//    std::string filename = "teapot_highssp_maxdepth_1";
+//    std::string filename = "teapot_depth1_branch200";
+
+//    std::string filename = "teapot_a_" + std::to_string(a);
+
     write_ppm(filename, rgb_image, h_res, v_res);
     write_txt(nb_intersections);
 }
@@ -110,14 +120,24 @@ void initialize_scene() {
 //    parseNormalMap("../data/apple/apple_normal.ppm");
 //    parseTexture("../data/apple/apple_texture.ppm", mat_apple);
 //    scene_objects.push_back(apple);
-    shared_ptr<BVH> dragon;
-    parseWaveFrontFile("../data/dragon.obj", dragon);
-    shared_ptr<Material> mat_drag(new Material);
-//    parseTexture("../data/reptile_texture.ppm", mat_drag);
-    dragon->material = mat_drag;
-    dragon->material->kd = rgb(0.25098,0.84158,0.815686);
-    dragon->material->ks = rgb(0.75,0.75,0.75);
-    scene_objects.push_back(dragon);
+//    shared_ptr<BVH> dragon;
+//    parseWaveFrontFile("../data/dragon.obj", dragon);
+//    shared_ptr<Material> mat_drag(new Material);
+//    dragon->material = mat_drag;
+//    dragon->material->kd = rgb(0.25098,0.84158,0.815686);
+//    dragon->material->ks = rgb(0,0,0);
+//    dragon->material->kt = rgb(0.75,0.75,0.75);
+//    dragon->material->nu = 5.0/3.0;
+//    scene_objects.push_back(dragon);
+    shared_ptr<BVH> teapot;
+    parseWaveFrontFile("../data/teapot.obj", teapot);
+    shared_ptr<Material> mat_tea(new Material);
+    teapot->material = mat_tea;
+//    teapot->material->kd = rgb(0.823529,0.4117647,0.117647);
+    teapot->material->ks = rgb(1,1,1);
+    teapot->material->kt = rgb(1,1,1);
+    teapot->material->nu = 1.5;
+    scene_objects.push_back(teapot);
     shared_ptr<Material> mat1(new Material);
     mat1->kd = rgb(1,1,1);
     mat1->ks = rgb(0,0,0);
@@ -126,7 +146,8 @@ void initialize_scene() {
     mat2->ks = rgb(0,0,0);
     shared_ptr<Material> mat3(new Material);
     mat3->kd = rgb(1,0,0);
-    mat3->ks = rgb(0,0,0);
+//    mat3->ks = rgb(0.75,0.75,0.75);
+//    mat3->nu = 2;
     shared_ptr<Material> mat6(new Material);
     mat6->kd = rgb(1,0.05,0.15);
     mat6->ks = rgb(0,0,0);
@@ -141,32 +162,43 @@ void initialize_scene() {
     mat7->ks = rgb(0,0,0);
     shared_ptr<Material> mat8(new Material);
     mat8->kd = rgb(0.5,0.5,0.5);
-    mat8->ks = rgb(0,0,0);
+    mat8->ks = rgb(0.75,0.75,0.75);
+    mat8->nu = 4;
+    shared_ptr<Material> mat9(new Material);
+    mat9->kd = rgb(0,0,0);
+    mat9->ks = rgb(1,1,1);
+    mat9->kt = rgb(1,1,1);
+    mat9->nu = 3.2;
     shared_ptr<Plane> plane1(new Plane());
     plane1->point = Vector3d(0,0,0);
     plane1->normal = Vector3d(0,1,0);
-    plane1->material = mat8;
+    plane1->material = mat1;
     scene_objects.push_back(plane1);
     shared_ptr<Plane> plane2(new Plane());
-    plane2->point = Vector3d(-1,0,0);
+    plane2->point = Vector3d(-5,0,0);
     plane2->normal = Vector3d(1,0,0);
-    plane2->material = mat2;
+    plane2->material = mat1;
     scene_objects.push_back(plane2);
     shared_ptr<Plane> plane3(new Plane());
     plane3->point = Vector3d(0,0,2);
     plane3->normal = Vector3d(0,0,-1);
-    plane3->material = mat3;
-    scene_objects.push_back(plane3);
+    plane3->material = mat1;
+//    scene_objects.push_back(plane3);
     shared_ptr<Plane> plane4(new Plane());
-    plane4->point = Vector3d(0,3,0);
+    plane4->point = Vector3d(0,4,0);
     plane4->normal = Vector3d(0,-1,0);
-    plane4->material = mat4;
-    scene_objects.push_back(plane4);
+    plane4->material = mat1;
+//    scene_objects.push_back(plane4);
     shared_ptr<Plane> plane5(new Plane());
-    plane5->point = Vector3d(0,0,-2);
+    plane5->point = Vector3d(0,0,-5);
     plane5->normal = Vector3d(0,0,1);
-    plane5->material = mat5;
-    scene_objects.push_back(plane5);
+    plane5->material = mat1;
+//    scene_objects.push_back(plane5);
+    shared_ptr<Plane> plane6(new Plane());
+    plane6->point = Vector3d(5,0,0);
+    plane6->normal = Vector3d(-1,0,0).normalized();
+    plane6->material = mat9;
+//    scene_objects.push_back(plane6);
 //    shared_ptr<Sphere> sphere1(new Sphere(0.25, Vector3d(-0.75,2.75,1.75)));
 //    sphere1->material = mat7;
 //    scene_objects.push_back(sphere1);
@@ -176,15 +208,27 @@ void initialize_scene() {
 //    shared_ptr<AABB> aabb1(new AABB(Vector3d(-1.75,0,-1), Vector3d(0, 1, 0)));
 //    aabb1->material = mat1;
 //    scene_objects.push_back(aabb1);
-//    shared_ptr<Sphere> sphere3(new Sphere(0.5, Vector3d(0, 1.3, 0)));
-//    sphere3->material = mat1;
+//    shared_ptr<Sphere> sphere3(new Sphere(0.3, Vector3d(3, 0.5, 0.5)));
+//    sphere3->material = mat9;
 //    scene_objects.push_back(sphere3);
-    shared_ptr<AreaLight> areaLight1(new AreaLight(Vector3d(0, 3, -0.5),
-                                                       Vector3d(0, 3, 0.5),
-                                                       Vector3d(1, 3, -0.5)));
+//    shared_ptr<AreaLight> areaLight1(new AreaLight(Vector3d(0, 3, -0.5),
+//                                                       Vector3d(0, 3, 0.5),
+//                                                       Vector3d(1, 3, -0.5)));
+//    areaLight1->material = mat1;
+//    scene_objects.push_back(areaLight1);
+//    lights.push_back(areaLight1);
+    shared_ptr<AreaLight> areaLight1(new AreaLight(Vector3d(5, 0*a, -1.5*a),
+                                                       Vector3d(5, 3*a, -1.5*a),
+                                                       Vector3d(5, 0*a, 1.5*a)));
     areaLight1->material = mat1;
     scene_objects.push_back(areaLight1);
     lights.push_back(areaLight1);
+    shared_ptr<AreaLight> areaLight3(new AreaLight(Vector3d(1.5, 5, -1.5) + Vector3d(-3.5,0,0),
+                                                       Vector3d(-1.5, 5, -1.5) + Vector3d(-3.5,0,0),
+                                                       Vector3d(1.5, 5, 1.5) + Vector3d(-3.5,0,0)));
+    areaLight3->material = mat1;
+//    scene_objects.push_back(areaLight3);
+//    lights.push_back(areaLight3);
 //    vector<unsigned char> texture;
 //    read_ppm("../data/reptile_texture.ppm", texture);
 }

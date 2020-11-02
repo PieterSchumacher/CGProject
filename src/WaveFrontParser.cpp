@@ -118,7 +118,9 @@ void parseWaveFrontFile(const String& filename, shared_ptr<BVH>& bvh) {
                 norms       << *normals[vn1], *normals[vn2], *normals[vn3];
                 shared_ptr<Triangle> triangle(new Triangle(vertices, norms, *textures[vt1], *textures[vt2], *textures[vt3]));
                 shared_ptr<Material> mat1(new Material());
-                mat1->kd = rgb(0.25098,0.84158,0.815686);
+//                mat1->kd = rgb(0.823529,0.4117647,0.117647) * 0.3;
+                mat1->kd = rgb(0.25098,0.84158,0.815686)*0.3;
+//                mat1->kd = rgb(1,1,1)*0.1;
                 triangle->material = mat1;
                 triangles.push_back(triangle);
             } break;

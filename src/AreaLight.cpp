@@ -4,7 +4,7 @@
 #include <memory>
 
 auto AreaLight::wi(const Vector3d &x, const double du, const double dv) const -> Vector3d {
-    return (p + (u*(du+sampler->random()) + v*(dv+sampler->random())) / sample_rate) - x;
+    return (p + (u*(du+sampler->random()) + v*(dv+sampler->random())) / sqrt(N)) - x;
 }
 
 AreaLight::AreaLight(const Vector3d& p1, const Vector3d& p2, const Vector3d& p3)
@@ -17,6 +17,7 @@ AreaLight::AreaLight(const Vector3d& p1, const Vector3d& p2, const Vector3d& p3)
     this->c = rgb(1,1,1);
     this->I = 1;
     this->normal = u.cross(v).normalized();
+    std::cout << normal << "\n";
 }
 
 auto AreaLight::intersect(const Ray &ray, double t_min, double &t_max, Vector3d &n, rgb &fr) const -> bool {
@@ -52,5 +53,7 @@ auto AreaLight::center() const -> Vector3d {
 }
 
 auto AreaLight::Le(const Vector3d &x, const Vector3d &wo) const -> rgb {
+//    std::cout << "pdf arealight: " << pdf(x) << "\n";
+
     return c * I * material->kd / pdf(x);
 }
