@@ -12,6 +12,9 @@ https://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function
 
 
 Images
+![Refractive teapot with caustics](sample_images/teapot_1440p.png)
+![Specular reflection](sample_images/Dragon_32ssp_reflectance.png)
+![Specular reflection](sample_images/shiny_dragon.png)
 
-![asdfasdfasdf](sample_images/Dragon_32ssp_reflectance.png)
+This code base is still under development and contains bugs/missing features. It is not intended for commercial use.
 
