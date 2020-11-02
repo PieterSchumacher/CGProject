@@ -11,9 +11,15 @@ https://en.wikipedia.org/wiki/Rendering_equation
 https://en.wikipedia.org/wiki/Bidirectional_reflectance_distribution_function
 
 
-Images
+--- Images ---
+
+
 ![Refractive teapot with caustics](sample_images/teapot_1440p.png)
+
+
 ![Specular reflection](sample_images/Dragon_32ssp_reflectance.png)
+
+
 ![Specular reflection](sample_images/shiny_dragon.png)
 
 This code base is still under development and contains bugs/missing features. It is not intended for commercial use.
